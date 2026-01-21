@@ -1,87 +1,77 @@
 ---
-import PageLayout from '../layouts/PageLayout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-const title = "Blogi - Matkatoimisto Saimaan Liikenne OY";
-const description = "Lue uusimmat matkauutiset ja tarinat Saimaan rannoilta ja kauempaa.";
----
+<PageLayout
+  title="Matkailu Suomessa – luonto, reitit ja elämykset"
+  description="Tutustu Suomen luontoon, matkareitteihin ja rauhalliseen matkailuun."
+>
+  <section class="hero">
+    <h1>Tervetuloa matkailuprojektiin</h1>
+    <p>
+      Löydä Suomen kauneimmat luontokohteet, retkeilyreitit
+      ja matkavinkit rauhalliseen ja kestävään matkailuun.
+    </p>
 
-<PageLayout title={title} description={description}>
-  <section class="blog-hero">
-    <div class="container">
-      <h1>Matkablogi</h1>
-      <p>Inspiraatiota seuraavalle matkallesi</p>
+    <a href="/routes" class="cta">Tutustu reitteihin</a>
+  </section>
+
+  <section class="features">
+    <h2>Mitä sivusto tarjoaa?</h2>
+
+    <div class="features-grid">
+      <div class="feature">
+        <h3>Luonto</h3>
+        <p>Kansallispuistot, metsät, järvet ja hiljaisuus.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Reitit</h3>
+        <p>Vaellus-, pyöräily- ja automatkareittejä.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Kaupunki & kulttuuri</h3>
+        <p>Kaupunkikohteet, nähtävyydet ja paikallinen elämä.</p>
+      </div>
     </div>
   </section>
 
-  <section class="blog-grid container">
-    {blogPosts.map((post) => (
-      <article class="post-card">
-        <div class="image-wrapper">
-          <img src={post.image} alt={post.title} loading="lazy" />
-        </div>
-        <div class="post-content">
-          <time datetime={post.date}>
-            {new Date(post.date).toLocaleDateString('fi-FI')}
-          </time>
-          <h2>{post.title}</h2>
-          <p>{post.description}</p>
-          <a href="#" class="read-more">Lue lisää →</a>
-        </div>
-      </article>
-    ))}
+  <section class="about-preview">
+    <h2>Miksi tämä projekti?</h2>
+    <p>
+      Suomi on ainutlaatuinen matkakohde: puhdas luonto,
+      turvallisuus ja tilaa hengittää.
+      Tämä sivusto auttaa sinua löytämään parhaat paikat
+      omaan tahtiin matkustamiseen.
+    </p>
+
+    <a href="/about">Lue lisää projektista →</a>
   </section>
 </PageLayout>
 
 <style>
-.blog-hero {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem 1rem 2rem;
-}
-
-.blog-hero p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.blog-list {
-  padding: 3rem 1rem;
-}
-
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.blog-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.5rem;
-  background: #ffffff;
-}
-
-.blog-card h3 {
-  margin-bottom: 0.5rem;
-  color: #0f766e;
-}
-
-.blog-cta {
-  padding: 3rem 1rem;
+.hero {
+  padding: 4rem 1rem;
   text-align: center;
 }
 
-.blog-cta p {
-  margin-bottom: 1.5rem;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
 }
 
 .cta {
   display: inline-block;
   background: #0f766e;
   color: #ffffff;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 500;
@@ -89,5 +79,34 @@ const description = "Lue uusimmat matkauutiset ja tarinat Saimaan rannoilta ja k
 
 .cta:hover {
   opacity: 0.9;
+}
+
+.features {
+  padding: 3rem 1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature h3 {
+  margin-bottom: 0.5rem;
+}
+
+.about-preview {
+  padding: 3rem 1rem;
+}
+
+.about-preview a {
+  color: #0f766e;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.about-preview a:hover {
+  text-decoration: underline;
 }
 </style>
