@@ -1,69 +1,28 @@
 ---
-import BlogPost from "../layouts/BlogPost.astro";
-
-const title = "Tietoa projektista";
-const description = "Matkailuprojekti Suomessa: luonto, reitit ja matkavinkit.";
-const pubDate = new Date();
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<BlogPost
-  title={title}
-  description={description}
-  pubDate={pubDate}
+<PageLayout
+  title="Tietoa projektista"
+  description="Matkailuprojekti Suomessa: luonto, reitit ja matkavinkit."
 >
-  <main class="about">
-    <h1>Tietoa projektista</h1>
+  <h1>Tietoa projektista</h1>
 
-    <p>
-      Tämä sivusto on matkailuprojekti, joka on omistettu
-      Suomen luonnolle, matkareiteille ja rauhalliselle
-      matkailulle.
-    </p>
+  <p>
+    Tämä sivusto on matkailuprojekti, joka on omistettu
+    Suomen luonnolle, matkareiteille ja rauhalliselle
+    matkailulle.
+  </p>
 
-    <p>
-      Projektin tavoitteena on auttaa matkailijoita
-      löytämään kauniita paikkoja, suunnittelemaan reittejä
-      ja nauttimaan matkasta ilman kiirettä.
-    </p>
+  <p>
+    Tavoitteena on jakaa hyödyllistä tietoa ja
+    inspiroivia reittejä matkailijoille.
+  </p>
 
-    <h2>Mitä sivustolta löytyy?</h2>
-    <ul>
-      <li>Luontokohteita ja kansallispuistoja</li>
-      <li>Kaupunkimatkoja ja nähtävyyksiä</li>
-      <li>Retkeily- ja vaellusreittejä</li>
-      <li>Vinkkejä eri vuodenaikoihin</li>
-    </ul>
-
-    <h2>Kenelle sivusto on tarkoitettu?</h2>
-    <p>
-      Sivusto sopii kaikille, jotka ovat kiinnostuneita
-      matkailusta Suomessa — niin paikallisille
-      kuin ulkomaisille matkailijoille.
-    </p>
-  </main>
-</BlogPost>
-
-<style>
-.about {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-h1, h2 {
-  color: #0f766e;
-}
-
-p {
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
-}
-
-ul {
-  margin-left: 1.2rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-</style>
+  <h2>Mitä sivustolta löytyy?</h2>
+  <ul>
+    <li>Luontokohteita</li>
+    <li>Kaupunkimatkoja</li>
+    <li>Retkeilyreittejä</li>
+  </ul>
+</PageLayout>
