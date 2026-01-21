@@ -3,120 +3,75 @@ import PageLayout from "../layouts/PageLayout.astro";
 ---
 
 <PageLayout
-  title="Reitit Suomessa – vaellus, luonto ja matkareitit"
-  description="Tutustu Suomen kauneimpiin vaellus-, retkeily- ja automatkareitteihin."
+  title="Matkailu Suomessa – luonto, reitit ja elämykset"
+  description="Tutustu Suomen luontoon, matkareitteihin ja rauhalliseen matkailuun."
 >
-  <section class="routes-hero">
-    <h1>Reitit Suomessa</h1>
+  <section class="hero">
+    <h1>Tervetuloa matkailuprojektiin</h1>
     <p>
-      Suomesta löytyy tuhansia kilometrejä
-      vaellus-, retkeily- ja matkareittejä.
-      Tältä sivulta löydät huolella valittuja
-      reittejä eri vuodenaikoihin.
+      Löydä Suomen kauneimmat luontokohteet, retkeilyreitit
+      ja matkavinkit rauhalliseen ja kestävään matkailuun.
     </p>
+
+    <a href="/routes" class="cta">Tutustu reitteihin</a>
   </section>
 
-  <section class="routes-list">
-    <h2>Suositut reitit</h2>
+  <section class="features">
+    <h2>Mitä sivusto tarjoaa?</h2>
 
-    <div class="routes-grid">
-      <article class="route-card">
-        <h3>Kansallispuistot</h3>
-        <p>
-          Reittejä Suomen kauneimmissa
-          kansallispuistoissa – metsiä,
-          järviä ja tuntureita.
-        </p>
-      </article>
+    <div class="features-grid">
+      <div class="feature">
+        <h3>Luonto</h3>
+        <p>Kansallispuistot, metsät, järvet ja hiljaisuus.</p>
+      </div>
 
-      <article class="route-card">
-        <h3>Kaupunkireitit</h3>
-        <p>
-          Kävely- ja pyöräilyreittejä
-          kaupungeissa ja niiden ympäristössä.
-        </p>
-      </article>
+      <div class="feature">
+        <h3>Reitit</h3>
+        <p>Vaellus-, pyöräily- ja automatkareittejä.</p>
+      </div>
 
-      <article class="route-card">
-        <h3>Automatkareitit</h3>
-        <p>
-          Maisemareittejä ja pitkiä ajomatkoja
-          Suomen eri alueilla.
-        </p>
-      </article>
-
-      <article class="route-card">
-        <h3>Vuodenaikareitit</h3>
-        <p>
-          Kesä-, syksy-, talvi- ja kevätreittejä
-          erilaisiin matkakokemuksiin.
-        </p>
-      </article>
+      <div class="feature">
+        <h3>Kaupunki & kulttuuri</h3>
+        <p>Kaupunkikohteet, nähtävyydet ja paikallinen elämä.</p>
+      </div>
     </div>
   </section>
 
-  <section class="routes-cta">
-    <h2>Haluatko löytää oman reittisi?</h2>
+  <section class="about-preview">
+    <h2>Miksi tämä projekti?</h2>
     <p>
-      Päivitämme sivustoa jatkuvasti uusilla
-      reiteillä ja käytännön vinkeillä.
+      Suomi on ainutlaatuinen matkakohde: puhdas luonto,
+      turvallisuus ja tilaa hengittää.
+      Tämä sivusto auttaa sinua löytämään parhaat paikat
+      omaan tahtiin matkustamiseen.
     </p>
 
-    <a href="/blog" class="cta">
-      Katso reittikuvaukset
-    </a>
+    <a href="/about">Lue lisää projektista →</a>
   </section>
 </PageLayout>
 
 <style>
-.routes-hero {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem 1rem 2rem;
-}
-
-.routes-hero p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.routes-list {
-  padding: 3rem 1rem;
-}
-
-.routes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.route-card {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.5rem;
-  background: #ffffff;
-}
-
-.route-card h3 {
-  margin-bottom: 0.5rem;
-  color: #0f766e;
-}
-
-.routes-cta {
-  padding: 3rem 1rem;
+.hero {
+  padding: 4rem 1rem;
   text-align: center;
 }
 
-.routes-cta p {
-  margin-bottom: 1.5rem;
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
 }
 
 .cta {
   display: inline-block;
   background: #0f766e;
   color: #ffffff;
-  padding: 0.75rem 1.75rem;
+  padding: 0.75rem 1.5rem;
   border-radius: 999px;
   text-decoration: none;
   font-weight: 500;
@@ -125,4 +80,34 @@ import PageLayout from "../layouts/PageLayout.astro";
 .cta:hover {
   opacity: 0.9;
 }
+
+.features {
+  padding: 3rem 1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.feature h3 {
+  margin-bottom: 0.5rem;
+}
+
+.about-preview {
+  padding: 3rem 1rem;
+}
+
+.about-preview a {
+  color: #0f766e;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.about-preview a:hover {
+  text-decoration: underline;
+}
 </style>
+
