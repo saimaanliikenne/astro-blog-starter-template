@@ -1,65 +1,38 @@
 ---
 import BlogPost from "../layouts/BlogPost.astro";
+
+const title = "Tietoa projektista";
+const description = "Matkailuprojekti Suomessa: luonto, reitit ja matkavinkit.";
+const pubDate = new Date();
 ---
 
-<BlogPost title="Tietoa projektista">
+<BlogPost
+  title={title}
+  description={description}
+  pubDate={pubDate}
+>
+  <main class="about">
+    <h1>Tietoa projektista</h1>
+
     <p>
-      Tämä sivusto on henkilökohtainen matkailuprojekti,
-      joka on omistettu Suomen luonnolle, kaupungeille
-      ja matkareiteille.
+      Tämä sivusto on matkailuprojekti, joka on omistettu
+      Suomen luonnolle, matkareiteille ja rauhalliselle
+      matkailulle.
     </p>
 
     <p>
-      Sivuston tarkoituksena on jakaa käytännöllisiä
-      matkavinkkejä, reittikuvauksia ja kokemuksia,
-      jotka auttavat suunnittelemaan onnistuneita
-      matkoja Suomessa.
+      Projektin tavoitteena on auttaa matkailijoita
+      löytämään kauniita paikkoja, suunnittelemaan reittejä
+      ja nauttimaan matkasta ilman kiirettä.
     </p>
 
     <h2>Mitä sivustolta löytyy?</h2>
     <ul>
       <li>Luontokohteita ja kansallispuistoja</li>
-      <li>Kaupunkimatkoja ja viikonloppureissuja</li>
-      <li>Vaellus- ja retkeilyreittejä</li>
+      <li>Kaupunkimatkoja ja nähtävyyksiä</li>
+      <li>Retkeily- ja vaellusreittejä</li>
       <li>Vinkkejä eri vuodenaikoihin</li>
     </ul>
 
     <h2>Kenelle sivusto on tarkoitettu?</h2>
-    <p>
-      Sivusto sopii kaikille, jotka ovat kiinnostuneita
-      matkailusta Suomessa — niin paikallisille
-      kuin ulkomaisille matkailijoille.
-    </p>
-
-    <h2>Miksi tämä sivusto?</h2>
-    <p>
-      Suomi tarjoaa ainutlaatuisen yhdistelmän
-      puhdasta luontoa, rauhaa ja elämyksiä.
-      Tämän projektin tavoitteena on tehdä
-      matkailusta helpompaa ja inspiroivampaa.
-    </p>
-  </main>
-</BaseLayout>
-
-<style>
-.about {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
-}
-
-.about p {
-  line-height: 1.7;
-  margin-bottom: 1.2rem;
-}
-
-.about ul {
-  margin-left: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.about li {
-  margin-bottom: 0.5rem;
-}
-</style>
-</BlogPost>
+    <p
