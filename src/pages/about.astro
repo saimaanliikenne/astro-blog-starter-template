@@ -1,7 +1,369 @@
-<h1>Tietoa sivustosta</h1>
+<!doctype html>
+<html lang="fi" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suomen Matkat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Sans+3:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+    .font-display { font-family: 'Playfair Display', Georgia, serif; }
+    .font-body { font-family: 'Source Sans 3', system-ui, sans-serif; }
+    
+    .aurora-bg {
+      background: linear-gradient(135deg, #0a1628 0%, #1a3a52 25%, #0f2940 50%, #1a4a5e 75%, #0a2435 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .aurora-bg::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(ellipse at 20% 20%, rgba(74, 222, 128, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(56, 189, 248, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(167, 139, 250, 0.04) 0%, transparent 50%);
+      animation: aurora 20s ease-in-out infinite;
+    }
+    
+    @keyframes aurora {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(2%, 2%) rotate(1deg); }
+      66% { transform: translate(-1%, 1%) rotate(-1deg); }
+    }
+    
+    .card-hover {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+    }
+    
+    .forest-pattern {
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 L35 20 L25 20 Z' fill='%23ffffff' fill-opacity='0.03'/%3E%3Cpath d='M15 25 L20 40 L10 40 Z' fill='%23ffffff' fill-opacity='0.02'/%3E%3Cpath d='M45 25 L50 40 L40 40 Z' fill='%23ffffff' fill-opacity='0.02'/%3E%3C/svg%3E");
+    }
+    
+    .section-fade {
+      animation: fadeUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+    
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .nav-link {
+      position: relative;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4ade80, #38bdf8);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    .icon-glow {
+      filter: drop-shadow(0 0 8px currentColor);
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ </head>
+ <body class="h-full font-body aurora-bg forest-pattern text-gray-100">
+  <div class="h-full w-full overflow-auto"><!-- Navigation -->
+   <nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-slate-900/70 border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+     <div class="flex items-center gap-3">
+      <svg class="w-8 h-8 text-emerald-400" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg><span id="nav-title" class="font-display text-xl font-semibold">Suomen Matkat</span>
+     </div>
+     <div class="hidden md:flex gap-8 text-sm font-medium"><a href="#reitit" class="nav-link text-gray-300 hover:text-white transition-colors">Reitit</a> <a href="#kaupungit" class="nav-link text-gray-300 hover:text-white transition-colors">Kaupungit</a> <a href="#luonto" class="nav-link text-gray-300 hover:text-white transition-colors">Luonto</a>
+     </div>
+    </div>
+   </nav><!-- Hero Section -->
+   <header class="relative pt-32 pb-24 px-6">
+    <div class="max-w-4xl mx-auto text-center section-fade" style="animation-delay: 0.1s;">
+     <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8"><span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span> <span class="text-sm text-gray-400">Henkilökohtainen matkailuprojekti</span>
+     </div>
+     <h1 id="hero-title" class="font-display text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-emerald-100 to-sky-200 bg-clip-text text-transparent">Suomen Matkat</h1>
+     <p id="hero-tagline" class="text-xl md:text-2xl text-gray-400 font-light mb-8">Reittejä, kaupunkeja ja luontoa</p>
+     <p id="hero-intro" class="text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">Tervetuloa matkalleni halki Suomen kauneimpien maisemien. Tämä on kokoelma tarinoita ja kokemuksia pohjolan sydämestä.</p>
+    </div><!-- Decorative Elements -->
+    <div class="absolute top-20 left-10 w-32 h-32 bg-emerald-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-10 right-10 w-40 h-40 bg-sky-500/10 rounded-full blur-3xl"></div>
+   </header><!-- Routes Section -->
+   <section id="reitit" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex items-center gap-4 mb-12 section-fade" style="animation-delay: 0.2s;">
+      <div class="p-3 rounded-xl bg-emerald-500/20 text-emerald-400">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+       </svg>
+      </div>
+      <h2 id="routes-heading" class="font-display text-3xl md:text-4xl font-semibold">Reitit</h2>
+     </div>
+     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Route Card 1 -->
+      <article class="card-hover rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-white/10 overflow-hidden backdrop-blur-sm section-fade" style="animation-delay: 0.3s;">
+       <div class="h-48 bg-gradient-to-br from-emerald-900/50 to-teal-900/50 flex items-center justify-center">
+        <svg class="w-20 h-20 text-emerald-400/60" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2C8 2 4 6 4 10c0 5.25 7 11 7.68 11.54a.5.5 0 00.64 0C13 21 20 15.25 20 10c0-4-4-8-8-8zm0 11a3 3 0 110-6 3 3 0 010 6z" />
+        </svg>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-emerald-400 uppercase tracking-wider">Etelä-Suomi</span>
+        <h3 class="font-display text-xl font-semibold mt-2 mb-3">Kuninkaantie</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Historiallinen reitti Turusta Viipuriin, täynnä vanhoja kartanoita ja kauniita maisemia.</p>
+        <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+         </svg><span>370 km</span>
+        </div>
+       </div>
+      </article><!-- Route Card 2 -->
+      <article class="card-hover rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-white/10 overflow-hidden backdrop-blur-sm section-fade" style="animation-delay: 0.4s;">
+       <div class="h-48 bg-gradient-to-br from-sky-900/50 to-indigo-900/50 flex items-center justify-center">
+        <svg class="w-20 h-20 text-sky-400/60" viewbox="0 0 24 24" fill="currentColor"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+        </svg>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-sky-400 uppercase tracking-wider">Lappi</span>
+        <h3 class="font-display text-xl font-semibold mt-2 mb-3">Jäämeren tie</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Pohjoinen seikkailu Rovaniemeltä Nuorgamiin, Euroopan pohjoisimpaan pisteeseen.</p>
+        <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+         </svg><span>530 km</span>
+        </div>
+       </div>
+      </article><!-- Route Card 3 -->
+      <article class="card-hover rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-white/10 overflow-hidden backdrop-blur-sm section-fade" style="animation-delay: 0.5s;">
+       <div class="h-48 bg-gradient-to-br from-violet-900/50 to-purple-900/50 flex items-center justify-center">
+        <svg class="w-20 h-20 text-violet-400/60" viewbox="0 0 24 24" fill="currentColor"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6zm-1 2l5 5h-5V4zM8 17v-2h8v2H8zm0-4v-2h8v2H8z" />
+        </svg>
+       </div>
+       <div class="p-6"><span class="text-xs font-medium text-violet-400 uppercase tracking-wider">Järvi-Suomi</span>
+        <h3 class="font-display text-xl font-semibold mt-2 mb-3">Sininen tie</h3>
+        <p class="text-gray-400 text-sm leading-relaxed">Tuhansien järvien halki kulkeva reitti Savonlinnasta Kuopioon.</p>
+        <div class="mt-4 flex items-center gap-2 text-sm text-gray-500">
+         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+         </svg><span>165 km</span>
+        </div>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section><!-- Cities Section -->
+   <section id="kaupungit" class="py-20 px-6 bg-black/20">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex items-center gap-4 mb-12 section-fade" style="animation-delay: 0.2s;">
+      <div class="p-3 rounded-xl bg-sky-500/20 text-sky-400">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+       </svg>
+      </div>
+      <h2 id="cities-heading" class="font-display text-3xl md:text-4xl font-semibold">Kaupungit</h2>
+     </div>
+     <div class="grid md:grid-cols-2 gap-8"><!-- City Feature 1 -->
+      <article class="card-hover group relative rounded-2xl overflow-hidden section-fade" style="animation-delay: 0.3s;">
+       <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent z-10"></div>
+       <div class="h-80 bg-gradient-to-br from-amber-900/30 to-orange-900/30 flex items-end">
+        <svg class="w-full h-40 text-amber-400/20" viewbox="0 0 400 150" preserveaspectratio="xMidYMax slice"><rect x="20" y="50" width="40" height="100" fill="currentColor" /> <rect x="70" y="30" width="50" height="120" fill="currentColor" /> <rect x="130" y="60" width="35" height="90" fill="currentColor" /> <rect x="175" y="20" width="60" height="130" fill="currentColor" /> <rect x="245" y="45" width="45" height="105" fill="currentColor" /> <rect x="300" y="70" width="40" height="80" fill="currentColor" /> <rect x="350" y="40" width="30" height="110" fill="currentColor" />
+        </svg>
+       </div>
+       <div class="absolute bottom-0 left-0 right-0 p-8 z-20"><span class="text-xs font-medium text-amber-400 uppercase tracking-wider">Pääkaupunki</span>
+        <h3 class="font-display text-2xl font-semibold mt-2 mb-3">Helsinki</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">Meren äärellä sijaitseva pääkaupunkimme yhdistää modernin arkkitehtuurin ja rikkaan historian.</p>
+       </div>
+      </article><!-- City Feature 2 -->
+      <article class="card-hover group relative rounded-2xl overflow-hidden section-fade" style="animation-delay: 0.4s;">
+       <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/80 to-transparent z-10"></div>
+       <div class="h-80 bg-gradient-to-br from-rose-900/30 to-pink-900/30 flex items-center justify-center">
+        <svg class="w-32 h-32 text-rose-400/30" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+        </svg>
+       </div>
+       <div class="absolute bottom-0 left-0 right-0 p-8 z-20"><span class="text-xs font-medium text-rose-400 uppercase tracking-wider">Kulttuurikaupunki</span>
+        <h3 class="font-display text-2xl font-semibold mt-2 mb-3">Turku</h3>
+        <p class="text-gray-300 text-sm leading-relaxed">Suomen vanhin kaupunki ja entinen pääkaupunki Aurajoen varrella.</p>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section><!-- Nature Section -->
+   <section id="luonto" class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+     <div class="flex items-center gap-4 mb-12 section-fade" style="animation-delay: 0.2s;">
+      <div class="p-3 rounded-xl bg-green-500/20 text-green-400">
+       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+       </svg>
+      </div>
+      <h2 id="nature-heading" class="font-display text-3xl md:text-4xl font-semibold">Luonto</h2>
+     </div>
+     <div class="grid md:grid-cols-3 gap-6"><!-- Nature Card 1 -->
+      <article class="card-hover rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-white/10 p-6 backdrop-blur-sm section-fade" style="animation-delay: 0.3s;">
+       <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 flex items-center justify-center mb-4"><span class="text-3xl">🌲</span>
+       </div>
+       <h3 class="font-display text-lg font-semibold mb-2">Kansallispuistot</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">40 kansallispuistoa tarjoavat ainutlaatuisia luontokokemuksia ympäri vuoden.</p>
+      </article><!-- Nature Card 2 -->
+      <article class="card-hover rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-white/10 p-6 backdrop-blur-sm section-fade" style="animation-delay: 0.4s;">
+       <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-4"><span class="text-3xl">💧</span>
+       </div>
+       <h3 class="font-display text-lg font-semibold mb-2">Järvet</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">187 888 järveä tekevät Suomesta tuhansien järvien maan.</p>
+      </article><!-- Nature Card 3 -->
+      <article class="card-hover rounded-2xl bg-gradient-to-br from-slate-800/80 to-slate-900/80 border border-white/10 p-6 backdrop-blur-sm section-fade" style="animation-delay: 0.5s;">
+       <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500/20 to-violet-500/20 flex items-center justify-center mb-4"><span class="text-3xl">✨</span>
+       </div>
+       <h3 class="font-display text-lg font-semibold mb-2">Revontulet</h3>
+       <p class="text-gray-400 text-sm leading-relaxed">Lapin taivas tarjoaa maailman parhaat näkymät revontuliin.</p>
+      </article>
+     </div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="py-12 px-6 border-t border-white/10">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+     <div class="flex items-center gap-3">
+      <svg class="w-6 h-6 text-emerald-400" viewbox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+      </svg><span class="font-display text-lg">Suomen Matkat</span>
+     </div>
+     <p class="text-gray-500 text-sm">Henkilökohtainen matkailuprojekti © 2024</p>
+    </div>
+   </footer>
+  </div>
+  <script>
+    const defaultConfig = {
+      site_title: 'Suomen Matkat',
+      site_tagline: 'Reittejä, kaupunkeja ja luontoa',
+      intro_text: 'Tervetuloa matkalleni halki Suomen kauneimpien maisemien. Tämä on kokoelma tarinoita ja kokemuksia pohjolan sydämestä.',
+      routes_title: 'Reitit',
+      cities_title: 'Kaupungit',
+      nature_title: 'Luonto',
+      primary_color: '#0f2940',
+      secondary_color: '#1e293b',
+      text_color: '#f1f5f9',
+      accent_color: '#4ade80',
+      highlight_color: '#38bdf8'
+    };
 
-<p>
-Tämä sivusto on henkilökohtainen matkailuprojekti.
-Kirjoitan reiteistä, kaupungeista ja luonnosta
-Suomessa.
-</p>
+    let config = { ...defaultConfig };
+
+    async function onConfigChange(cfg) {
+      config = { ...defaultConfig, ...cfg };
+      
+      // Update text content
+      document.getElementById('nav-title').textContent = config.site_title || defaultConfig.site_title;
+      document.getElementById('hero-title').textContent = config.site_title || defaultConfig.site_title;
+      document.getElementById('hero-tagline').textContent = config.site_tagline || defaultConfig.site_tagline;
+      document.getElementById('hero-intro').textContent = config.intro_text || defaultConfig.intro_text;
+      document.getElementById('routes-heading').textContent = config.routes_title || defaultConfig.routes_title;
+      document.getElementById('cities-heading').textContent = config.cities_title || defaultConfig.cities_title;
+      document.getElementById('nature-heading').textContent = config.nature_title || defaultConfig.nature_title;
+      
+      // Apply colors
+      const textColor = config.text_color || defaultConfig.text_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const highlightColor = config.highlight_color || defaultConfig.highlight_color;
+      
+      document.body.style.color = textColor;
+      
+      document.querySelectorAll('.text-emerald-400').forEach(el => {
+        el.style.color = accentColor;
+      });
+      
+      document.querySelectorAll('.text-sky-400').forEach(el => {
+        el.style.color = highlightColor;
+      });
+    }
+
+    function mapToCapabilities(cfg) {
+      return {
+        recolorables: [
+          {
+            get: () => cfg.primary_color || defaultConfig.primary_color,
+            set: (value) => {
+              cfg.primary_color = value;
+              window.elementSdk.setConfig({ primary_color: value });
+            }
+          },
+          {
+            get: () => cfg.secondary_color || defaultConfig.secondary_color,
+            set: (value) => {
+              cfg.secondary_color = value;
+              window.elementSdk.setConfig({ secondary_color: value });
+            }
+          },
+          {
+            get: () => cfg.text_color || defaultConfig.text_color,
+            set: (value) => {
+              cfg.text_color = value;
+              window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => cfg.accent_color || defaultConfig.accent_color,
+            set: (value) => {
+              cfg.accent_color = value;
+              window.elementSdk.setConfig({ accent_color: value });
+            }
+          },
+          {
+            get: () => cfg.highlight_color || defaultConfig.highlight_color,
+            set: (value) => {
+              cfg.highlight_color = value;
+              window.elementSdk.setConfig({ highlight_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => cfg.font_family || 'Playfair Display',
+          set: (value) => {
+            cfg.font_family = value;
+            window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => cfg.font_size || 16,
+          set: (value) => {
+            cfg.font_size = value;
+            window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(cfg) {
+      return new Map([
+        ['site_title', cfg.site_title || defaultConfig.site_title],
+        ['site_tagline', cfg.site_tagline || defaultConfig.site_tagline],
+        ['intro_text', cfg.intro_text || defaultConfig.intro_text],
+        ['routes_title', cfg.routes_title || defaultConfig.routes_title],
+        ['cities_title', cfg.cities_title || defaultConfig.cities_title],
+        ['nature_title', cfg.nature_title || defaultConfig.nature_title]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c16f71c7470c783',t:'MTc2OTAwMDExOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
