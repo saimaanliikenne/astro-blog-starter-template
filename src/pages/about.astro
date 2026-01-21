@@ -1,73 +1,67 @@
 ---
-const title = "Tietoa projektista";
+import BaseLayout from "../layouts/BlogPost.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="fi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-  </head>
+<BaseLayout title="Tietoa projektista">
+  <main class="about">
+    <h1>Tietoa projektista</h1>
 
-  <body>
-    <main class="about">
-      <h1>Tietoa projektista</h1>
+    <p>
+      Tämä sivusto on henkilökohtainen matkailuprojekti,
+      joka on omistettu Suomen luonnolle, kaupungeille
+      ja matkareiteille.
+    </p>
 
-      <p>
-        Tämä sivusto on matkailuprojekti, joka on omistettu
-        Suomen luonnolle, reiteille ja matkakokemuksille.
-      </p>
+    <p>
+      Sivuston tarkoituksena on jakaa käytännöllisiä
+      matkavinkkejä, reittikuvauksia ja kokemuksia,
+      jotka auttavat suunnittelemaan onnistuneita
+      matkoja Suomessa.
+    </p>
 
-      <p>
-        Tavoitteena on tarjota hyödyllistä tietoa
-        matkailijoille, jotka haluavat tutustua Suomeen
-        rauhallisesti ja omatoimisesti.
-      </p>
+    <h2>Mitä sivustolta löytyy?</h2>
+    <ul>
+      <li>Luontokohteita ja kansallispuistoja</li>
+      <li>Kaupunkimatkoja ja viikonloppureissuja</li>
+      <li>Vaellus- ja retkeilyreittejä</li>
+      <li>Vinkkejä eri vuodenaikoihin</li>
+    </ul>
 
-      <h2>Mitä sivusto tarjoaa?</h2>
-      <ul>
-        <li>Matkareittejä ja luontokohteita</li>
-        <li>Kaupunkeja ja nähtävyyksiä</li>
-        <li>Käytännön vinkkejä matkailuun</li>
-      </ul>
+    <h2>Kenelle sivusto on tarkoitettu?</h2>
+    <p>
+      Sivusto sopii kaikille, jotka ovat kiinnostuneita
+      matkailusta Suomessa — niin paikallisille
+      kuin ulkomaisille matkailijoille.
+    </p>
 
-      <h2>Kenelle tämä on?</h2>
-      <p>
-        Sivusto on tarkoitettu kaikille,
-        jotka rakastavat matkustamista ja luontoa.
-      </p>
-    </main>
+    <h2>Miksi tämä sivusto?</h2>
+    <p>
+      Suomi tarjoaa ainutlaatuisen yhdistelmän
+      puhdasta luontoa, rauhaa ja elämyksiä.
+      Tämän projektin tavoitteena on tehdä
+      matkailusta helpompaa ja inspiroivampaa.
+    </p>
+  </main>
+</BaseLayout>
 
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        margin: 0;
-        background: #f8fafc;
-      }
+<style>
+.about {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
 
-      .about {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 2rem 1rem;
-      }
+.about p {
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
 
-      h1, h2 {
-        color: #0f766e;
-      }
+.about ul {
+  margin-left: 1.2rem;
+  margin-bottom: 1.5rem;
+}
 
-      p {
-        line-height: 1.7;
-        margin-bottom: 1.2rem;
-      }
-
-      ul {
-        margin-left: 1.2rem;
-      }
-
-      li {
-        margin-bottom: 0.5rem;
-      }
-    </style>
-  </body>
-</html>
+.about li {
+  margin-bottom: 0.5rem;
+}
+</style>
