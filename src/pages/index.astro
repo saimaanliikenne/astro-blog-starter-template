@@ -53,30 +53,47 @@ import PageLayout from "../layouts/PageLayout.astro";
 </PageLayout>
 
 <style>
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(24px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero {
+  position: relative;
+  min-height: 70vh;
+  background-image: url("/images/hero/finland-hero.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.fade-in {
-  opacity: 0;
-  animation: fadeUp 1.2s ease-out forwards;
-}
-.title {
-  animation-delay: 0.2s;
-}
-
-.subtitle {
-  animation-delay: 0.5s;
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-radius: 12px;
+  max-width: 800px;
 }
 
-.button {
-  animation-delay: 0.8s;
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  display: inline-block;
+  background: #0f766e;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cta:hover {
+  opacity: 0.9;
 }
 <style>
