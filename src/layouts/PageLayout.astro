@@ -1,0 +1,82 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const {
+  title,
+  description = "",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+
+    {description && (
+      <meta name="description" content={description} />
+    )}
+  </head>
+
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a href="/">Etusivu</a>
+        <a href="/about">Tietoa</a>
+        <a href="/routes">Reitit</a>
+        <a href="/blog">Blogi</a>
+      </nav>
+    </header>
+
+    <main class="page-content">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p>© {new Date().getFullYear()} Matkailuprojekti</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+.site-header {
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #0f766e;
+  font-weight: 500;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.page-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.site-footer {
+  border-top: 1px solid #e5e7eb;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+</style>
