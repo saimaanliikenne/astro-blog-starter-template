@@ -37,21 +37,54 @@ import PageLayout from "../layouts/PageLayout.astro";
         </p>
       </article>
 
-      <article class="route-card">
-        <h3>Automatkareitit</h3>
-        <p>
-          Maisemareittejä ja pitkiä ajomatkoja
-          Suomen eri alueilla.
-        </p>
-      </article>
+     <article class="route-card">
+  <img
+    src="/images/routes/national-parks.jpg"
+    alt="Kansallispuistojen vaellusreitit"
+  />
+  <h3>Kansallispuistot</h3>
+  <p>
+    Reittejä Suomen kauneimmissa
+    kansallispuistoissa – metsiä,
+    järviä ja tuntureita.
+  </p>
+</article>
 
-      <article class="route-card">
-        <h3>Vuodenaikareitit</h3>
-        <p>
-          Kesä-, syksy-, talvi- ja kevätreittejä
-          erilaisiin matkakokemuksiin.
-        </p>
-      </article>
+<article class="route-card">
+  <img
+    src="/images/routes/city-routes.jpg"
+    alt="Kaupunkien kävelyreitit"
+  />
+  <h3>Kaupunkireitit</h3>
+  <p>
+    Kävely- ja pyöräilyreittejä
+    kaupungeissa ja niiden ympäristössä.
+  </p>
+</article>
+
+<article class="route-card">
+  <img
+    src="/images/routes/roadtrip.jpg"
+    alt="Maisemareitit Suomessa"
+  />
+  <h3>Automatkareitit</h3>
+  <p>
+    Maisemareittejä ja pitkiä ajomatkoja
+    Suomen eri alueilla.
+  </p>
+</article>
+
+<article class="route-card">
+  <img
+    src="/images/routes/seasons.jpg"
+    alt="Matkareitit eri vuodenaikoina"
+  />
+  <h3>Vuodenaikareitit</h3>
+  <p>
+    Kesä-, syksy-, talvi- ja kevätreittejä
+    erilaisiin matkakokemuksiin.
+  </p>
+</article>
     </div>
   </section>
 
@@ -69,60 +102,27 @@ import PageLayout from "../layouts/PageLayout.astro";
 </PageLayout>
 
 <style>
-.routes-hero {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 3rem 1rem 2rem;
-}
-
-.routes-hero p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-}
-
-.routes-list {
-  padding: 3rem 1rem;
-}
-
-.routes-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
 .route-card {
   border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 1.5rem;
+  border-radius: 14px;
+  overflow: hidden;
   background: #ffffff;
 }
 
+.route-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
 .route-card h3 {
-  margin-bottom: 0.5rem;
+  margin: 1rem 1rem 0.5rem;
   color: #0f766e;
 }
 
-.routes-cta {
-  padding: 3rem 1rem;
-  text-align: center;
-}
-
-.routes-cta p {
-  margin-bottom: 1.5rem;
-}
-
-.cta {
-  display: inline-block;
-  background: #0f766e;
-  color: #ffffff;
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.cta:hover {
-  opacity: 0.9;
+.route-card p {
+  margin: 0 1rem 1.25rem;
+  line-height: 1.6;
 }
 </style>
