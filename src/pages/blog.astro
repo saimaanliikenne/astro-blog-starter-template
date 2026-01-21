@@ -3,51 +3,24 @@ import PageLayout from "../layouts/PageLayout.astro";
 ---
 
 <PageLayout
-  title="Matkailu Suomessa – luonto, reitit ja elämykset"
-  description="Tutustu Suomen luontoon, matkareitteihin ja rauhalliseen matkailuun."
->
-  <section class="hero">
-    <h1>Tervetuloa matkailuprojektiin</h1>
-    <p>
-      Löydä Suomen kauneimmat luontokohteet, retkeilyreitit
-      ja matkavinkit rauhalliseen ja kestävään matkailuun.
-    </p>
-
-    <a href="/routes" class="cta">Tutustu reitteihin</a>
-  </section>
-
-  <section class="features">
-    <h2>Mitä sivusto tarjoaa?</h2>
-
-    <div class="features-grid">
-      <div class="feature">
-        <h3>Luonto</h3>
-        <p>Kansallispuistot, metsät, järvet ja hiljaisuus.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Reitit</h3>
-        <p>Vaellus-, pyöräily- ja automatkareittejä.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Kaupunki & kulttuuri</h3>
-        <p>Kaupunkikohteet, nähtävyydet ja paikallinen elämä.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="about-preview">
-    <h2>Miksi tämä projekti?</h2>
-    <p>
-      Suomi on ainutlaatuinen matkakohde: puhdas luonto,
-      turvallisuus ja tilaa hengittää.
-      Tämä sivusto auttaa sinua löytämään parhaat paikat
-      omaan tahtiin matkustamiseen.
-    </p>
-
-    <a href="/about">Lue lisää projektista →</a>
-  </section>
+  {
+    "title": "Saimaan risteilyt kesällä 2026",
+    "description": "Tutustu kauneimpaan järvimaisemaan ja nauti leppoisasta tunnelmasta.",
+    "image": "https://images.unsplash.com/photo-1520106212299-d99c443e4568?auto=format&fit=crop&w=800&q=80",
+    "date": "2026-05-15"
+  },
+  {
+    "title": "Bussimatkat Eurooppaan",
+    "description": "Mukavat ja turvalliset matkat Saimaan Liikenteen uusilla busseilla.",
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80",
+    "date": "2026-04-10"
+  },
+  {
+    "title": "Talven parhaat hiihtokohteet",
+    "description": "Lähde mukaan Lapin lumille tai Keski-Euroopan rinteille.",
+    "image": "https://images.unsplash.com/photo-1482867996988-29ec3aee817d?auto=format&fit=crop&w=800&q=80",
+    "date": "2026-01-05"
+  }
 </PageLayout>
 
 <style>
