@@ -5,498 +5,124 @@ import PageLayout from "../layouts/PageLayout.astro";
 <PageLayout
   title="Reitit Suomessa – vaellus, luonto ja matkareitit"
   description="Tutustu Suomen kauneimpiin vaellus-, retkeily- ja automatkareitteihin."
-<!doctype html>
-<html lang="fi" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Suomen Matkablogi</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <script src="/_sdk/data_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
-  <style>
-    body {
-      box-sizing: border-box;
-    }
-    .font-display { font-family: 'Crimson Pro', Georgia, serif; }
-    .font-body { font-family: 'Inter', system-ui, sans-serif; }
-    
-    .gradient-bg {
-      background: linear-gradient(165deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
-      position: relative;
-    }
-    
-    .card-hover {
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .card-hover:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
-    }
-    
-    .fade-in {
-      animation: fadeIn 0.6s ease-out forwards;
-      opacity: 0;
-    }
-    
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .btn-primary {
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transition: all 0.3s ease;
-    }
-    
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px -5px rgba(102, 126, 234, 0.4);
-    }
-    
-    .btn-secondary {
-      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-      transition: all 0.3s ease;
-    }
-    
-    .btn-secondary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px -5px rgba(245, 87, 108, 0.4);
-    }
-    
-    textarea {
-      resize: vertical;
-      min-height: 150px;
-    }
-    
-    .category-badge {
-      display: inline-block;
-      padding: 4px 12px;
-      border-radius: 12px;
-      font-size: 0.75rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    
-    .modal-backdrop {
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(4px);
-    }
-  </style>
-  <style>@view-transition { navigation: auto; }</style>
- </head>
- <body class="h-full font-body gradient-bg text-gray-100">
-  <div class="h-full w-full overflow-auto"><!-- Header -->
-   <header class="sticky top-0 z-50 backdrop-blur-lg bg-slate-900/80 border-b border-white/10">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-     <div class="flex items-center gap-3">
-      <svg class="w-8 h-8 text-purple-400" viewbox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z" />
-      </svg><span id="header-title" class="font-display text-xl font-semibold">Suomen Matkablogi</span>
-     </div><button id="new-post-btn" class="btn-primary px-5 py-2 rounded-lg text-white font-medium text-sm flex items-center gap-2">
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
-      </svg> Uusi kirjoitus </button>
+>
+  <section class="routes-hero">
+    <h1>Reitit Suomessa</h1>
+    <p>
+      Suomesta löytyy tuhansia kilometrejä
+      vaellus-, retkeily- ja matkareittejä.
+      Tältä sivulta löydät huolella valittuja
+      reittejä eri vuodenaikoihin.
+    </p>
+  </section>
+
+  <section class="routes-list">
+    <h2>Suositut reitit</h2>
+
+    <div class="routes-grid">
+      <article class="route-card">
+        <h3>Kansallispuistot</h3>
+        <p>
+          Reittejä Suomen kauneimmissa
+          kansallispuistoissa – metsiä,
+          järviä ja tuntureita.
+        </p>
+      </article>
+
+      <article class="route-card">
+        <h3>Kaupunkireitit</h3>
+        <p>
+          Kävely- ja pyöräilyreittejä
+          kaupungeissa ja niiden ympäristössä.
+        </p>
+      </article>
+
+      <article class="route-card">
+        <h3>Automatkareitit</h3>
+        <p>
+          Maisemareittejä ja pitkiä ajomatkoja
+          Suomen eri alueilla.
+        </p>
+      </article>
+
+      <article class="route-card">
+        <h3>Vuodenaikareitit</h3>
+        <p>
+          Kesä-, syksy-, talvi- ja kevätreittejä
+          erilaisiin matkakokemuksiin.
+        </p>
+      </article>
     </div>
-   </header><!-- Hero Section -->
-   <section class="pt-16 pb-12 px-6">
-    <div class="max-w-4xl mx-auto text-center fade-in">
-     <h1 id="hero-title" class="font-display text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-purple-200 via-pink-200 to-purple-300 bg-clip-text text-transparent">Suomen Matkablogi</h1>
-     <p id="hero-tagline" class="text-xl text-gray-300 font-light mb-6">Tarinoita Suomen teiltä</p>
-     <p id="hero-welcome" class="text-gray-400 max-w-2xl mx-auto">Tervetuloa lukemaan matkakokemuksiani halki Suomen. Täältä löydät tarinoita, vinkkejä ja inspiraatiota omille matkoillesi.</p>
-    </div>
-   </section><!-- Posts Grid -->
-   <section class="py-8 px-6">
-    <div class="max-w-6xl mx-auto">
-     <div id="posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"><!-- Posts will be dynamically inserted here -->
-     </div>
-     <div id="empty-state" class="text-center py-20 hidden">
-      <svg class="w-24 h-24 mx-auto text-gray-600 mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-      </svg>
-      <h3 class="text-xl font-display font-semibold text-gray-400 mb-2">Ei vielä kirjoituksia</h3>
-      <p class="text-gray-500">Aloita klikkaamalla "Uusi kirjoitus" -painiketta</p>
-     </div>
-    </div>
-   </section><!-- New/Edit Post Modal -->
-   <div id="post-modal" class="fixed inset-0 z-50 hidden">
-    <div class="modal-backdrop absolute inset-0" id="modal-backdrop"></div>
-    <div class="relative h-full flex items-center justify-center p-6">
-     <div class="bg-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90%] overflow-y-auto border border-white/10">
-      <div class="sticky top-0 bg-slate-800 border-b border-white/10 px-8 py-6 flex justify-between items-center">
-       <h2 id="modal-title" class="font-display text-2xl font-semibold">Uusi kirjoitus</h2><button id="close-modal-btn" class="text-gray-400 hover:text-white transition-colors">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-        </svg></button>
-      </div>
-      <form id="post-form" class="px-8 py-6 space-y-6">
-       <div><label for="post-title" class="block text-sm font-medium text-gray-300 mb-2">Otsikko</label> <input type="text" id="post-title" required class="w-full px-4 py-3 bg-slate-700/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Anna kirjoitukselle otsikko...">
-       </div>
-       <div class="grid md:grid-cols-2 gap-4">
-        <div><label for="post-category" class="block text-sm font-medium text-gray-300 mb-2">Kategoria</label> <select id="post-category" required class="w-full px-4 py-3 bg-slate-700/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"> <option value="Reitit">Reitit</option> <option value="Kaupungit">Kaupungit</option> <option value="Luonto">Luonto</option> <option value="Kulttuuri">Kulttuuri</option> <option value="Ruoka">Ruoka</option> <option value="Vinkit">Vinkit</option> </select>
-        </div>
-        <div><label for="post-location" class="block text-sm font-medium text-gray-300 mb-2">Sijainti</label> <input type="text" id="post-location" required class="w-full px-4 py-3 bg-slate-700/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Esim. Helsinki">
-        </div>
-       </div>
-       <div><label for="post-date" class="block text-sm font-medium text-gray-300 mb-2">Päivämäärä</label> <input type="date" id="post-date" required class="w-full px-4 py-3 bg-slate-700/50 border border-white/10 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
-       </div>
-       <div><label for="post-content" class="block text-sm font-medium text-gray-300 mb-2">Sisältö</label> <textarea id="post-content" required rows="10" class="w-full px-4 py-3 bg-slate-700/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent" placeholder="Kirjoita matkakokemuksesi..."></textarea>
-       </div>
-       <div class="flex gap-3 pt-4"><button type="submit" id="save-post-btn" class="flex-1 btn-primary px-6 py-3 rounded-lg text-white font-medium"> <span id="save-btn-text">Tallenna</span> </button> <button type="button" id="cancel-btn" class="px-6 py-3 bg-slate-700 hover:bg-slate-600 rounded-lg text-white font-medium transition-colors"> Peruuta </button>
-       </div>
-      </form>
-     </div>
-    </div>
-   </div><!-- Delete Confirmation Modal -->
-   <div id="delete-modal" class="fixed inset-0 z-50 hidden">
-    <div class="modal-backdrop absolute inset-0" id="delete-backdrop"></div>
-    <div class="relative h-full flex items-center justify-center p-6">
-     <div class="bg-slate-800 rounded-2xl shadow-2xl max-w-md w-full border border-white/10 p-8">
-      <div class="text-center">
-       <div class="w-16 h-16 bg-red-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-        <svg class="w-8 h-8 text-red-400" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-2">Poista kirjoitus?</h3>
-       <p class="text-gray-400 mb-6">Tätä toimintoa ei voi peruuttaa.</p>
-       <div class="flex gap-3"><button id="confirm-delete-btn" class="flex-1 bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg text-white font-medium transition-colors"> Poista </button> <button id="cancel-delete-btn" class="flex-1 bg-slate-700 hover:bg-slate-600 px-6 py-3 rounded-lg text-white font-medium transition-colors"> Peruuta </button>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div><!-- Footer -->
-   <footer class="py-8 px-6 border-t border-white/10 mt-20">
-    <div class="max-w-6xl mx-auto text-center">
-     <p class="text-gray-500 text-sm">© 2024 Suomen Matkablogi - Henkilökohtainen matkailuprojekti</p>
-    </div>
-   </footer>
-  </div>
-  <script>
-    const defaultConfig = {
-      blog_title: 'Suomen Matkablogi',
-      blog_tagline: 'Tarinoita Suomen teiltä',
-      welcome_text: 'Tervetuloa lukemaan matkakokemuksiani halki Suomen. Täältä löydät tarinoita, vinkkejä ja inspiraatiota omille matkoillesi.',
-      background_color: '#16213e',
-      surface_color: '#1e293b',
-      text_color: '#f1f5f9',
-      primary_accent: '#a78bfa',
-      secondary_accent: '#f472b6'
-    };
+  </section>
 
-    let posts = [];
-    let editingPost = null;
-    let postToDelete = null;
-    let config = { ...defaultConfig };
+  <section class="routes-cta">
+    <h2>Haluatko löytää oman reittisi?</h2>
+    <p>
+      Päivitämme sivustoa jatkuvasti uusilla
+      reiteillä ja käytännön vinkeillä.
+    </p>
 
-    // Data SDK Handler
-    const dataHandler = {
-      onDataChanged(data) {
-        posts = data || [];
-        renderPosts();
-      }
-    };
+    <a href="/blog" class="cta">
+      Katso reittikuvaukset
+    </a>
+  </section>
+</PageLayout>
 
-    // Initialize Data SDK
-    async function initDataSdk() {
-      const result = await window.dataSdk.init(dataHandler);
-      if (!result.isOk) {
-        console.error('Failed to initialize Data SDK');
-      }
-    }
+<style>
+.routes-hero {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 1rem 2rem;
+}
 
-    // Render posts
-    function renderPosts() {
-      const container = document.getElementById('posts-container');
-      const emptyState = document.getElementById('empty-state');
+.routes-hero p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
 
-      if (posts.length === 0) {
-        container.innerHTML = '';
-        emptyState.classList.remove('hidden');
-        return;
-      }
+.routes-list {
+  padding: 3rem 1rem;
+}
 
-      emptyState.classList.add('hidden');
-      
-      // Sort posts by date (newest first)
-      const sortedPosts = [...posts].sort((a, b) => 
-        new Date(b.createdAt) - new Date(a.createdAt)
-      );
+.routes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
 
-      container.innerHTML = sortedPosts.map(post => {
-        const categoryColors = {
-          'Reitit': 'bg-emerald-500/20 text-emerald-300',
-          'Kaupungit': 'bg-amber-500/20 text-amber-300',
-          'Luonto': 'bg-green-500/20 text-green-300',
-          'Kulttuuri': 'bg-purple-500/20 text-purple-300',
-          'Ruoka': 'bg-rose-500/20 text-rose-300',
-          'Vinkit': 'bg-sky-500/20 text-sky-300'
-        };
+.route-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: #ffffff;
+}
 
-        const categoryClass = categoryColors[post.category] || 'bg-gray-500/20 text-gray-300';
-        const excerpt = post.content.length > 150 ? post.content.substring(0, 150) + '...' : post.content;
-        const formattedDate = new Date(post.date).toLocaleDateString('fi-FI', { 
-          year: 'numeric', 
-          month: 'long', 
-          day: 'numeric' 
-        });
+.route-card h3 {
+  margin-bottom: 0.5rem;
+  color: #0f766e;
+}
 
-        return `
-          <article class="card-hover bg-slate-800/80 rounded-xl border border-white/10 overflow-hidden backdrop-blur-sm">
-            <div class="p-6">
-              <div class="flex items-start justify-between mb-3">
-                <span class="category-badge ${categoryClass}">${post.category}</span>
-                <div class="flex gap-2">
-                  <button onclick="editPost('${post.__backendId}')" class="text-gray-400 hover:text-purple-400 transition-colors p-1">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                    </svg>
-                  </button>
-                  <button onclick="confirmDelete('${post.__backendId}')" class="text-gray-400 hover:text-red-400 transition-colors p-1">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              
-              <h3 class="font-display text-xl font-semibold mb-2">${post.title}</h3>
-              
-              <div class="flex items-center gap-4 text-sm text-gray-400 mb-3">
-                <div class="flex items-center gap-1">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
-                  </svg>
-                  <span>${post.location}</span>
-                </div>
-                <div class="flex items-center gap-1">
-                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                  </svg>
-                  <span>${formattedDate}</span>
-                </div>
-              </div>
-              
-              <p class="text-gray-400 text-sm leading-relaxed">${excerpt}</p>
-            </div>
-          </article>
-        `;
-      }).join('');
-    }
+.routes-cta {
+  padding: 3rem 1rem;
+  text-align: center;
+}
 
-    // Modal functions
-    function openModal(isEdit = false) {
-      const modal = document.getElementById('post-modal');
-      const modalTitle = document.getElementById('modal-title');
-      const saveBtnText = document.getElementById('save-btn-text');
-      
-      modalTitle.textContent = isEdit ? 'Muokkaa kirjoitusta' : 'Uusi kirjoitus';
-      saveBtnText.textContent = isEdit ? 'Tallenna muutokset' : 'Tallenna';
-      
-      modal.classList.remove('hidden');
-    }
+.routes-cta p {
+  margin-bottom: 1.5rem;
+}
 
-    function closeModal() {
-      const modal = document.getElementById('post-modal');
-      modal.classList.add('hidden');
-      document.getElementById('post-form').reset();
-      editingPost = null;
-    }
+.cta {
+  display: inline-block;
+  background: #0f766e;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
 
-    // Edit post
-    window.editPost = function(postId) {
-      editingPost = posts.find(p => p.__backendId === postId);
-      if (!editingPost) return;
-
-      document.getElementById('post-title').value = editingPost.title;
-      document.getElementById('post-category').value = editingPost.category;
-      document.getElementById('post-location').value = editingPost.location;
-      document.getElementById('post-date').value = editingPost.date;
-      document.getElementById('post-content').value = editingPost.content;
-
-      openModal(true);
-    };
-
-    // Delete confirmation
-    window.confirmDelete = function(postId) {
-      postToDelete = posts.find(p => p.__backendId === postId);
-      if (!postToDelete) return;
-      document.getElementById('delete-modal').classList.remove('hidden');
-    };
-
-    function closeDeleteModal() {
-      document.getElementById('delete-modal').classList.add('hidden');
-      postToDelete = null;
-    }
-
-    // Form submission
-    document.getElementById('post-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const saveBtn = document.getElementById('save-post-btn');
-      const originalText = document.getElementById('save-btn-text').textContent;
-      document.getElementById('save-btn-text').textContent = 'Tallennetaan...';
-      saveBtn.disabled = true;
-
-      const postData = {
-        title: document.getElementById('post-title').value.trim(),
-        category: document.getElementById('post-category').value,
-        location: document.getElementById('post-location').value.trim(),
-        date: document.getElementById('post-date').value,
-        content: document.getElementById('post-content').value.trim(),
-        createdAt: editingPost ? editingPost.createdAt : new Date().toISOString()
-      };
-
-      let result;
-      if (editingPost) {
-        result = await window.dataSdk.update({ ...postData, __backendId: editingPost.__backendId });
-      } else {
-        if (posts.length >= 999) {
-          const messageDiv = document.createElement('div');
-          messageDiv.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
-          messageDiv.textContent = 'Maksimimäärä (999) kirjoituksia saavutettu. Poista vanhoja kirjoituksia ensin.';
-          document.body.appendChild(messageDiv);
-          setTimeout(() => messageDiv.remove(), 4000);
-          
-          saveBtn.disabled = false;
-          document.getElementById('save-btn-text').textContent = originalText;
-          return;
-        }
-        result = await window.dataSdk.create(postData);
-      }
-
-      if (result.isOk) {
-        closeModal();
-      } else {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
-        messageDiv.textContent = 'Tallennus epäonnistui. Yritä uudelleen.';
-        document.body.appendChild(messageDiv);
-        setTimeout(() => messageDiv.remove(), 3000);
-      }
-
-      saveBtn.disabled = false;
-      document.getElementById('save-btn-text').textContent = originalText;
-    });
-
-    // Delete post
-    document.getElementById('confirm-delete-btn').addEventListener('click', async () => {
-      if (!postToDelete) return;
-
-      const btn = document.getElementById('confirm-delete-btn');
-      const originalText = btn.textContent;
-      btn.textContent = 'Poistetaan...';
-      btn.disabled = true;
-
-      const result = await window.dataSdk.delete(postToDelete);
-      
-      if (result.isOk) {
-        closeDeleteModal();
-      } else {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-6 py-3 rounded-lg shadow-lg z-50';
-        messageDiv.textContent = 'Poisto epäonnistui. Yritä uudelleen.';
-        document.body.appendChild(messageDiv);
-        setTimeout(() => messageDiv.remove(), 3000);
-      }
-
-      btn.disabled = false;
-      btn.textContent = originalText;
-    });
-
-    // Event listeners
-    document.getElementById('new-post-btn').addEventListener('click', () => openModal(false));
-    document.getElementById('close-modal-btn').addEventListener('click', closeModal);
-    document.getElementById('cancel-btn').addEventListener('click', closeModal);
-    document.getElementById('modal-backdrop').addEventListener('click', closeModal);
-    document.getElementById('cancel-delete-btn').addEventListener('click', closeDeleteModal);
-    document.getElementById('delete-backdrop').addEventListener('click', closeDeleteModal);
-
-    // Element SDK
-    async function onConfigChange(cfg) {
-      config = { ...defaultConfig, ...cfg };
-      
-      document.getElementById('header-title').textContent = config.blog_title || defaultConfig.blog_title;
-      document.getElementById('hero-title').textContent = config.blog_title || defaultConfig.blog_title;
-      document.getElementById('hero-tagline').textContent = config.blog_tagline || defaultConfig.blog_tagline;
-      document.getElementById('hero-welcome').textContent = config.welcome_text || defaultConfig.welcome_text;
-    }
-
-    function mapToCapabilities(cfg) {
-      return {
-        recolorables: [
-          {
-            get: () => cfg.background_color || defaultConfig.background_color,
-            set: (value) => {
-              cfg.background_color = value;
-              window.elementSdk.setConfig({ background_color: value });
-            }
-          },
-          {
-            get: () => cfg.surface_color || defaultConfig.surface_color,
-            set: (value) => {
-              cfg.surface_color = value;
-              window.elementSdk.setConfig({ surface_color: value });
-            }
-          },
-          {
-            get: () => cfg.text_color || defaultConfig.text_color,
-            set: (value) => {
-              cfg.text_color = value;
-              window.elementSdk.setConfig({ text_color: value });
-            }
-          },
-          {
-            get: () => cfg.primary_accent || defaultConfig.primary_accent,
-            set: (value) => {
-              cfg.primary_accent = value;
-              window.elementSdk.setConfig({ primary_accent: value });
-            }
-          },
-          {
-            get: () => cfg.secondary_accent || defaultConfig.secondary_accent,
-            set: (value) => {
-              cfg.secondary_accent = value;
-              window.elementSdk.setConfig({ secondary_accent: value });
-            }
-          }
-        ],
-        borderables: [],
-        fontEditable: {
-          get: () => cfg.font_family || 'Crimson Pro',
-          set: (value) => {
-            cfg.font_family = value;
-            window.elementSdk.setConfig({ font_family: value });
-          }
-        },
-        fontSizeable: {
-          get: () => cfg.font_size || 16,
-          set: (value) => {
-            cfg.font_size = value;
-            window.elementSdk.setConfig({ font_size: value });
-          }
-        }
-      };
-    }
-
-    function mapToEditPanelValues(cfg) {
-      return new Map([
-        ['blog_title', cfg.blog_title || defaultConfig.blog_title],
-        ['blog_tagline', cfg.blog_tagline || defaultConfig.blog_tagline],
-        ['welcome_text', cfg.welcome_text || defaultConfig.welcome_text]
-      ]);
-    }
-
-    // Initialize
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities,
-        mapToEditPanelValues
-      });
-    }
-
-    initDataSdk();
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c193646d415c783',t:'MTc2OTAyMzY3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
+.cta:hover {
+  opacity: 0.9;
+}
+</style>
