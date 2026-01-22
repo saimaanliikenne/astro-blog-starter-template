@@ -24,27 +24,20 @@ const {
 
   <body>
     <header class="site-header">
-  <a href="/" class="logo">
-    <img
-      src="/images/logo/logo_SL.png"
-      alt="Matkatoimisto Saimaan Liikenne"
-    />
-  </a>
-<header class="site-header">
-  <nav class="main-nav">
-    <a href="/">Etusivu</a>
-    <a href="/reitit">Reitit</a>
-    <a href="/blog">Blogi</a>
-    <a href="/about">Tietoa</a>
-  </nav>
-</header>
+      <nav class="nav">
+        <a href="/">Etusivu</a>
+        <a href="/about">Tietoa</a>
+        <a href="/routes">Reitit</a>
+        <a href="/blog">Blogi</a>
+      </nav>
+    </header>
 
     <main class="page-content">
       <slot />
     </main>
 
     <footer class="site-footer">
-    <p>© {new Date().getFullYear()} Matkatoimisto Saimaan Liikenne OY. All Rights Reserved.</p>
+      <p>© {new Date().getFullYear()} Matkatoimisto Saimaan Liikenne OY. All Rights Reserved.</p>
     </footer>
   </body>
 </html>
