@@ -3,54 +3,69 @@ import PageLayout from "../layouts/PageLayout.astro";
 ---
 
 <PageLayout
-  title="Matkailu Suomessa – luonto, reitit ja elämykset"
-  description="Tutustu Suomen luontoon, matkareitteihin ja rauhalliseen matkailuun."
+  title="Matkailu Suomessa – reitit, luonto ja rauha"
+  description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
 >
-<section class="hero">
-  <div class="hero-overlay">
-    <h1>Tervetuloa Suomeen</h1>
-    <p>
-      Rauhallinen matkailu, luonto ja reitit
-      Etelä-Karjalassa ja koko Suomessa
-    </p>
-  </div>
-</section>
 
-  <section class="features">
-    <h2>Mitä sivusto tarjoaa?</h2>
-
-    <div class="features-grid">
-      <div class="feature">
-        <h3>Luonto</h3>
-        <p>Kansallispuistot, metsät, järvet ja hiljaisuus.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Reitit</h3>
-        <p>Vaellus-, pyöräily- ja automatkareittejä.</p>
-      </div>
-
-      <div class="feature">
-        <h3>Kaupunki & kulttuuri</h3>
-        <p>Kaupunkikohteet, nähtävyydet ja paikallinen elämä.</p>
-      </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Tervetuloa Suomeen</h1>
+      <p>
+        Luontoa, rauhaa ja ainutlaatuisia reittejä
+        Etelä-Karjalassa ja koko Suomessa
+      </p>
     </div>
   </section>
 
-  <section class="about-preview">
-    <h2>Miksi tämä projekti?</h2>
+  <!-- SECTION 1 -->
+  <section class="section">
+    <h2>Rauhallinen matkailu</h2>
     <p>
-      Suomi on ainutlaatuinen matkakohde: puhdas luonto,
-      turvallisuus ja tilaa hengittää.
-      Tämä sivusto auttaa sinua löytämään parhaat paikat
-      omaan tahtiin matkustamiseen.
+      Suomi tarjoaa ainutlaatuisen mahdollisuuden
+      matkustaa ilman kiirettä. Metsät, järvet ja
+      pienet kaupungit luovat täydellisen ympäristön
+      levolliseen lomaan.
     </p>
-
-    <a href="/about">Lue lisää projektista →</a>
   </section>
+
+  <!-- SECTION 2 -->
+  <section class="section light">
+    <h2>Reitit ja kohteet</h2>
+    <p>
+      Tutustu vaellusreitteihin, pyöräilyyn,
+      luontopolkuihin ja kaupunkikävelyihin.
+      Jokainen reitti on valittu huolella
+      matkailijoille, jotka arvostavat laatua ja rauhaa.
+    </p>
+  </section>
+
+  <!-- SECTION 3 -->
+  <section class="section">
+    <h2>Matkablogi</h2>
+    <p>
+      Blogissamme jaamme kokemuksia,
+      vinkkejä ja tarinoita matkailusta Suomessa.
+      Löydät reittikuvauksia, valokuvia ja
+      käytännön neuvoja.
+    </p>
+  </section>
+
+  <!-- SECTION 4 -->
+  <section class="section light">
+    <h2>Paikallinen asiantuntemus</h2>
+    <p>
+      Toimimme Lappeenrannassa ja tunnemme
+      alueen parhaat reitit ja nähtävyydet.
+      Autamme sinua löytämään juuri sinulle
+      sopivan matkakokemuksen.
+    </p>
+  </section>
+
 </PageLayout>
 
 <style>
+/* HERO */
 .hero {
   width: 100vw;
   height: 100vh;
@@ -64,10 +79,10 @@ import PageLayout from "../layouts/PageLayout.astro";
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.hero-overlay {
+.hero-content {
   position: relative;
   z-index: 1;
   height: 100%;
@@ -81,14 +96,34 @@ import PageLayout from "../layouts/PageLayout.astro";
 }
 
 .hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 5vw, 3.8rem);
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: 1.25rem;
   max-width: 600px;
+  line-height: 1.6;
+}
+
+/* SECTIONS */
+.section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.section.light {
+  background: #f8fafc;
+}
+
+.section h2 {
+  color: #0f766e;
+  margin-bottom: 1rem;
+}
+
+.section p {
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 </style>
-<style>
