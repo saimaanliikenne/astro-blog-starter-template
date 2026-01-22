@@ -7,16 +7,17 @@ import PageLayout from "../layouts/PageLayout.astro";
   description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
 >
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <h1>Tervetuloa Suomeen</h1>
-      <p>
-        Luontoa, rauhaa ja ainutlaatuisia reittejä
-        Etelä-Karjalassa ja koko Suomessa
-      </p>
-    </div>
-  </section>
+  <div class="hero-overlay">
+    <h1>Tervetuloa matkailuprojektiin</h1>
+    <p>
+      Löydä Suomen kauneimmat luontokohteet,
+      reitit ja rauhallinen matkailu.
+    </p>
+
+    <a href="/routes" class="cta">Tutustu reitteihin</a>
+  </div>
+</section>
 
   <!-- SECTION 1 -->
   <section class="section">
@@ -65,45 +66,48 @@ import PageLayout from "../layouts/PageLayout.astro";
 </PageLayout>
 
 <style>
-/* HERO */
 .hero {
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  min-height: 70vh;
   background-image: url("/images/hero/finland-hero.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  height: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 0 1rem;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.45);
   color: #ffffff;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  border-radius: 12px;
+  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 5vw, 3.8rem);
+  font-size: 2.8rem;
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.25rem;
-  max-width: 600px;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta {
+  display: inline-block;
+  background: #0f766e;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cta:hover {
+  opacity: 0.9;
 }
 
 /* SECTIONS */
