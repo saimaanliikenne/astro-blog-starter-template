@@ -23,15 +23,21 @@ const {
   </head>
 
   <body>
-    <header class="site-header">  
-    </a>
-        <nav class="nav">
-        <a href="/">Etusivu</a>
-        <a href="/about">Tietoa</a>
-        <a href="/routes">Reitit</a>
-        <a href="/blog">Blogi</a>
-      </nav>
-    </header>
+    <header class="site-header">
+  <a href="/" class="logo">
+    <img
+      src="/images/logo/logo_SL.png"
+      alt="Matkatoimisto Saimaan Liikenne"
+    />
+  </a>
+
+  <nav class="main-nav">
+    <a href="/">Etusivu</a>
+    <a href="/reitit">Reitit</a>
+    <a href="/blog">Blogi</a>
+    <a href="/about">Tietoa</a>
+  </nav>
+</header>
 
     <main class="page-content">
       <slot />
