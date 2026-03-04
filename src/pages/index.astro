@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/PageLayout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
 <PageLayout
@@ -18,6 +18,7 @@ import Layout from '../layouts/PageLayout.astro';
     <a href="/routes" class="cta">Tutustu reitteihin</a>
   </div>
 </section>
+
 
   <!-- SECTION 1 -->
   <section class="section fade-in">
@@ -67,7 +68,7 @@ import Layout from '../layouts/PageLayout.astro';
     <a href="/contact" class="btn-primary">Contact Us</a>
   </section>
 
-</Layout>
+</PageLayout>
 
 <style>
 .hero {
@@ -113,10 +114,7 @@ import Layout from '../layouts/PageLayout.astro';
 .cta:hover {
   opacity: 0.9;
 }
-
-
-/* ================= SECTIONS ================= */
-
+/* SECTIONS */
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
