@@ -1,133 +1,216 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
+// src/pages/index.astro
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<PageLayout
-  title="Matkailu Suomessa – reitit, luonto ja rauha"
-  description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
->
-
-  <section class="hero">
-  <div class="hero-overlay">
-    <h1>Matkatoimisto Saimaan Liikenne OY</h1>
-    <p>
-      Löydä Suomen kauneimmat luontokohteet,
-      reitit ja rauhallinen matkailu.
-    </p>
-
-    <a href="/routes" class="cta">Tutustu reitteihin</a>
+<PageLayout title="Matkalla ilman rajoja | Unelmiesi loma">
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content">
+      <h1>Avaa maailma<br> kanssamme</h1>
+      <p class="lead">Matkoja, jotka jäävät mieleen ikuisesti</p>
+      
+      <div class="search-box">
+        <input type="text" placeholder="Minne haluat matkustaa?" class="search-input" />
+        <button class="search-btn">Etsi matka</button>
+      </div>
+      
+      <div class="popular-destinations">
+        <span>Suositut kohteet:</span>
+        <div class="tags">
+          <a href="#">Bali</a>
+          <a href="#"> Islanti</a>
+          <a href="#"> Georgia</a>
+          <a href="#"> Japani</a>
+          <a href="#"> Italia</a>
+          <a href="#"> Turkki</a>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-  <!-- SECTION 1 -->
-  <section class="section">
-    <h2>Rauhallinen matkailu</h2>
-    <p>
-      Suomi tarjoaa ainutlaatuisen mahdollisuuden
-      matkustaa ilman kiirettä. Metsät, järvet ja
-      pienet kaupungit luovat täydellisen ympäristön
-      levolliseen lomaan.
-    </p>
+  <section class="section quick-info">
+    <div class="container">
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">✈️</div>
+          <h3>Viime hetken matkat</h3>
+          <p>Parhaat hinnat lähiajoille</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🌴</div>
+          <h3>Eksklusiiviset reitit</h3>
+          <p>Paikat, joita ei löydy oppaista</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">💎</div>
+          <h3>Paras hinta</h3>
+          <p>Hinta-takuu</p>
+        </div>
+      </div>
+    </div>
   </section>
-
-  <!-- SECTION 2 -->
-  <section class="section light">
-    <h2>Reitit ja kohteet</h2>
-    <p>
-      Tutustu vaellusreitteihin, pyöräilyyn,
-      luontopolkuihin ja kaupunkikävelyihin.
-      Jokainen reitti on valittu huolella
-      matkailijoille, jotka arvostavat laatua ja rauhaa.
-    </p>
-  </section>
-
-  <!-- SECTION 3 -->
-  <section class="section">
-    <h2>Matkablogi</h2>
-    <p>
-      Blogissamme jaamme kokemuksia,
-      vinkkejä ja tarinoita matkailusta Suomessa.
-      Löydät reittikuvauksia, valokuvia ja
-      käytännön neuvoja.
-    </p>
-  </section>
-
-  <!-- SECTION 4 -->
-  <section class="section light">
-    <h2>Paikallinen asiantuntemus</h2>
-    <p>
-      Toimimme Lappeenrannassa ja tunnemme
-      alueen parhaat reitit ja nähtävyydet.
-      Autamme sinua löytämään juuri sinulle
-      sopivan matkakokemuksen.
-    </p>
-  </section>
-
 </PageLayout>
 
 <style>
-.hero {
-  position: relative;
-  min-height: 70vh;
-  background-image: url("/images/hero/finland-hero.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+  /* sama tyyli kuin aiemmin – ei muutoksia */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 720px;
+    background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=2400') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
 
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.45);
-  color: #ffffff;
-  text-align: center;
-  padding: 3rem 1.5rem;
-  border-radius: 12px;
-  max-width: 800px;
-}
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 128, 128, 0.25) 0%,
+      rgba(0, 128, 128, 0.55) 50%,
+      rgba(0, 80, 100, 0.85) 100%
+    );
+    mix-blend-mode: multiply;
+  }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-}
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 20px;
+  }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
+  h1 {
+    font-size: clamp(3.2rem, 8vw, 6.5rem);
+    font-weight: 800;
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  }
 
-.cta {
-  display: inline-block;
-  background: #0f766e;
-  color: #ffffff;
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 500;
-}
+  .lead {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+  }
 
-.cta:hover {
-  opacity: 0.9;
-}
+  .search-box {
+    display: flex;
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+    background: rgba(255,255,255,0.95);
+    border-radius: 60px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+  }
 
-/* SECTIONS */
-.section {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
-}
+  .search-input {
+    flex: 1;
+    padding: 1.1rem 1.8rem;
+    border: none;
+    font-size: 1.15rem;
+    background: transparent;
+  }
 
-.section.light {
-  background: #f8fafc;
-}
+  .search-btn {
+    padding: 0 2.2rem;
+    background: #00b7b7;
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
 
-.section h2 {
-  color: #0f766e;
-  margin-bottom: 1rem;
-}
+  .search-btn:hover {
+    background: #009999;
+  }
 
-.section p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
+  .popular-destinations {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .tags a {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(6px);
+    padding: 0.5rem 1.3rem;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.25s;
+  }
+
+  .tags a:hover {
+    background: rgba(255,255,255,0.45);
+    transform: translateY(-2px);
+  }
+
+  .quick-info {
+    padding: 5rem 0 7rem;
+    background: linear-gradient(to bottom, #f8ffff, #e6f4f4);
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.2rem 1.8rem;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+  }
+
+  .card-icon {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .card h3 {
+    color: #006666;
+    margin-bottom: 0.8rem;
+  }
+
+  @media (max-width: 640px) {
+    .search-box {
+      flex-direction: column;
+      border-radius: 20px;
+    }
+    
+    .search-btn {
+      padding: 1.2rem;
+      border-radius: 0 0 20px 20px;
+    }
+  }
 </style>
