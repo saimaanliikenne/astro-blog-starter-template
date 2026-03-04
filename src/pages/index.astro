@@ -1,270 +1,256 @@
 ---
-import Layout from '../layouts/PageLayout.astro';
+import PageLayout from "../layouts/PageLayout.astro";
 ---
 
-<Layout>
+<PageLayout
+  title="Matkailu Suomessa – reitit, luonto ja rauha"
+  description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
+>
 
-  <!-- ULTRA HERO -->
+  <!-- HERO PREMIUM -->
   <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-glass">
-      <span class="hero-label">Lake Saimaa • Finland</span>
-      <h1>Saimaan Liikenne</h1>
-      <p>Ultra-Premium Private Cruises & Nordic Experiences</p>
-      <a href="/contact" class="btn-gold">Request a Private Cruise</a>
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Matkatoimisto Saimaan Liikenne</h1>
+        <p>  Löydä Suomen kauneimmat luontokohteet,
+      reitit ja rauhallinen matkailu.</p>
+        <a href="/contact" class="btn-primary">Tutustu reitteihin</a>
+      </div>
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="lux-section fade">
-    <div class="lux-image">
-      <img src="/images/boats.jpg" alt="Luxury boat cruise Saimaa">
+  <!-- SECTION 1 -->
+  <section class="section fade-in">
+    <div class="image">
+      <img src="/images/routes/seasons.jpg" alt="Rauhallinen matkailu" />
     </div>
-    <div class="lux-text">
-      <h2>Exceptional Experiences</h2>
+    <div class="text">
+      <h2>Rauhallinen matkailu</h2>
       <p>
-        Carefully curated private cruises designed for guests who value
-        comfort, silence and exclusivity on Lake Saimaa.
+      Suomi tarjoaa ainutlaatuisen mahdollisuuden matkustaa ilman kiirettä. 
+      Metsät, järvet ja pienet kaupungit luovat täydellisen ympäristön
+      levolliseen lomaan.
+
       </p>
     </div>
   </section>
 
-  <!-- NATURE -->
-  <section class="lux-section reverse fade">
-    <div class="lux-image">
-      <img src="/images/nature.jpg" alt="Pure Finnish nature">
+  <!-- SECTION 2 -->
+  <section class="section reverse fade-in">
+    <div class="image">
+      <img src="/images/blog/winter-blog.jpg" alt="Reitit ja kohteet" />
     </div>
-    <div class="lux-text">
-      <h2>Pure Nordic Nature</h2>
+    <div class="text">
+      <h2>Reitit ja kohteet</h2>
       <p>
-        Crystal-clear waters, untouched landscapes and the rare luxury
-        of absolute peace — nature as it was meant to be experienced.
+        Tutustu vaellusreitteihin, pyöräilyyn, luontopolkuihin ja kaupunkikävelyihin.
+        Jokainen reitti on valittu huolella matkailijoille, jotka arvostavat laatua ja 
+        rauhaa.
+
       </p>
     </div>
   </section>
 
-  <!-- SUNSET -->
-  <section class="lux-section fade">
-    <div class="lux-image">
-      <img src="/images/sunset.jpg" alt="Sunset luxury cruise">
+   <!-- SECTION 3 -->
+  <section class="section fade-in">
+    <div class="image">
+      <img src="/images/blog/forest-blog.jpg" alt="Matkablogi" />
     </div>
-    <div class="lux-text">
-      <h2>Private Sunset Cruises</h2>
+    <div class="text">
+      <h2>Matkablogi</h2>
       <p>
-        Golden reflections, champagne moments and unforgettable evenings
-        designed exclusively for you and your guests.
+        Blogissamme jaamme kokemuksia, vinkkejä ja tarinoita matkailusta Suomessa.
+      Löydät reittikuvauksia, valokuvia ja käytännön neuvoja.
       </p>
     </div>
   </section>
 
-  <!-- FINAL CTA -->
-  <section class="final-cta">
-    <h2>Your Private Journey Awaits</h2>
-    <p>Limited availability • Tailored experiences only</p>
-    <a href="/contact" class="btn-gold large">Begin Your Experience</a>
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Ready for an unforgettable journey?</h2>
+    <a href="/contact" class="btn-primary">Contact Us</a>
   </section>
 
-</Layout>
+</PageLayout>
 
 <style>
 
-/* ========== GLOBAL PREMIUM TONE ========== */
-
-:root {
-  --gold: #d4af37;
-  --dark: #0b1f24;
-}
-
-body {
-  background: #f8fbfc;
-}
-
-/* ========== HERO ========== */
+/* ================= HERO ================= */
 
 .hero {
   position: relative;
   height: 100vh;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
   background-image: url('/images/hero/hero-premium.jpg');
   background-size: cover;
   background-position: center;
-  transform: scale(1.1);
-  will-change: transform;
-}
-
-.hero-glass {
-  position: relative;
-  z-index: 2;
-  height: 100%;
+  background-attachment: fixed;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-  backdrop-filter: blur(6px);
-  background: linear-gradient(
-    rgba(0,0,0,0.45),
-    rgba(0,0,0,0.65)
-  );
-  padding: 40px;
 }
 
-.hero-label {
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 0.75rem;
-  opacity: 0.8;
-  margin-bottom: 20px;
-}
-
-.hero-glass h1 {
-  font-size: 3.8rem;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
-
-.hero-glass p {
-  font-size: 1.3rem;
-  margin-bottom: 50px;
-  opacity: 0.9;
-}
-
-/* ========== GOLD BUTTON ========== */
-
-.btn-gold {
-  padding: 14px 44px;
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  text-decoration: none;
-  border-radius: 40px;
-  letter-spacing: 1px;
-  transition: all 0.4s ease;
-}
-
-.btn-gold:hover {
-  background: var(--gold);
-  color: black;
-  transform: translateY(-3px);
-}
-
-.btn-gold.large {
-  font-size: 1.1rem;
-  padding: 18px 60px;
-}
-
-/* ========== LUX SECTIONS ========== */
-
-.lux-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  padding: 140px 10%;
-  align-items: center;
-}
-
-.lux-section.reverse {
-  direction: rtl;
-}
-
-.lux-section.reverse .lux-text {
-  direction: ltr;
-}
-
-.lux-image img {
+.hero-overlay {
   width: 100%;
-  height: 480px;
-  object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.6)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.lux-text h2 {
-  font-size: 2.2rem;
-  margin-bottom: 25px;
-}
-
-.lux-text p {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  color: #333;
-}
-
-/* ========== FINAL CTA ========== */
-
-.final-cta {
-  background: var(--dark);
-  color: white;
+.hero-content {
   text-align: center;
-  padding: 140px 20px;
+  color: white;
+  max-width: 800px;
+  padding: 20px;
+  animation: fadeHero 1.5s ease forwards;
+  opacity: 0;
 }
 
-.final-cta h2 {
-  font-size: 2.4rem;
+.hero-content h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
-.final-cta p {
-  opacity: 0.8;
+.hero-content p {
+  font-size: 1.4rem;
   margin-bottom: 40px;
 }
 
-/* ========== ANIMATION ========== */
-
-.fade {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: all 1s ease;
+.btn-primary {
+  padding: 14px 40px;
+  background: white;
+  color: #0fa3b1;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
 }
 
-.fade.visible {
+.btn-primary:hover {
+  background: #0fa3b1;
+  color: white;
+  transform: translateY(-3px);
+}
+
+@keyframes fadeHero {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 100px 10%;
+}
+
+.section.reverse {
+  direction: rtl;
+}
+
+.section.reverse .text {
+  direction: ltr;
+}
+
+.section img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+.section img:hover {
+  transform: scale(1.03);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ================= CTA ================= */
+
+.cta {
+  text-align: center;
+  padding: 120px 20px;
+  background: #0fa3b1;
+  color: white;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* ================= ANIMATION ================= */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* ========== MOBILE ========== */
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
 
-  .hero-glass h1 {
-    font-size: 2.3rem;
+  .hero {
+    background-attachment: scroll;
   }
 
-  .lux-section {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .section {
     grid-template-columns: 1fr;
-    padding: 80px 20px;
+    padding: 60px 20px;
   }
 
-  .lux-image img {
-    height: 320px;
+  .section.reverse {
+    direction: ltr;
+  }
+
+  .section img {
+    height: 300px;
   }
 }
 
 </style>
 
 <script>
-  /* Fade-in animation */
-  const items = document.querySelectorAll('.fade');
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-  items.forEach(i => observer.observe(i));
+  const elements = document.querySelectorAll('.fade-in');
 
-  /* Subtle hero parallax */
-  window.addEventListener('scroll', () => {
-    const bg = document.querySelector('.hero-bg');
-    bg.style.transform = `scale(1.1) translateY(${window.scrollY * 0.2}px)`;
-  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
 </script>
