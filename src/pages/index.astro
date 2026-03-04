@@ -7,15 +7,13 @@ import PageLayout from "../layouts/PageLayout.astro";
   description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
 >
 
-  <section class="hero">
+<section class="hero-premium">
   <div class="hero-overlay">
-    <h1>Matkatoimisto Saimaan Liikenne OY</h1>
-    <p>
-      Löydä Suomen kauneimmat luontokohteet,
-      reitit ja rauhallinen matkailu.
-    </p>
-
-    <a href="/routes" class="cta">Tutustu reitteihin</a>
+    <div class="hero-content">
+      <h1>Saimaan Liikenne</h1>
+      <p>Premium Boat Cruises on Lake Saimaa</p>
+      <a href="/contact" class="hero-button">Book Your Experience</a>
+    </div>
   </div>
 </section>
 
@@ -66,49 +64,81 @@ import PageLayout from "../layouts/PageLayout.astro";
 </PageLayout>
 
 <style>
-.hero {
+/* HERO FULL WIDTH PREMIUM */
+
+.hero-premium {
   position: relative;
-  min-height: 70vh;
-  background-image: url("/images/hero/finland-hero.jpg");
+  height: 100vh;
+  background-image: url('/images/hero-premium.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed; /* Параллакс */
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.45);
-  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.4),
+    rgba(0,0,0,0.6)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
   text-align: center;
-  padding: 3rem 1.5rem;
-  border-radius: 12px;
+  color: white;
   max-width: 800px;
+  padding: 20px;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
+.hero-content h1 {
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 600;
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.cta {
-  display: inline-block;
-  background: #20c5c9;
-  color: #ffffff;
-  padding: 0.75rem 1.75rem;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.cta:hover {
+.hero-content p {
+  font-size: 1.4rem;
+  margin-bottom: 40px;
   opacity: 0.9;
 }
+
+.hero-button {
+  display: inline-block;
+  padding: 14px 40px;
+  background: white;
+  color: #0fa3b1;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover {
+  background: #0fa3b1;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Убираем fixed на мобильных */
+@media (max-width: 900px) {
+  .hero-premium {
+    background-attachment: scroll;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+}
+</style>
 
 /* SECTIONS */
 .section {
