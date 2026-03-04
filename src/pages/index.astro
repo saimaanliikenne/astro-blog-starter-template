@@ -7,29 +7,30 @@ import PageLayout from "../layouts/PageLayout.astro";
   description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
 >
 
+  <!-- HERO PREMIUM -->
   <section class="hero">
-  <div class="hero-overlay">
-    <h1>Matkatoimisto Saimaan Liikenne OY</h1>
-    <p>
-      Löydä Suomen kauneimmat luontokohteet,
-      reitit ja rauhallinen matkailu.
-    </p>
-
-    <a href="/routes" class="cta">Tutustu reitteihin</a>
-  </div>
-</section>
-
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Matkatoimisto Saimaan Liikenne</h1>
+        <p>  Löydä Suomen kauneimmat luontokohteet,
+      reitit ja rauhallinen matkailu.</p>
+        <a href="/contact" class="btn-primary">Tutustu reitteihin</a>
+      </div>
+    </div>
+  </section>
 
   <!-- SECTION 1 -->
   <section class="section fade-in">
     <div class="image">
-      <img src="/images/routes/seasons.jpg" alt="Boat tours on Lake Saimaa" />
+      <img src="/images/routes/seasons.jpg" alt="Rauhallinen matkailu" />
     </div>
     <div class="text">
-      <h2>Exclusive Boat Tours</h2>
+      <h2>Rauhallinen matkailu</h2>
       <p>
-        Discover the beauty of Lake Saimaa with our premium guided cruises.
-        Enjoy peaceful waters, breathtaking landscapes and unforgettable moments.
+      Suomi tarjoaa ainutlaatuisen mahdollisuuden matkustaa ilman kiirettä. 
+      Metsät, järvet ja pienet kaupungit luovat täydellisen ympäristön
+      levolliseen lomaan.
+
       </p>
     </div>
   </section>
@@ -77,7 +78,7 @@ import PageLayout from "../layouts/PageLayout.astro";
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('/images/hero-premium.jpg');
+  background-image: url('/images/hero/hero-premium.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
