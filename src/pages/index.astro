@@ -2,17 +2,22 @@
 import Layout from '../layouts/PageLayout.astro';
 ---
 
-<Layout>
-  <!-- HERO PREMIUM -->
+<PageLayout
+  title="Matkailu Suomessa – reitit, luonto ja rauha"
+  description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
+>
+
   <section class="hero">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1>Saimaan Liikenne</h1>
-        <p>Premium Boat Cruises on Lake Saimaa</p>
-        <a href="/contact" class="btn-primary">Book Your Experience</a>
-      </div>
-    </div>
-  </section>
+  <div class="hero-overlay">
+    <h1>Matkatoimisto Saimaan Liikenne OY</h1>
+    <p>
+      Löydä Suomen kauneimmat luontokohteet,
+      reitit ja rauhallinen matkailu.
+    </p>
+
+    <a href="/routes" class="cta">Tutustu reitteihin</a>
+  </div>
+</section>
 
   <!-- SECTION 1 -->
   <section class="section fade-in">
@@ -65,77 +70,50 @@ import Layout from '../layouts/PageLayout.astro';
 </Layout>
 
 <style>
-
-/* ================= HERO ================= */
-
 .hero {
   position: relative;
-  height: 100vh;
-  background-image: url('/images/hero/hero-premium.jpg');
+  min-height: 70vh;
+  background-image: url("/images/hero/finland-hero.jpg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-overlay {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.6)
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-content {
+  background: rgba(0, 0, 0, 0.45);
+  color: #ffffff;
   text-align: center;
-  color: white;
+  padding: 3rem 1.5rem;
+  border-radius: 12px;
   max-width: 800px;
-  padding: 20px;
-  animation: fadeHero 1.5s ease forwards;
-  opacity: 0;
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  font-weight: 600;
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
 }
 
-.hero-content p {
-  font-size: 1.4rem;
-  margin-bottom: 40px;
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-.btn-primary {
-  padding: 14px 40px;
-  background: white;
-  color: #0fa3b1;
+.cta {
+  display: inline-block;
+  background: #20c5c9;
+  color: #ffffff;
+  padding: 0.75rem 1.75rem;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
-.btn-primary:hover {
-  background: #0fa3b1;
-  color: white;
-  transform: translateY(-3px);
+.cta:hover {
+  opacity: 0.9;
 }
 
-@keyframes fadeHero {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* ================= SECTIONS ================= */
 
