@@ -1,36 +1,32 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
+import Layout from '../layouts/PageLayout.astro';
 ---
 
-<PageLayout
-  title="Matkailu Suomessa – reitit, luonto ja rauha"
-  description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
->
+<Layout>
 
-  <!-- HERO PREMIUM -->
+  <!-- ULTRA PREMIUM HERO -->
   <section class="hero">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1>Matkatoimisto Saimaan Liikenne</h1>
-        <p>  Löydä Suomen kauneimmat luontokohteet,
-      reitit ja rauhallinen matkailu.</p>
-        <a href="/contact" class="btn-primary">Tutustu reitteihin</a>
-      </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-glass">
+      <span class="hero-label">Luxury Lake Cruises</span>
+      <h1>Saimaan Liikenne</h1>
+      <p>Exclusive private and premium cruises on Lake Saimaa</p>
+      <a href="/contact" class="hero-cta">Reserve Your Cruise</a>
     </div>
   </section>
 
   <!-- SECTION 1 -->
   <section class="section fade-in">
     <div class="image">
-      <img src="/images/routes/seasons.jpg" alt="Rauhallinen matkailu" />
+      <img src="/images/boats.jpg" alt="Luxury boat cruise Saimaa" />
     </div>
-    <div class="text">
-      <h2>Rauhallinen matkailu</h2>
+    <div class="content">
+      <span class="tag">Experience</span>
+      <h2>Handcrafted Luxury Cruises</h2>
       <p>
-      Suomi tarjoaa ainutlaatuisen mahdollisuuden matkustaa ilman kiirettä. 
-      Metsät, järvet ja pienet kaupungit luovat täydellisen ympäristön
-      levolliseen lomaan.
-
+        Every cruise is designed individually. Silence, comfort and
+        breathtaking scenery combine into a truly exclusive experience.
       </p>
     </div>
   </section>
@@ -38,174 +34,206 @@ import PageLayout from "../layouts/PageLayout.astro";
   <!-- SECTION 2 -->
   <section class="section reverse fade-in">
     <div class="image">
-      <img src="/images/blog/winter-blog.jpg" alt="Reitit ja kohteet" />
+      <img src="/images/nature.jpg" alt="Lake Saimaa nature" />
     </div>
-    <div class="text">
-      <h2>Reitit ja kohteet</h2>
+    <div class="content">
+      <span class="tag">Nature</span>
+      <h2>Pure Nordic Elegance</h2>
       <p>
-        Tutustu vaellusreitteihin, pyöräilyyn, luontopolkuihin ja kaupunkikävelyihin.
-        Jokainen reitti on valittu huolella matkailijoille, jotka arvostavat laatua ja 
-        rauhaa.
-
+        Surrounded by pristine waters and untouched forests, Lake Saimaa
+        offers one of the most serene luxury environments in Northern Europe.
       </p>
     </div>
   </section>
 
-   <!-- SECTION 3 -->
+  <!-- SECTION 3 -->
   <section class="section fade-in">
     <div class="image">
-      <img src="/images/blog/forest-blog.jpg" alt="Matkablogi" />
+      <img src="/images/sunset.jpg" alt="Sunset cruise Saimaa" />
     </div>
-    <div class="text">
-      <h2>Matkablogi</h2>
+    <div class="content">
+      <span class="tag">Private</span>
+      <h2>Sunset & Private Charters</h2>
       <p>
-        Blogissamme jaamme kokemuksia, vinkkejä ja tarinoita matkailusta Suomessa.
-      Löydät reittikuvauksia, valokuvia ja käytännön neuvoja.
+        Celebrate unforgettable moments with private sunset cruises,
+        champagne evenings and tailor-made journeys.
       </p>
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- ULTRA PREMIUM CTA -->
   <section class="cta">
-    <h2>Ready for an unforgettable journey?</h2>
-    <a href="/contact" class="btn-primary">Contact Us</a>
+    <h2>Your journey begins on the water</h2>
+    <p>Contact us to design your private Lake Saimaa experience</p>
+    <a href="/contact" class="hero-cta dark">Contact Us</a>
   </section>
 
-</PageLayout>
+</Layout>
 
 <style>
+
+/* ================= ULTRA PREMIUM VARIABLES ================= */
+
+:root {
+  --gold: #d4af37;
+  --dark: #0b1f24;
+  --glass: rgba(255,255,255,0.15);
+}
 
 /* ================= HERO ================= */
 
 .hero {
   position: relative;
   height: 100vh;
-  background-image: url('/images/hero/hero-premium.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background: url('/images/hero/hero-premium.jpg') center / cover fixed;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hero-overlay {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   background: linear-gradient(
     to bottom,
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.6)
+    rgba(5,20,25,0.55),
+    rgba(5,20,25,0.75)
   );
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.hero-content {
+.hero-glass {
+  position: relative;
+  z-index: 2;
   text-align: center;
   color: white;
-  max-width: 800px;
-  padding: 20px;
-  animation: fadeHero 1.5s ease forwards;
+  padding: 60px 70px;
+  border-radius: 24px;
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.35);
+  animation: heroFade 1.6s ease forwards;
   opacity: 0;
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
+.hero-label {
+  display: inline-block;
+  color: var(--gold);
   letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 0.75rem;
   margin-bottom: 20px;
-  font-weight: 600;
 }
 
-.hero-content p {
-  font-size: 1.4rem;
+.hero-glass h1 {
+  font-size: 3.6rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.hero-glass p {
+  font-size: 1.3rem;
+  opacity: 0.9;
   margin-bottom: 40px;
 }
 
-.btn-primary {
-  padding: 14px 40px;
-  background: white;
-  color: #0fa3b1;
+.hero-cta {
+  display: inline-block;
+  padding: 14px 46px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, var(--gold), #f1d87a);
+  color: #000;
   text-decoration: none;
   font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
+  transition: all 0.35s ease;
 }
 
-.btn-primary:hover {
-  background: #0fa3b1;
-  color: white;
-  transform: translateY(-3px);
+.hero-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(212,175,55,0.45);
 }
 
-@keyframes fadeHero {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.hero-cta.dark {
+  background: white;
 }
 
 /* ================= SECTIONS ================= */
+
 .section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 70px;
   align-items: center;
-  padding: 100px 10%;
+  padding: 120px 10%;
 }
 
 .section.reverse {
   direction: rtl;
 }
 
-.section.reverse .text {
+.section.reverse .content {
   direction: ltr;
 }
 
 .section img {
   width: 100%;
-  height: 420px;
+  height: 460px;
   object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  transition: transform 0.4s ease;
+  border-radius: 26px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+  transition: transform 0.6s ease;
 }
 
 .section img:hover {
-  transform: scale(1.03);
+  transform: scale(1.04);
 }
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.content .tag {
+  display: inline-block;
+  margin-bottom: 14px;
+  color: var(--gold);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
 }
 
-.section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
+.content h2 {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+}
+
+.content p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: #333;
 }
 
 /* ================= CTA ================= */
 
 .cta {
-  text-align: center;
-  padding: 120px 20px;
-  background: #0fa3b1;
+  background: var(--dark);
   color: white;
+  text-align: center;
+  padding: 140px 20px;
 }
 
 .cta h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  margin-bottom: 40px;
+  opacity: 0.85;
 }
 
 /* ================= ANIMATION ================= */
 
 .fade-in {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
+  transform: translateY(60px);
+  transition: all 1s ease;
 }
 
 .fade-in.visible {
@@ -213,21 +241,30 @@ import PageLayout from "../layouts/PageLayout.astro";
   transform: translateY(0);
 }
 
+@keyframes heroFade {
+  to {
+    opacity: 1;
+  }
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media (max-width: 900px) {
-
   .hero {
     background-attachment: scroll;
   }
 
-  .hero-content h1 {
-    font-size: 2.2rem;
+  .hero-glass {
+    padding: 40px 30px;
+  }
+
+  .hero-glass h1 {
+    font-size: 2.3rem;
   }
 
   .section {
     grid-template-columns: 1fr;
-    padding: 60px 20px;
+    padding: 80px 20px;
   }
 
   .section.reverse {
@@ -242,9 +279,9 @@ import PageLayout from "../layouts/PageLayout.astro";
 </style>
 
 <script>
-  const elements = document.querySelectorAll('.fade-in');
+  const items = document.querySelectorAll('.fade-in');
 
-  const observer = new IntersectionObserver((entries) => {
+  const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
@@ -252,5 +289,5 @@ import PageLayout from "../layouts/PageLayout.astro";
     });
   }, { threshold: 0.2 });
 
-  elements.forEach(el => observer.observe(el));
+  items.forEach(el => observer.observe(el));
 </script>
