@@ -1,277 +1,206 @@
 ---
-import PageLayout from "../layouts/PageLayout.astro";
+// src/pages/index.astro
+const title = "Kesäloma Saimaalla – Tervetuloa nauttimaan!";
+const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto ja puhtaat vesistöt. Löydä parhaat lennot Saimaalle nyt!";
 ---
 
-<PageLayout
-  title="Matkailu Suomessa – reitit, luonto ja rauha"
-  description="Turistinen sivusto Suomesta: luontoreitit, kaupungit, blogi ja rauhallinen matkailu."
->
-
-  <!-- HERO PREMIUM -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <div class="hero-content">
-<span class="hero-label">Travel agency Finland</span>
-        <span><h1>Matkatoimisto Saimaan Liikenne OY</h1></span>
-        </p>
-     
-        <a href="/routes" class="btn-primary">Tutustu reitteihin</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- SECTION 1 -->
-  <section class="section fade-in">
-    <div class="image">
-      <img src="/images/routes/seasons.jpg" alt="Rauhallinen matkailu" />
-    </div>
-    <div class="text">
-      <h2>Rauhallinen matkailu</h2>
-      <p>
-      Suomi tarjoaa ainutlaatuisen mahdollisuuden matkustaa ilman kiirettä. 
-      Metsät, järvet ja pienet kaupungit luovat täydellisen ympäristön
-      levolliseen lomaan.
-
-      </p>
-    </div>
-  </section>
-
-  <!-- SECTION 2 -->
-  <section class="section reverse fade-in">
-    <div class="image">
-      <img src="/images/blog/winter-blog.jpg" alt="Reitit ja kohteet" />
-    </div>
-    <div class="text">
-      <h2>Reitit ja kohteet</h2>
-      <p>
-        Tutustu vaellusreitteihin, pyöräilyyn, luontopolkuihin ja kaupunkikävelyihin.
-        Jokainen reitti on valittu huolella matkailijoille, jotka arvostavat laatua ja 
-        rauhaa.
-
-      </p>
-    </div>
-  </section>
-
-   <!-- SECTION 3 -->
-  <section class="section fade-in">
-    <div class="image">
-      <img src="/images/blog/forest-blog.jpg" alt="Matkablogi" />
-    </div>
-    <div class="text">
-      <h2>Matkablogi</h2>
-      <p>
-        Blogissamme jaamme kokemuksia, vinkkejä ja tarinoita matkailusta Suomessa.
-      Löydät reittikuvauksia, valokuvia ja käytännön neuvoja.
-      </p>
-    </div>
-  </section>
-
-<section class="tp-search-section" style="padding: 4rem 1rem; background: white; text-align: center;">
-  <div class="container">
-    <h2 style="margin-bottom: 2rem; color: var(--dark-teal);">Etsi halvin lento tai hotelli</h2>
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
-    <script async src="https://tpwgt.com/content?currency=eur&trs=279173&shmarker=498238&show_hotels=true&powered_by=true&locale=fi&searchUrl=search.jetradar.com&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&origin=HEL&promo_id=7879&campaign_id=100" charset="utf-8"></script>
-    <div style="max-width: 900px; margin: 0 auto;">
-    </div>
-  </div>
-</section>
-
-  <!-- CTA -->
-  <section class="cta">
-    <h2>Ready for an unforgettable journey?</h2>
-    <a href="/contact" class="btn-primary">Contact Us</a>
-  </section>
-
-</PageLayout>
-
-<style>
-
-/* ================= HERO ================= */
-
-.hero {
-  position: relative;
-  height: 70vh;
-  background-image: url('/images/hero/hero-premium.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-overlay {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.4),
-    rgba(0,0,0,0.6)
-  );
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-content {
-  text-align: center;
-  color: white;
-  max-width: 800px;
-  padding: 20px;
-  animation: fadeHero 2.5s ease forwards;
-  opacity: 0;
-}
-
-.hero-content h1 {
-  font-size: 3.5rem;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
-
-.hero-content p {
-  font-size: 1.4rem;
-  margin-bottom: 40px;
-}
-
-.btn-primary {
-  padding: 14px 40px;
-  background: white;
-  color: #0fa3b1;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-
-.btn-primary:hover {
-  background: #0fa3b1;
-  color: white;
-  transform: translateY(-3px);
-}
-
-@keyframes fadeHero {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ================= SECTIONS ================= */
-.section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-  padding: 100px 10%;
-}
-
-.section.reverse {
-  direction: rtl;
-}
-
-.section.reverse .text {
-  direction: ltr;
-}
-
-.section img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-  transition: transform 0.4s ease;
-}
-
-.section img:hover {
-  transform: scale(1.03);
-}
-
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.section p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* ================= CTA ================= */
-
-.cta {
-  text-align: center;
-  padding: 120px 20px;
-  background: #0fa3b1;
-  color: white;
-}
-
-.cta h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-/* ================= ANIMATION ================= */
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 900px) {
-
-  .hero {
-    background-attachment: scroll;
-  }
-
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-
-  .section {
-    grid-template-columns: 1fr;
-    padding: 60px 20px;
-  }
-
-  .section.reverse {
-    direction: ltr;
-  }
-
-  .section img {
-    height: 300px;
-  }
-
-.travelpayouts-widget {
-  background: rgba(255,255,255,0.98);
-  border-radius: 16px;
-  padding: 1.5rem;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-  backdrop-filter: blur(8px);
-}
-
-.tp-search-section {
-  background: linear-gradient(to bottom, #20c5c9, #20c5c9);
-}
-</style>
-
-<script>
-  const elements = document.querySelectorAll('.fade-in');
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+    <!-- Google Fonts: современный скандинавский стиль -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    
+    <style is:global>
+      :root {
+        --color-primary: #2a6b5f;      /* глубокий зелёно-бирюзовый Саймаа */
+        --color-accent: #e67e22;       /* тёплый оранжевый закат */
+        --color-text: #1a2a2a;
+        --color-bg: #f8f9f7;
       }
-    });
-  }, { threshold: 0.2 });
 
-  elements.forEach(el => observer.observe(el));
-</script>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.6;
+      }
+
+      h1, h2 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+      }
+
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 700px;
+        background: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.55));
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 1.5rem;
+      }
+
+      .hero-content {
+        max-width: 900px;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.2rem, 8vw, 5.8rem);
+        margin-bottom: 1.2rem;
+        text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      }
+
+      .hero p {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+        margin-bottom: 2.5rem;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1.1rem 2.6rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        background: var(--color-accent);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.28s ease;
+        box-shadow: 0 8px 24px rgba(230,126,34,0.35);
+        cursor: pointer;
+      }
+
+      .cta-button:hover {
+        background: #d35400;
+        transform: translateY(-4px);
+        box-shadow: 0 14px 32px rgba(230,126,34,0.45);
+      }
+
+      .features {
+        padding: 6rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-12px);
+      }
+
+      .feature-img {
+        height: 240px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .feature-content {
+        padding: 2rem 1.8rem;
+      }
+
+      .feature-content h3 {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        color: var(--color-primary);
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 { font-size: 3.6rem; }
+        .hero p  { font-size: 1.4rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- Hero section – большая красивая фотография озера Саймаа -->
+      <section 
+        class="hero"
+        style="background-image: url('https://images.unsplash.com/photo-1620121681033-8b68cfbdcded?auto=format&fit=crop&q=85');"
+      >
+        <div class="hero-content">
+          <h1>Kesäloma Saimaalla odottaa sinua</h1>
+          <p>Järvenrantamökit, puhdas luonto, hiljaisuus ja auringonlaskut, jotka unohtuvat ikuisesti.</p>
+          
+          <a 
+            href="https://avia.saimaanliikenne.fi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button"
+          >
+            Etsi lennot Saimaalle nyt ✈️
+          </a>
+        </div>
+      </section>
+
+      <!-- Три карточки с преимуществами -->
+      <section class="features">
+        <div class="feature-card">
+          <div 
+            class="feature-img" 
+            style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=85');"
+          ></div>
+          <div class="feature-content">
+            <h3>Kauniit järvimaisemat</h3>
+            <p>Saimaa on Suomen suurin järvi – täydellinen paikka rentoutua ja nauttia luonnosta.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div 
+            class="feature-img" 
+            style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=85');"
+          ></div>
+          <div class="feature-content">
+            <h3>Mökkielämää rannalla</h3>
+            <p>Perinteinen suomalainen mökki järven rannalla – sauna, soutuvene ja täydellinen rauha.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div 
+            class="feature-img" 
+            style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019f?auto=format&fit=crop&q=85');"
+          ></div>
+          <div class="feature-content">
+            <h3>Auringonlaskut & hiljaisuus</h3>
+            <p>Koe unohtumattomat kesäyöt ja auringonlaskut puhtaan luonnon keskellä.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
