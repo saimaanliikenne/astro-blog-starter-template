@@ -201,6 +201,129 @@ const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto 
           </div>
         </div>
       </section>
-    </main>
-  </body>
+   </main>
+ <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3 class="footer-logo">Saimaa Kesä</h3>
+      <p>Unohtumattomat hetket Suomen suurimmalla järvellä</p>
+    </div>
+
+    <div class="footer-contacts">
+      <h4>Yhteystiedot</h4>
+      <ul>
+        <li>📧 <a href="mailto:info@saimaankesa.fi">info@saimaankesa.fi</a></li>
+        <li>📞 +358 50 123 4567</li>
+        <li>📍 Saimaanranta 12, 53850 Lappeenranta</li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Seuraa meitä</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://fi.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">Pinterest</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {new Date().getFullYear()} Saimaa Kesä. Kaikki oikeudet pidätetään.</p>
+  </div>
+</footer>
+
+<style is:global>
+  .footer {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2a6b5f 100%);
+    color: #e0f7fa;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+    border-top: 4px solid #30D5C8;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3rem;
+  }
+
+  .footer-brand .footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: #30D5C8;
+    margin-bottom: 0.8rem;
+  }
+
+  .footer-brand p {
+    font-size: 1.05rem;
+    opacity: 0.9;
+  }
+
+  .footer-contacts h4,
+  .footer-social h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+  }
+
+  .footer-contacts ul {
+    list-style: none;
+  }
+
+  .footer-contacts li {
+    margin-bottom: 0.9rem;
+    font-size: 1.05rem;
+  }
+
+  .footer-contacts a {
+    color: #b2f2ea;
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  .footer-contacts a:hover {
+    color: #30D5C8;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  .social-icons a {
+    color: #ffffff;
+    font-size: 1.4rem;
+    opacity: 0.85;
+    transition: all 0.25s;
+  }
+
+  .social-icons a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: #30D5C8;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.95rem;
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      padding: 3rem 1.5rem 2rem;
+    }
+    
+    .footer-container {
+      gap: 2.5rem;
+    }
+  }
+</style>
+</body>
 </html>
