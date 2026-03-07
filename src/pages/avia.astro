@@ -1,40 +1,206 @@
-<div class="cta-section">
-  <h2>Find the best flights now</h2>
-  <a 
-    href="https://avia.saimaanliikenne.fi"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="big-button"
-  >
-    Flight tickets
-  </a>
-</div>
+---
+// src/pages/index.astro
+const title = "Kesäloma Saimaalla – Tervetuloa nauttimaan!";
+const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto ja puhtaat vesistöt. Löydä parhaat lennot Saimaalle nyt!";
+---
 
-<style>
-  .cta-section {
-    text-align: center;
-    padding: 3rem 1rem;
-    background: linear-gradient(to right, #f0f9ff, #e0f2fe);
-    border-radius: 12px;
-    margin: 2rem 0;
-  }
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <!-- Google Fonts:  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    
+    <style is:global>
+      :root {
+        --color-primary: #2a6b5f;  
+        --color-accent: #e67e22; 
+        --color-text: #1a2a2a;
+        --color-bg: #f8f9f7;
+      }
 
-  .big-button {
-    display: inline-block;
-    padding: 1.2rem 2.5rem;
-    font-size: 1.25rem;
-    background-color: #10b981;  
-    color: white;
-    font-weight: bold;
-    border-radius: 50px;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: all 0.3s;
-  }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  .big-button:hover {
-    background-color: #059669;
-    transform: scale(1.05);
-    box-shadow: 0 10px 15px rgba(0,0,0,0.15);
-  }
-</style>
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.6;
+      }
+
+      h1, h2 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+      }
+
+      .hero {
+        position: relative;
+        height: 100vh;
+        min-height: 700px;
+        background: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.55));
+        background-size: cover;
+        background-position: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 1.5rem;
+      }
+
+      .hero-content {
+        max-width: 900px;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.2rem, 8vw, 5.8rem);
+        margin-bottom: 1.2rem;
+        text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      }
+
+      .hero p {
+        font-size: clamp(1.3rem, 4vw, 1.8rem);
+        margin-bottom: 2.5rem;
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      }
+
+      .cta-button {
+        display: inline-block;
+        padding: 1.1rem 2.6rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        background: var(--color-accent);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        text-decoration: none;
+        transition: all 0.28s ease;
+        box-shadow: 0 8px 24px rgba(230,126,34,0.35);
+        cursor: pointer;
+      }
+
+      .cta-button:hover {
+        background: #d35400;
+        transform: translateY(-4px);
+        box-shadow: 0 14px 32px rgba(230,126,34,0.45);
+      }
+
+      .features {
+        padding: 6rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 3rem;
+      }
+
+      .feature-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease;
+      }
+
+      .feature-card:hover {
+        transform: translateY(-12px);
+      }
+
+      .feature-img {
+        height: 240px;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .feature-content {
+        padding: 2rem 1.8rem;
+      }
+
+      .feature-content h3 {
+        font-size: 1.7rem;
+        margin-bottom: 1rem;
+        color: var(--color-primary);
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 { font-size: 3.6rem; }
+        .hero p  { font-size: 1.4rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <!-- Hero section –  -->
+      <section 
+        class="hero"
+        style="background-image: url('https://images.unsplash.com/photo-1620121681033-8b68cfbdcded?auto=format&fit=crop&q=85');"
+      >
+        <div class="hero-content">
+          <h1>Kesäloma Saimaalla odottaa sinua</h1>
+          <p>Järvenrantamökit, puhdas luonto, hiljaisuus ja auringonlaskut, jotka unohtuvat ikuisesti.</p>
+          
+          <a 
+            href="https://avia.saimaanliikenne.fi"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="cta-button"
+          >
+            Etsi lennot Saimaalle nyt ✈️
+          </a>
+        </div>
+      </section>
+
+     
+      <section class="features">
+        <div class="feature-card">
+          <div 
+            class="feature-img" 
+            style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=85');"
+          ></div>
+          <div class="feature-content">
+            <h3>Kauniit järvimaisemat</h3>
+            <p>Saimaa on Suomen suurin järvi – täydellinen paikka rentoutua ja nauttia luonnosta.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div 
+            class="feature-img" 
+            style="background-image: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&q=85');"
+          ></div>
+          <div class="feature-content">
+            <h3>Mökkielämää rannalla</h3>
+            <p>Perinteinen suomalainen mökki järven rannalla – sauna, soutuvene ja täydellinen rauha.</p>
+          </div>
+        </div>
+
+        <div class="feature-card">
+          <div 
+            class="feature-img" 
+            style="background-image: url('https://images.unsplash.com/photo-1470770841072-f978cf4d019f?auto=format&fit=crop&q=85');"
+          ></div>
+          <div class="feature-content">
+            <h3>Auringonlaskut & hiljaisuus</h3>
+            <p>Koe unohtumattomat kesäyöt ja auringonlaskut puhtaan luonnon keskellä.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
