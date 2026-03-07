@@ -152,14 +152,15 @@ const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto 
         style="background-image: url('/images/hero/hero-premium.jpg');"
       >
         <div class="hero-content">
-          <h1>Kesäloma Saimaalla odottaa sinua</h1>
-          <p>Järvenrantamökit, puhdas luonto, hiljaisuus ja auringonlaskut, jotka unohtuvat ikuisesti.</p>
-          
-          <a 
-            href="https://avia.saimaanliikenne.fi"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="cta-button"
+    <h1 class="animate-fade-up">Kesäloma Saimaalla odottaa sinua</h1>
+    <p class="animate-fade-up" style="animation-delay: 0.3s;">Järvenrantamökit, puhdas luonto, hiljaisuus ja auringonlaskut, jotka unohtuvat ikuisesti.</p>
+    
+    <a 
+      href="https://avia.saimaanliikenne.fi"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="cta-button animate-fade-up"
+      style="animation-delay: 0.6s;"
           >
             Etsi lennot nyt ✈️
           </a>
@@ -234,6 +235,29 @@ const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto 
 </footer>
 
 <style is:global>
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 1s ease-out forwards;
+}
+
+/* Уважение к настройкам reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
   .footer {
     background: linear-gradient(135deg, #1e3a5f 0%, #2a6b5f 100%);
     color: #e0f7fa;
