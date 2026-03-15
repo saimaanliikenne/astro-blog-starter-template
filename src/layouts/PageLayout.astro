@@ -7,7 +7,7 @@
 
 import { ViewTransitions } from 'astro:transitions'; // плавные переходы между страницами (Astro 4+)
 
-const { title = 'Matkatoimisto Saimaan Liikenne', description = 'Unohtumattomat kesälomat Saimaalla' } = Astro.props;
+const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattomat kesälomat Saimaalla' } = Astro.props;
 const currentYear = new Date().getFullYear();
 ---
 
@@ -17,7 +17,7 @@ const currentYear = new Date().getFullYear();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="author" content="Saimaa Kesä" />
+    <meta name="author" content="Matkatoimisto Saimaan Liikenne" />
 
     <!-- Open Graph / Social sharing -->
     <meta property="og:title" content={title} />
@@ -91,6 +91,7 @@ const currentYear = new Date().getFullYear();
   <body class="bg-[hsl(var(--color-bg))] text-[hsl(var(--color-text))] transition-colors duration-500">
     <!-- Skip link для доступности -->
     <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:shadow-lg">
+      Siirry pääsisältöön
     </a>
 
     <!-- Header / Navigation -->
@@ -98,7 +99,30 @@ const currentYear = new Date().getFullYear();
       <div class="container flex items-center justify-between h-16 md:h-20">
         <!-- Logo -->
         <a href="/" class="text-2xl md:text-3xl font-bold text-[hsl(var(--color-accent))] tracking-tight">
-        
+          Saimaa Kesä
+        </a>
+
+        <!-- Navigation -->
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="/" class="hover:text-[hsl(var(--color-accent))] font-medium">Etusivu</a>
+          <a href="/blog" class="hover:text-[hsl(var(--color-accent))] font-medium">Artikkelit</a>
+          <a href="/lappeenranta" class="hover:text-[hsl(var(--color-accent))] font-medium">Lappeenranta</a>
+          <a href="/yhteystiedot" class="hover:text-[hsl(var(--color-accent))] font-medium">Yhteystiedot</a>
+        </nav>
+
+        <!-- Dark mode toggle + mobile menu button -->
+        <div class="flex items-center gap-4">
+          <!-- Dark mode (можно сделать через JS или astro-integration) -->
+          <button id="theme-toggle" aria-label="Vaihda teema" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
+            <span class="sr-only">Teema</span>
+            <!-- Иконки можно заменить на lucide-react или heroicons -->
+            🌙 / ☀️
+          </button>
+
+          <!-- Mobile menu button -->
+          <button class="md:hidden p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800" aria-label="Avaa valikko">
+            ☰
+          </button>
         </div>
       </div>
     </header>
@@ -112,6 +136,7 @@ const currentYear = new Date().getFullYear();
     <footer class="bg-gradient-to-t from-[hsl(var(--color-primary))] to-[hsl(calc(var(--color-primary)+20))] text-white py-12">
       <div class="container text-center">
         <p class="text-lg mb-4">
+          Unohtumattomat hetket Suomen suurimmalla järvellä
         </p>
 
         <div class="flex justify-center gap-6 mb-6">
