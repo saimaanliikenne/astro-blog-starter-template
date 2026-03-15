@@ -102,23 +102,6 @@ const currentYear = new Date().getFullYear();
           Saimaa Kesä
         </a>
 
-        <!-- Navigation -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="/" class="hover:text-[hsl(var(--color-accent))] font-medium">Etusivu</a>
-          <a href="/blog" class="hover:text-[hsl(var(--color-accent))] font-medium">Artikkelit</a>
-          <a href="/lappeenranta" class="hover:text-[hsl(var(--color-accent))] font-medium">Lappeenranta</a>
-          <a href="/yhteystiedot" class="hover:text-[hsl(var(--color-accent))] font-medium">Yhteystiedot</a>
-        </nav>
-
-        <!-- Dark mode toggle + mobile menu button -->
-        <div class="flex items-center gap-4">
-          <!-- Dark mode (можно сделать через JS или astro-integration) -->
-          <button id="theme-toggle" aria-label="Vaihda teema" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
-            <span class="sr-only">Teema</span>
-            <!-- Иконки можно заменить на lucide-react или heroicons -->
-            🌙 / ☀️
-          </button>
-
           <!-- Mobile menu button -->
           <button class="md:hidden p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800" aria-label="Avaa valikko">
             ☰
@@ -136,7 +119,6 @@ const currentYear = new Date().getFullYear();
     <footer class="bg-gradient-to-t from-[hsl(var(--color-primary))] to-[hsl(calc(var(--color-primary)+20))] text-white py-12">
       <div class="container text-center">
         <p class="text-lg mb-4">
-          Unohtumattomat hetket Suomen suurimmalla järvellä
         </p>
 
         <div class="flex justify-center gap-6 mb-6">
