@@ -95,36 +95,13 @@ const currentYear = new Date().getFullYear();
     </a>
 
     <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-white/70 dark:bg-slate-900/70 border-b border-slate-200/50 dark:border-slate-800/50 transition-colors">
-      <div class="container flex items-center justify-between h-16 md:h-20">
-        <!-- Logo -->
-        <a href="/" class="text-2xl md:text-3xl font-bold text-[hsl(var(--color-accent))] tracking-tight">
-          Matkatoimisto Saimaan Liikenne OY
-        </a>
+   ---
+import Navbar from '@/components/Navbar.astro';
+---
 
-        <!-- Navigation -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a href="/" class="hover:text-[hsl(var(--color-accent))] font-medium">Etusivu</a>
-          <a href="/blog" class="hover:text-[hsl(var(--color-accent))] font-medium">Artikkelit</a>
-          <a href="/lappeenranta" class="hover:text-[hsl(var(--color-accent))] font-medium">Lappeenranta</a>
-          <a href="/yhteystiedot" class="hover:text-[hsl(var(--color-accent))] font-medium">Yhteystiedot</a>
-        </nav>
+<Navbar currentPath={Astro.url.pathname} />
 
-        <!-- Dark mode toggle + mobile menu button -->
-        <div class="flex items-center gap-4">
-          <!-- Dark mode (можно сделать через JS или astro-integration) -->
-          <button id="theme-toggle" aria-label="Vaihda teema" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800">
-            <span class="sr-only">Teema</span>
-            <!-- Иконки можно заменить на lucide-react или heroicons -->
-            🌙 / ☀️
-          </button>
-
-          <!-- Mobile menu button -->
-          <button class="md:hidden p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800" aria-label="Avaa valikko">
-            ☰
-          </button>
-        </div>
-      </div>
+<!-- остальной контент -->
     </header>
 
     <!-- Main content -->
