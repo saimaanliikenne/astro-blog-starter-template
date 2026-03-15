@@ -177,6 +177,7 @@ const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto 
           <div class="feature-content">
             <h3>Kauniit järvimaisemat</h3>
             <p>Saimaa on Suomen suurin järvi – täydellinen paikka rentoutua ja nauttia luonnosta.</p>
+          <a href="/jarvimaisemat" class="read-more-btn">Lue lisää →</a>
           </div>
         </div>
 
@@ -188,6 +189,7 @@ const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto 
           <div class="feature-content">
             <h3>Mökkielämää rannalla</h3>
             <p>Perinteinen suomalainen mökki järven rannalla – sauna, soutuvene ja täydellinen rauha.</p>
+          <a href="/jarvimaisemat" class="read-more-btn">Lue lisää →</a>
           </div>
         </div>
 
@@ -199,6 +201,7 @@ const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto 
           <div class="feature-content">
             <h3>Auringonlaskut & hiljaisuus</h3>
             <p>Koe unohtumattomat kesäyöt ja auringonlaskut puhtaan luonnon keskellä.</p>
+          <a href="/jarvimaisemat" class="read-more-btn">Lue lisää →</a>
           </div>
         </div>
       </section>
@@ -256,6 +259,31 @@ const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto 
     animation: none;
     opacity: 1;
     transform: none;
+ }
+}
+.read-more-btn {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.6rem;
+  background-color: #30D5C8;           /* бирюзовый */
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(48, 213, 200, 0.25);
+}
+
+.read-more-btn:hover {
+  background-color: #26b8ac;           /* темнее при наведении */
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(48, 213, 200, 0.4);
+}
+
+.read-more-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(48, 213, 200, 0.25);
   }
 }
   .footer {
