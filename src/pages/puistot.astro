@@ -176,19 +176,6 @@ import PageLayout from '../layouts/PageLayout.astro';
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-.animate-fade-up {
-  animation: fade-up 1s ease-out forwards;
-}
-
-/* Уважение к настройкам reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-up {
-    animation: none;
-    opacity: 1;
-    transform: none;
  }
 }
 .read-more-btn {
@@ -217,5 +204,3 @@ import PageLayout from '../layouts/PageLayout.astro';
    }
   }
 </style>
-</body>
-</html>
