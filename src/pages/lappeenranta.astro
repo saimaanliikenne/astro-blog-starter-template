@@ -1,23 +1,27 @@
 ---
-// src/pages/lappeenranta.astro
+import Layout from '../layouts/Layout.astro';  // ← самый распространённый вариант в astro-blog-starter-template и подобных
+// Если в твоём шаблоне layout называется иначе (BaseLayout.astro, MainLayout.astro, BlogLayout.astro и т.д.) — измени путь и имя
+// Если layout вообще не используется — удали import и обёртку <Layout>...</Layout>
+
 const title = "Lappeenranta – Saimaan rannalla sijaitseva kesäkaupunki";
-const description = "Kaakkois-Suomen suosituin matkailukaupunki: satama, hiekkarannat, linnoitus ja Saimaan risteilyt.";
+const description = "Kaakkois-Suomen suosituin matkailukaupunki satamassa, hiekkarannoilla ja historiallisella linnoituksella.";
 ---
 
-<Layout title={title}>
+<Layout title={title} description={description}>
   <main class="lappeenranta-page">
-    <section class="hero-lappeenranta">
+    <!-- Hero-секция для атмосферы -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
       <div class="hero-content">
         <h1>Lappeenranta</h1>
         <p class="subtitle">– Saimaan rannalla sijaitseva kesäkaupunki</p>
       </div>
     </section>
 
-    <section class="content">
+    <!-- Основной контент -->
+    <section class="content-section">
       <div class="container">
-        <h2>Tervetuloa Lappeenrantaan</h2>
-        
-        <p>
+        <p class="intro">
           Lappeenranta on yksi Kaakkois-Suomen suosituimmista matkailukaupungeista. 
           Kaupunki tunnetaan kauniista satamastaan, hiekkarannoistaan ja historiallisesta 
           Lappeenrannan linnoitus-alueesta.
@@ -29,31 +33,32 @@ const description = "Kaakkois-Suomen suosituin matkailukaupunki: satama, hiekkar
           Alueella voi myös vuokrata polkupyöriä tai veneitä ja tutkia järvimaisemia omassa tahdissa.
         </p>
 
+        <!-- Дополнительный блок с выделенными пунктами для красоты -->
         <div class="highlights">
-          <div class="highlight-item">
-            <h3>Satama & risteilyt</h3>
-            <p>Kesäinen satama täynnä elämää – risteilyt Saimaalle, jäätelökioskit ja tunnelma.</p>
+          <div class="highlight">
+            <h3>Satama ja risteilyt</h3>
+            <p>Vilkas kesäkeskus, josta lähtevät Saimaan risteilyt ja tunnelmalliset kävelyt.</p>
           </div>
-          
-          <div class="highlight-item">
+          <div class="highlight">
             <h3>Linnoitusalue</h3>
-            <p>Historiallinen linnoitus museoineen, kahviloineen ja taide-elämyksineen.</p>
+            <p>Historiaa, museoita, gallerioita ja tunnelmallisia kahviloita vanhassa ympäristössä.</p>
           </div>
-          
-          <div class="highlight-item">
-            <h3>Hiekkarannat</h3>
-            <p>Kaupungin uimarannat kutsuvat rentoutumaan ja nauttimaan kesäpäivästä.</p>
+          <div class="highlight">
+            <h3>Hiekkarannat ja ulkoilu</h3>
+            <p>Rentoutumista rannalla sekä pyöräilyä ja veneilyä järven maisemissa.</p>
           </div>
         </div>
 
-        <div class="cta-section">
+        <!-- Кнопка возврата или CTA -->
+        <div class="back-cta">
+          <a href="/" class="back-button">Takaisin etusivulle</a>
           <a 
             href="https://avia.saimaanliikenne.fi" 
             target="_blank" 
             rel="noopener noreferrer" 
             class="cta-button"
           >
-            Etsi lennot Lappeenrantaan nyt ✈️
+            Etsi lennot Lappeenrantaan ✈️
           </a>
         </div>
       </div>
@@ -61,16 +66,20 @@ const description = "Kaakkois-Suomen suosituin matkailukaupunki: satama, hiekkar
   </main>
 </Layout>
 
-<style is:global>
+<style>
   .lappeenranta-page {
-    background: #f8f9f7;
+    background-color: #f8f9f7;
   }
 
-  .hero-lappeenranta {
-    height: 60vh;
-    min-height: 500px;
-    background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
-                url('https://images.unsplash.com/photo-1580130718646-9f694209b207?auto=format&fit=crop&q=85&w=1600') center/cover no-repeat;
+  .hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    background-image: 
+      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
+      url('https://images.unsplash.com/photo-1580130718646-9f694209b207?auto=format&fit=crop&q=85&w=1600');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,98 +87,115 @@ const description = "Kaakkois-Suomen suosituin matkailukaupunki: satama, hiekkar
     color: white;
   }
 
-  .hero-content h1 {
-    font-size: clamp(3.5rem, 8vw, 6rem);
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(42, 107, 95, 0.25); /* лёгкий бирюзовый оверлей */
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
     margin-bottom: 0.5rem;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    color: #30D5C8; /* бирюзовый заголовок */
   }
 
   .subtitle {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: clamp(1.4rem, 4vw, 2rem);
     font-weight: 400;
     opacity: 0.95;
   }
 
-  .content {
-    padding: 5rem 2rem;
+  .content-section {
+    padding: 4rem 2rem;
   }
 
   .container {
-    max-width: 1100px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 
-  .content h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8rem;
-    color: #2a6b5f;
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
-
-  .content p {
-    font-size: 1.25rem;
+  .intro {
+    font-size: 1.35rem;
     line-height: 1.8;
-    margin-bottom: 1.8rem;
-    color: #333;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    color: #2a6b5f;
   }
 
   .highlights {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    margin: 4rem 0;
+    margin: 3rem 0;
   }
 
-  .highlight-item {
+  .highlight {
     background: white;
-    padding: 2rem;
+    padding: 1.8rem;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     transition: transform 0.3s ease;
   }
 
-  .highlight-item:hover {
-    transform: translateY(-8px);
+  .highlight:hover {
+    transform: translateY(-6px);
   }
 
-  .highlight-item h3 {
+  .highlight h3 {
     color: #30D5C8;
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
   }
 
-  .cta-section {
+  .back-cta {
     text-align: center;
     margin-top: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
   }
 
+  .back-button,
   .cta-button {
     display: inline-block;
-    padding: 1rem 2.5rem;
-    font-size: 1.3rem;
-    background: #30D5C8;
-    color: white;
+    padding: 0.9rem 2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 24px rgba(48, 213, 200, 0.35);
+  }
+
+  .back-button {
+    background: #e0e0e0;
+    color: #333;
+  }
+
+  .back-button:hover {
+    background: #d0d0d0;
+  }
+
+  .cta-button {
+    background: #30D5C8;
+    color: white;
+    box-shadow: 0 6px 18px rgba(48, 213, 200, 0.3);
   }
 
   .cta-button:hover {
     background: #26b8ac;
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(48, 213, 200, 0.45);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(48, 213, 200, 0.4);
   }
 
   @media (max-width: 768px) {
-    .hero-lappeenranta { height: 50vh; min-height: 400px; }
-    .content { padding: 3rem 1.5rem; }
-    .content h2 { font-size: 2.2rem; }
+    .content-section { padding: 3rem 1.5rem; }
+    .hero { height: 45vh; min-height: 350px; }
   }
 </style>
