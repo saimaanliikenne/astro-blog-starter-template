@@ -1,4 +1,45 @@
 ---
+// src/layouts/PageLayout.astro
+import Navigation from '../components/Navigation.astro';
+
+const { title = "Matkailu Etelä-Karjala" } = Astro.props;
+---
+
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  
+  <body>
+    <Navigation currentPage={Astro.url.pathname.split('/')[1] || 'home'} />
+    
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --turquoise: #00b7b7;
+    --dark-teal: #006666;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    line-height: 1.6;
+    color: #222;
+  }
+</style>---
 /**
  * PageLayout.astro
  * Современный базовый layout для astro-blog-starter-template
