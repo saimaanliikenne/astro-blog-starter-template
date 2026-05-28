@@ -7,7 +7,7 @@ const { currentPage = 'home' } = Astro.props;
   <div class="nav-container">
     <!-- Логотип -->
     <a href="/" class="logo">
-      Etelä-Karjala
+      Matkatoimisto Saimaan Liikenne OY
     </a>
 
     <!-- Десктопное меню -->
@@ -15,7 +15,7 @@ const { currentPage = 'home' } = Astro.props;
       <a href="/" class={currentPage === 'home' ? 'active' : ''}>Etusivu</a>
       <a href="/lappeenranta" class={currentPage === 'lappeenranta' ? 'active' : ''}>Lappeenranta</a>
       <a href="/imatra" class={currentPage === 'imatra' ? 'active' : ''}>Imatra</a>
-      <a href="/retkeily" class={currentPage === 'retkeily' ? 'active' : ''}>Kansallispuistot & Retkeily</a>
+      <a href="/puistot" class={currentPage === 'retkeily' ? 'active' : ''}>Kansallispuistot & Retkeily</a>
     </div>
 
     <!-- Мобильное меню (гамбургер) -->
@@ -31,7 +31,7 @@ const { currentPage = 'home' } = Astro.props;
     <a href="/" class={currentPage === 'home' ? 'active' : ''}>Etusivu</a>
     <a href="/lappeenranta" class={currentPage === 'lappeenranta' ? 'active' : ''}>Lappeenranta</a>
     <a href="/imatra" class={currentPage === 'imatra' ? 'active' : ''}>Imatra</a>
-    <a href="/retkeily" class={currentPage === 'retkeily' ? 'active' : ''}>Kansallispuistot & Retkeily</a>
+    <a href="/puistot" class={currentPage === 'retkeily' ? 'active' : ''}>Kansallispuistot & Retkeily</a>
   </div>
 </nav>
 
