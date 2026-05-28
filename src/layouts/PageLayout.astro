@@ -1,145 +1,252 @@
 ---
-// src/components/Navigation.astro
-const { currentPath = '/' } = Astro.props;
+/**
+ * PageLayout.astro
+ * Современный базовый layout для astro-blog-starter-template
+ * 2026 стиль: Tailwind v4 + dark mode + smooth transitions
+ */
+
+import { ViewTransitions } from 'astro:transitions'; // плавные переходы между страницами (Astro 4+)
+
+const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattomat kesälomat Saimaalla' } = Astro.props;
+const currentYear = new Date().getFullYear();
 ---
 
-<nav class="main-nav">
-  <div class="nav-container">
-    <a href="/" class="logo">Saimaan Liikenne</a>
+<!doctype html>
+<html lang="fi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Matkatoimisto Saimaan Liikenne" />
 
-    <div class="nav-links">
-      <a href="/" class={currentPath === '/' ? 'active' : ''}>Etusivu</a>
-      <a href="/lappeenranta" class={currentPath === '/lappeenranta' ? 'active' : ''}>Lappeenranta</a>
-      <a href="/imatra" class={currentPath === '/imatra' ? 'active' : ''}>Imatra</a>
-      <a href="/retkeily" class={currentPath === '/retkeily' ? 'active' : ''}>Kansallispuistot & Retkeily</a>
+    <!-- Open Graph / Social sharing -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content="/og-image.jpg" /> <!-- добавь своё og-изображение в public/ -->
+
+    <!-- Favicon и PWA basics -->
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Google Fonts: современная комбинация -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+    <title>{title}</title>
+
+    <!-- View Transitions для плавной навигации -->
+    <ViewTransitions fallback="animate" />
+
+    <!-- Tailwind + custom styles -->
+    <style is:global>
+      :root {
+        --color-primary: 42 107 95;     /* глубокий бирюзово-зелёный для Саймаа */
+        --color-accent: 48 213 200;     /* яркий бирюзовый #30D5C8 */
+        --color-bg: 248 249 247;        /* светлый фон #f8f9f7 */
+        --color-text: 26 42 42;         /* тёмный текст */
+      }
+
+      [data-theme="dark"] {
+        --color-bg: 15 23 42;           /* slate-900 */
+        --color-text: 226 232 240;      /* slate-200 */
+      }
+
+      html {
+        @apply bg-[hsl(var(--color-bg))] text-[hsl(var(--color-text))];
+      }
+
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        @apply min-h-screen antialiased;
+      }
+
+      h1, h2, h3 {
+        font-family: 'Playfair Display', serif;
+        @apply font-semibold tracking-tight;
+      }
+
+      /* Плавные hover и focus */
+      a, button {
+        @apply transition-all duration-300 ease-out;
+      }
+
+      a:hover, button:hover {
+        @apply scale-[1.02];
+      }
+
+      /* Кастомные утилиты */
+      .btn-primary {
+        @apply px-6 py-3 rounded-full font-medium text-white bg-[hsl(var(--color-accent))] hover:bg-[hsl(calc(var(--color-accent)-30))] shadow-lg hover:shadow-xl;
+      }
+
+      .container {
+        @apply max-w-7xl mx-auto px-6 lg:px-8;
+      }
+    </style>
+  </head>
+
+  <body class="bg-[hsl(var(--color-bg))] text-[hsl(var(--color-text))] transition-colors duration-500">
+    <!-- Skip link для доступности -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded focus:shadow-lg">
+      Siirry pääsisältöön
+    </a>
+
+    <!-- Header>
+---
+import Navbar from '@/components/Navbar.astro';
+---
+
+<Navbar currentPath={Astro.url.pathname} />
+    </header>
+
+    <!-- Main content -->
+    <main id="main-content" class="pt-20 md:pt-24 pb-16">
+      <slot />  <!-- Здесь будет контент страниц -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h3 class="footer-logo">Matkatoimisto Saimaan Liikenne OY</h3>
+      <p>Unohtumattomat hetket Suomen suurimmalla järvellä</p>
     </div>
 
-    <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Avaa valikko">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="footer-contacts">
+      <h4>Yhteystiedot</h4>
+      <ul>
+        <li>📧 <a href="mailto:info@saimaankesa.fi">info@saimaanliikenne.fi</a></li>
+        <li>📞 +358 50 556 8889</li>
+        <li>📍 Kauppakatu 40 B 27, 53100 Lappeenranta</li>
+      </ul>
+    </div>
+
+    <div class="footer-social">
+      <h4>Seuraa meitä</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+        <a href="https://fi.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">Pinterest</a>
+      </div>
+    </div>
   </div>
 
-  <!-- Мобильное меню -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="/" class={currentPath === '/' ? 'active' : ''}>Etusivu</a>
-    <a href="/lappeenranta" class={currentPath === '/lappeenranta' ? 'active' : ''}>Lappeenranta</a>
-    <a href="/imatra" class={currentPath === '/imatra' ? 'active' : ''}>Imatra</a>
-    <a href="/retkeily" class={currentPath === '/retkeily' ? 'active' : ''}>Kansallispuistot & Retkeily</a>
+  <div class="footer-bottom">
+    <p>© {new Date().getFullYear()} Matkatoimisto Saimaan Liikenne OY. Kaikki oikeudet pidätetään.</p>
   </div>
-</nav>
+</footer>
 
-<style>
-  .main-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(48, 213, 200, 0.2);
+<style is:global>
+  .footer {
+    background: linear-gradient(135deg, #1e3a5f 0%, #2a6b5f 100%);
+    color: #e0f7fa;
+    padding: 4rem 2rem 2rem;
+    margin-top: 4rem;
+    border-top: 4px solid #30D5C8;
   }
 
-  .nav-container {
-    max-width: 1280px;
+  .footer-container {
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 85px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 3rem;
   }
 
-  .logo {
+  .footer-brand .footer-logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.65rem;
-    font-weight: 700;
-    color: hsl(var(--color-primary));
-    text-decoration: none;
+    font-size: 2.2rem;
+    color: #30D5C8;
+    margin-bottom: 0.8rem;
   }
 
-  .nav-links {
+  .footer-brand p {
+    font-size: 1.05rem;
+    opacity: 0.9;
+  }
+
+  .footer-contacts h4,
+  .footer-social h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+  }
+
+  .footer-contacts ul {
+    list-style: none;
+  }
+
+  .footer-contacts li {
+    margin-bottom: 0.9rem;
+    font-size: 1.05rem;
+  }
+
+  .footer-contacts a {
+    color: #b2f2ea;
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  .footer-contacts a:hover {
+    color: #30D5C8;
+  }
+
+  .social-icons {
     display: flex;
-    gap: 2.25rem;
-    font-weight: 500;
+    gap: 1.5rem;
   }
 
-  .nav-links a {
-    color: hsl(var(--color-text));
-    text-decoration: none;
-    transition: color 0.3s;
+  .social-icons a {
+    color: #ffffff;
+    font-size: 1.4rem;
+    opacity: 0.85;
+    transition: all 0.25s;
   }
 
-  .nav-links a:hover,
-  .nav-links a.active {
-    color: hsl(var(--color-accent));
+  .social-icons a:hover {
+    opacity: 1;
+    transform: translateY(-3px);
+    color: #30D5C8;
   }
 
-  .nav-links a.active {
-    position: relative;
+  .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    font-size: 0.95rem;
+    opacity: 0.8;
   }
 
-  .nav-links a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -6px;
-    left: 0;
-    width: 100%;
-    height: 2.5px;
-    background: hsl(var(--color-accent));
-    border-radius: 2px;
-  }
-
-  .mobile-menu-btn {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  .mobile-menu-btn span {
-    width: 26px;
-    height: 3px;
-    background: hsl(var(--color-primary));
-    transition: 0.3s;
-  }
-
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    background: white;
-    padding: 1.5rem;
-    border-top: 1px solid #eee;
-  }
-
-  .mobile-menu a {
-    padding: 1rem 0;
-    font-size: 1.1rem;
-    border-bottom: 1px solid #f1f1f1;
-  }
-
-  @media (max-width: 868px) {
-    .nav-links { display: none; }
-    .mobile-menu-btn { display: flex; }
-    .mobile-menu { display: flex; }
+  @media (max-width: 768px) {
+    .footer {
+      padding: 3rem 1.5rem 2rem;
+    }
+    
+    .footer-container {
+      gap: 2.5rem;
+    }
   }
 </style>
 
-<script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
+    <!-- Простой JS для dark mode toggle (можно вынести в отдельный .js) -->
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+      if (toggle) {
+        toggle.addEventListener('click', () => {
+          document.documentElement.dataset.theme = 
+            document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+          localStorage.setItem('theme', document.documentElement.dataset.theme);
+        });
 
-  btn?.addEventListener('click', () => {
-    menu.classList.toggle('active');
-    const spans = btn.querySelectorAll('span');
-    if (menu.classList.contains('active')) {
-      spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-      spans[1].style.opacity = '0';
-      spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
-    } else {
-      spans[0].style.transform = 'none';
-      spans[1].style.opacity = '1';
-      spans[2].style.transform = 'none';
-    }
-  });
-</script>
+        // Загрузка сохранённой темы
+        const saved = localStorage.getItem('theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.dataset.theme = saved;
+      }
+    </script>
+  </body>
+</html>
