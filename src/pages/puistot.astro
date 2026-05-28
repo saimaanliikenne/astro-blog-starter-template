@@ -1,4 +1,299 @@
 ---
+// src/pages/retkeily.astro
 import PageLayout from '../layouts/PageLayout.astro';
 ---
+
+<PageLayout title="Kansallispuistot & Retkeily | Etelä-Karjala">
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Kansallispuistot ja retkeily</h1>
+      <p class="lead">Etelä-Karjalan upeimmat luontokohteet ja retkeilyreitit</p>
+    </div>
+  </div>
+
+  <section class="section intro">
+    <div class="container">
+      <h2>Löydä Etelä-Karjalan luonnon helmet</h2>
+      <p class="intro-text">
+        Etelä-Karjala tarjoaa monipuolisia retkeilymahdollisuuksia aivan Suomen kaakkoiskulmassa. 
+        Voit kokea koskien voimaa, karjalaista metsäluontoa ja geologisia ihmeitä. 
+        Täältä löydät sekä helppoja luontopolkuja että vaativampia vaelluksia.
+      </p>
+    </div>
+  </section>
+
+  <section class="section destinations">
+    <div class="container">
+      <h2>Suositellut kohteet</h2>
+      <div class="cards-grid">
+
+        <!-- 1. Imatrankoski -->
+        <div class="destination-card">
+          <img src="/images/blog/imatrankoski.jpg" alt="Imatrankoski">
+          <div class="card-body">
+            <h3>Imatrankoski & Koski-Lahti</h3>
+            <p class="short-desc">Etelä-Karjalan tunnetuin luonnonnähtävyys</p>
+            
+            <div class="info">
+              <span class="difficulty easy">Helppo</span>
+              <span class="distance">2–8 km reitit</span>
+            </div>
+
+            <p class="description">
+              Imatrankoski on yksi Suomen suosituimmista luontokohteista. Kesällä voit seurata koskinäytöstä, 
+              kävellä kosken reunalla kulkevaa polkua ja nauttia Koski-Lahden kauniista maisemista. Alueella on useita 
+              esteettömiä reittejä ja pitkospuita.
+            </p>
+
+            <div class="accessibility">
+              <strong>Saavutettavuus:</strong> Osittain esteetön. Kosken näköalapaikalle pääsee pyörätuolilla. 
+              Pysäköinti ja WC lähellä.
+            </div>
+
+            <a href="#" class="read-more">Lue lisää ja reittikartat →</a>
+          </div>
+        </div>
+
+        <!-- 2. Ruunaa -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80" alt="Ruunaa">
+          <div class="card-body">
+            <h3>Ruunaa Retkeilyalue</h3>
+            <p class="short-desc">Karjalan erämaan portti</p>
+            
+            <div class="info">
+              <span class="difficulty medium">Keskivaikea</span>
+              <span class="distance">5–25 km</span>
+            </div>
+
+            <p class="description">
+              Ruunaa on Etelä-Karjalan suurin retkeilyalue. Alueella on upeita koskia, vanhaa metsää ja lukuisia 
+              retkeilyreittejä. Parhaita kohteita ovat esimerkiksi Kummakivi, Naarajärvi ja Ruunaan kosket.
+            </p>
+
+            <div class="accessibility">
+              <strong>Saavutettavuus:</strong> Osittain vaikeakulkuinen. Joitain esteettömiä osuuksia. 
+              Suositellaan hyviä kenkiä.
+            </div>
+
+            <a href="#" class="read-more">Lue lisää ja reittikartat →</a>
+          </div>
+        </div>
+
+        <!-- 3. Kummakivi -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1511497584788-8767609f6f3d?auto=format&fit=crop&q=80" alt="Kummakivi">
+          <div class="card-body">
+            <h3>Kummakivi</h3>
+            <p class="short-desc">Geologinen ihme</p>
+            
+            <div class="info">
+              <span class="difficulty easy">Helppo</span>
+              <span class="distance">1,5 km</span>
+            </div>
+
+            <p class="description">
+              Kummakivi on 7-metrinen jättimäinen kivenlohkare, joka tasapainoilee kalliolla. 
+              Lyhyt ja kaunis luontopolku vie perille. Erityisen upea syksyllä ruska-aikaan.
+            </p>
+
+            <div class="accessibility">
+              <strong>Saavutettavuus:</strong> Esteetön polku pysäköintipaikalta kummakivelle.
+            </div>
+
+            <a href="#" class="read-more">Lue lisää →</a>
+          </div>
+        </div>
+
+        <!-- 4. Petkeljärvi -->
+        <div class="destination-card">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80" alt="Petkeljärvi">
+          <div class="card-body">
+            <h3>Petkeljärven kansallispuisto</h3>
+            <p class="short-desc">Suomen pienin kansallispuisto</p>
+            
+            <div class="info">
+              <span class="difficulty medium">Keskivaikea</span>
+              <span class="distance">3–12 km</span>
+            </div>
+
+            <p class="description">
+              Petkeljärvi on Suomen pienin kansallispuisto, mutta tarjoaa silti monipuolisia maisemia: 
+              harjuja, lampia ja vanhaa metsää. Hyvät retkeilyreitit ja vuokramökkejä.
+            </p>
+
+            <div class="accessibility">
+              <strong>Saavutettavuus:</strong> Osittain esteetön. Luontokeskus ja lyhyet reitit sopivat myös liikuntarajoitteisille.
+            </div>
+
+            <a href="#" class="read-more">Lue lisää →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section tips">
+    <div class="container">
+      <h2>Retkeilyvinkit Etelä-Karjalaan</h2>
+      <ul class="tips-list">
+        <li>Paras retkeilyaika on toukokuusta lokakuuhun. Ruska syyskuussa on erityisen upea.</li>
+        <li>Ota aina mukaan hyvät retkeilykengät ja säähän sopiva vaatetus.</li>
+        <li>Ilmoita retkestäsi aina jollekin, varsinkin pidemmillä vaelluksilla.</li>
+        <li>Kunnioita luontoa – jätä ei jälkeä periaatteella.</li>
+      </ul>
+    </div>
+  </section>
 </PageLayout>
+
+<style>
+  .hero {
+    height: 90vh;
+    min-height: 680px;
+    background: url('https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=2400') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,80,90,0.35), rgba(0,50,70,0.75));
+  }
+
+  .hero-content h1 {
+    font-size: clamp(3.8rem, 9vw, 7.5rem);
+    font-weight: 800;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  .intro {
+    padding: 5rem 0;
+    background: #f8ffff;
+    text-align: center;
+  }
+
+  .intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    line-height: 1.75;
+  }
+
+  .destinations {
+    padding: 5rem 0;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  .destination-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+  }
+
+  .destination-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  }
+
+  .destination-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+  }
+
+  .card-body {
+    padding: 1.8rem;
+  }
+
+  .card-body h3 {
+    color: #006666;
+    margin-bottom: 0.5rem;
+  }
+
+  .short-desc {
+    color: #00b7b7;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .info {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .difficulty {
+    padding: 0.35rem 1rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+
+  .easy { background: #d4f4e6; color: #006666; }
+  .medium { background: #fff3d4; color: #b37d00; }
+
+  .description {
+    line-height: 1.65;
+    margin-bottom: 1.4rem;
+    color: #333;
+  }
+
+  .accessibility {
+    background: #f0f9f9;
+    padding: 1rem;
+    border-radius: 12px;
+    font-size: 0.97rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .read-more {
+    color: #00b7b7;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .tips {
+    padding: 5rem 0;
+    background: linear-gradient(to bottom, #f8ffff, #e6f4f4);
+  }
+
+  .tips-list {
+    max-width: 800px;
+    margin: 2.5rem auto;
+    font-size: 1.15rem;
+    line-height: 1.9;
+  }
+
+  .tips-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .tips-list li::before {
+    content: "🌲";
+    position: absolute;
+    left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .cards-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
