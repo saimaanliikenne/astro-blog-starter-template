@@ -4,7 +4,7 @@
  * Современный базовый layout для astro-blog-starter-template
  * 2026 стиль: Tailwind v4 + dark mode + smooth transitions
  */
-
+<Navigation currentPath={Astro.url.pathname} />
 import { ViewTransitions } from 'astro:transitions'; // плавные переходы между страницами (Astro 4+)
 
 const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattomat kesälomat Saimaalla' } = Astro.props;
