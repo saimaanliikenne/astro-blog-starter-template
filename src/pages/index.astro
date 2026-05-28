@@ -1,380 +1,201 @@
 ---
-// src/pages/index.astro
-const title = "Kesäloma Saimaalla – Tervetuloa nauttimaan!";
-const description = "Unohtumattomat kesälomat järven rannalla, mökit, luonto ja puhtaat vesistöt. Löydä parhaat lennot Saimaalle nyt!";
+import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<!doctype html>
-<html lang="fi">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
-    <!-- Google Fonts: современный скандинавский стиль -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
-    
-    <style is:global>
-      :root {
-        --color-primary: #2a6b5f;      /* глубокий зелёно-бирюзовый Саймаа */
-        --color-accent: #e67e22;       /* тёплый оранжевый закат */
-        --color-text: #1a2a2a;
-        --color-bg: #f8f9f7;
-      }
+<PageLayout 
+  title="Matkatoimisto Saimaan Liikenne OY" 
+  description="Unohtumattomat kesälomat Saimaalla – lennot, hotellit ja retkeily Etelä-Karjalassa">
+  
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Avaa Saimaa<br> kanssamme</h1>
+      <p class="lead">Unohtumattomat matkat, upeat luontokohteet ja aidot elämykset Etelä-Karjalassa</p>
+      
+      <!-- Travelpayouts Widget -->
+      <div class="tp-widget-wrapper">
+        <script async src="https://tpwgt.com/content?currency=eur&trs=279173&shmarker=498238&show_hotels=true&powered_by=true&locale=fi&searchUrl=search.jetradar.com&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&origin=HEL&promo_id=7879&campaign_id=100" charset="utf-8"></script>
+      </div>
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        font-family: 'Inter', system-ui, sans-serif;
-        color: var(--color-text);
-        background: var(--color-bg);
-        line-height: 1.6;
-      }
-
-      h1, h2 {
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-      }
-
-      .hero {
-        position: relative;
-        height: 100vh;
-        min-height: 700px;
-        background: linear-gradient(rgba(0,0,0,0.38), rgba(0,0,0,0.55));
-        background-size: cover;
-        background-position: center;
-        color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 0 1.5rem;
-      }
-
-      .hero-content {
-        max-width: 900px;
-        z-index: 2;
-      }
-
-      .hero h1 {
-        font-size: clamp(3.2rem, 8vw, 5.8rem);
-        margin-bottom: 1.2rem;
-        text-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      }
-
-      .hero p {
-        font-size: clamp(1.3rem, 4vw, 1.8rem);
-        margin-bottom: 2.5rem;
-        max-width: 720px;
-        margin-left: auto;
-        margin-right: auto;
-        text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      }
-
-      .cta-button {
-        display: inline-block;
-        padding: 1.1rem 2.6rem;
-        font-size: 1.3rem;
-        font-weight: 600;
-        background: var(--color-accent);
-        color: white;
-        border: none;
-        border-radius: 50px;
-        text-decoration: none;
-        transition: all 0.28s ease;
-        box-shadow: 0 8px 24px rgba(230,126,34,0.35);
-        cursor: pointer;
-      }
-
-      .cta-button:hover {
-        background: #d35400;
-        transform: translateY(-4px);
-        box-shadow: 0 14px 32px rgba(230,126,34,0.45);
-      }
-
-      .features {
-        padding: 6rem 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 3rem;
-      }
-
-      .feature-card {
-        background: white;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        transition: transform 0.3s ease;
-      }
-
-      .feature-card:hover {
-        transform: translateY(-12px);
-      }
-
-      .feature-img {
-        height: 240px;
-        background-size: cover;
-        background-position: center;
-      }
-
-      .feature-content {
-        padding: 2rem 1.8rem;
-      }
-
-      .feature-content h3 {
-        font-size: 1.7rem;
-        margin-bottom: 1rem;
-        color: var(--color-primary);
-      }
-
-      @media (max-width: 768px) {
-        .hero h1 { font-size: 3.6rem; }
-        .hero p  { font-size: 1.4rem; }
-      }
-    </style>
-  </head>
-
-  <body>
-    <main>
-      <!-- Hero section – большая красивая фотография озера Саймаа -->
-      <section 
-        class="hero"
-        style="background-image: url('/images/hero/hero-premium.jpg');"
-      >
-        <div class="hero-content">
-    <h1 class="animate-fade-up">Kesäloma Saimaalla odottaa sinua</h1>
-    <p class="animate-fade-up" style="animation-delay: 0.3s;">Järvenrantamökit, puhdas luonto, hiljaisuus ja auringonlaskut, jotka unohtuvat ikuisesti.</p>
-    
-    <a 
-      href="https://avia.saimaanliikenne.fi"
-      target="_blank"
-      rel="noopener noreferrer"
-      class="cta-button animate-fade-up"
-      style="animation-delay: 0.6s;"
-          >
-            Etsi lennot nyt ✈️
-          </a>
+      <div class="popular-destinations">
+        <span>Suositut kohteet:</span>
+        <div class="tags">
+          <a href="/imatra">Imatra</a>
+          <a href="/lappeenranta">Lappeenranta</a>
+          <a href="/retkeily">Kansallispuistot</a>
+          <a href="#">Saimaa</a>
+          <a href="#">Ruunaa</a>
         </div>
-      </section>
-
-      <!-- Три карточки с преимуществами -->
-      <section class="features">
-        <div class="feature-card">
-          <div 
-            class="feature-img" 
-            style="background-image: url('/images/blog/lappeenranta.jpg');"
-          ></div>
-          <div class="feature-content">
-            <h3>Lappeenranta – järvenrantakaupunki</h3>
-            <p>Lappeenranta on suosittu matkailukaupunki Saimaan rannalla.</p>
-          <a href="/lappeenranta" class="read-more-btn">Lue lisää →</a>
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div 
-            class="feature-img" 
-            style="background-image: url('/images/blog/imatrankoski.jpg');"
-          ></div>
-          <div class="feature-content">
-            <h3>Imatra ja Suomen suurin koski</h3>
-            <p>Imatra tunnetaan voimakkaasta Imatrankoski-koskesta.</p>
-          <a href="/imatra" class="read-more-btn">Lue lisää →</a>
-          </div>
-        </div>
-
-        <div class="feature-card">
-          <div 
-            class="feature-img" 
-           style="background-image: url('/images/routes/seasons.jpg');" 
-          ></div>
-          <div class="feature-content">
-            <h3>Kansallispuistot ja retkeily</h3>
-            <p>Luonnon ystäville Suomessa on useita upeita retkikohteita.</p>
-          <a href="/puistot" class="read-more-btn">Lue lisää →</a>
-          </div>
-        </div>
-      </section>
-   </main>
- <footer class="footer">
-  <div class="footer-container">
-    <div class="footer-brand">
-      <h3 class="footer-logo">Matkatoimisto Saimaan Liikenne OY</h3>
-      <p>Unohtumattomat hetket Suomen suurimmalla järvellä</p>
-    </div>
-
-    <div class="footer-contacts">
-      <h4>Yhteystiedot</h4>
-      <ul>
-        <li>📧 <a href="mailto:info@saimaankesa.fi">info@saimaanliikenne.fi</a></li>
-        <li>📞 +358 50 556 8889</li>
-        <li>📍 Kauppakatu 40 B 27, 53100 Lappeenranta</li>
-      </ul>
-    </div>
-
-    <div class="footer-social">
-      <h4>Seuraa meitä</h4>
-      <div class="social-icons">
-        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
-        <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
-        <a href="https://fi.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest">Pinterest</a>
       </div>
     </div>
   </div>
 
-  <div class="footer-bottom">
-    <p>© {new Date().getFullYear()} Matkatoimisto Saimaan Liikenne OY. Kaikki oikeudet pidätetään.</p>
-  </div>
-</footer>
+  <!-- Quick Info Cards -->
+  <section class="section quick-info">
+    <div class="container">
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">🌲</div>
+          <h3>Retkeily & Luonto</h3>
+          <p>Imatrankoski, Petkeljärvi ja Ruunaa – upeat kansallispuistot ja retkeilyreitit</p>
+          <a href="/retkeily" class="card-link">Tutustu reitteihin →</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">🏨</div>
+          <h3>Hotellit & Kylpylät</h3>
+          <p>Laadukkaat majoitukset Saimaan rannalla ja Imatran kylpylässä</p>
+          <a href="#" class="card-link">Etsi majoitusta →</a>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">✈️</div>
+          <h3>Lomat & Aktiviteetit</h3>
+          <p>Risteilyt, kalastus, SUP-lautailu ja monet muut kesän elämykset</p>
+          <a href="#" class="card-link">Katso tarjoukset →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<style is:global>
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+</PageLayout>
 
-.animate-fade-up {
-  animation: fade-up 1s ease-out forwards;
-}
-
-/* Уважение к настройкам reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  .animate-fade-up {
-    animation: none;
-    opacity: 1;
-    transform: none;
- }
-}
-.read-more-btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.7rem 1.6rem;
-  background-color: #30D5C8;           /* бирюзовый */
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  text-decoration: none;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(48, 213, 200, 0.25);
-}
-
-.read-more-btn:hover {
-  background-color: #26b8ac;           /* темнее при наведении */
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(48, 213, 200, 0.4);
-}
-
-.read-more-btn:active {
-  transform: translateY(0);
-  box-shadow: 0 4px 12px rgba(48, 213, 200, 0.25);
-  }
-  .footer {
-    background: linear-gradient(135deg, #1e3a5f 0%, #2a6b5f 100%);
-    color: #e0f7fa;
-    padding: 4rem 2rem 2rem;
-    margin-top: 4rem;
-    border-top: 4px solid #30D5C8;
+<style>
+  .hero {
+    height: 92vh;
+    min-height: 680px;
+    background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=2400') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
   }
 
-  .footer-container {
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 120, 130, 0.35), rgba(0, 60, 80, 0.75));
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 820px;
+    padding: 0 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.4rem, 8.5vw, 6.8rem);
+    font-weight: 800;
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  }
+
+  .lead {
+    font-size: clamp(1.35rem, 3.5vw, 2.1rem);
+    margin-bottom: 2.5rem;
+    opacity: 0.95;
+  }
+
+  .tp-widget-wrapper {
+    max-width: 720px;
+    margin: 2rem auto 3rem;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    padding: 1.8rem;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+  }
+
+  .popular-destinations {
+    margin-top: 1rem;
+  }
+
+  .popular-destinations span {
+    display: block;
+    margin-bottom: 0.8rem;
+    opacity: 0.9;
+    font-size: 1.1rem;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+
+  .tags a {
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(8px);
+    padding: 0.55rem 1.4rem;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .tags a:hover {
+    background: rgba(255,255,255,0.45);
+    transform: translateY(-3px);
+  }
+
+  /* Quick Info Section */
+  .quick-info {
+    padding: 6rem 0 7rem;
+    background: linear-gradient(to bottom, #f8ffff, #e6f4f4);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.2rem;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 3rem;
+    padding: 0 20px;
   }
 
-  .footer-brand .footer-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.2rem;
-    color: #30D5C8;
-    margin-bottom: 0.8rem;
-  }
-
-  .footer-brand p {
-    font-size: 1.05rem;
-    opacity: 0.9;
-  }
-
-  .footer-contacts h4,
-  .footer-social h4 {
-    font-size: 1.4rem;
-    margin-bottom: 1.2rem;
-    color: #ffffff;
-  }
-
-  .footer-contacts ul {
-    list-style: none;
-  }
-
-  .footer-contacts li {
-    margin-bottom: 0.9rem;
-    font-size: 1.05rem;
-  }
-
-  .footer-contacts a {
-    color: #b2f2ea;
-    text-decoration: none;
-    transition: color 0.25s;
-  }
-
-  .footer-contacts a:hover {
-    color: #30D5C8;
-  }
-
-  .social-icons {
-    display: flex;
-    gap: 1.5rem;
-  }
-
-  .social-icons a {
-    color: #ffffff;
-    font-size: 1.4rem;
-    opacity: 0.85;
-    transition: all 0.25s;
-  }
-
-  .social-icons a:hover {
-    opacity: 1;
-    transform: translateY(-3px);
-    color: #30D5C8;
-  }
-
-  .footer-bottom {
+  .card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
     text-align: center;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    font-size: 0.95rem;
-    opacity: 0.8;
+    transition: all 0.4s ease;
   }
 
-  @media (max-width: 768px) {
-    .footer {
-      padding: 3rem 1.5rem 2rem;
-    }
-    
-    .footer-container {
-      gap: 2.5rem;
+  .card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+  }
+
+  .card-icon {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .card h3 {
+    color: #006666;
+    margin-bottom: 1rem;
+    font-size: 1.45rem;
+  }
+
+  .card-link {
+    color: #00b7b7;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 1.2rem;
+    display: inline-block;
+  }
+
+  @media (max-width: 640px) {
+    .tp-widget-wrapper {
+      margin: 1.5rem 1rem;
+      padding: 1.2rem;
     }
   }
 </style>
-</body>
-</html>
