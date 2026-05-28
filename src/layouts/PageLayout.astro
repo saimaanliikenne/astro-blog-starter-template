@@ -1,6 +1,6 @@
 ---
 /**
- * PageLayout.astro — Основной layout
+ * PageLayout.astro — Главный layout с меню
  */
 import Navigation from '../components/Navigation.astro';
 import { ViewTransitions } from 'astro:transitions';
@@ -21,7 +21,6 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={Astro.url.href} />
-    <meta property="og:image" content="/og-image.jpg" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,8 +30,7 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
     <ViewTransitions fallback="animate" />
   </head>
 
-  <body class="bg-[hsl(var(--color-bg))] text-[hsl(var(--color-text))] transition-colors duration-500">
-    
+  <body>
     <!-- Навигация -->
     <Navigation currentPath={Astro.url.pathname} />
 
@@ -66,64 +64,66 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© {new Date().getFullYear()} Matkatoimisto Saimaan Liikenne OY. Kaikki oikeudet pidätetään.</p>
+        <p>&copy; {new Date().getFullYear()} Matkatoimisto Saimaan Liikenne OY. Kaikki oikeudet pidätetään.</p>
       </div>
     </footer>
 
     <style is:global>
       :root {
-        --color-primary: 42 107 95;
-        --color-accent: 48 213 200;
-        --color-bg: 248 249 247;
-        --color-text: 26 42 42;
+        --primary: #2a6b5f;
+        --accent: #30d5c8;
+        --bg: #f8f9f7;
+        --text: #1a2a2a;
       }
 
       body {
         font-family: 'Inter', system-ui, sans-serif;
+        background: hsl(var(--bg));
+        color: hsl(var(--text));
+        margin: 0;
+        line-height: 1.6;
       }
+
       h1, h2, h3 {
         font-family: 'Playfair Display', serif;
       }
 
-      .main-nav { /* стили уже в компоненте */ }
+      .pt-20 { padding-top: 5rem; }
+      .md\:pt-24 { padding-top: 6rem; }
 
+      /* Footer */
       .footer {
         background: linear-gradient(135deg, #1e3a5f 0%, #2a6b5f 100%);
         color: #e0f7fa;
-        padding: 4rem 2rem 2rem;
-        margin-top: 6rem;
-        border-top: 4px solid #30D5C8;
+        padding: 4rem 1.5rem 2rem;
+        margin-top: 5rem;
       }
       .footer-container {
         max-width: 1200px;
         margin: 0 auto;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 3rem;
       }
       .footer-logo {
-        font-size: 2.2rem;
-        color: #30D5C8;
+        font-size: 2.1rem;
+        color: #30d5c8;
         margin-bottom: 0.8rem;
       }
       .footer-contacts h4,
       .footer-social h4 {
-        font-size: 1.4rem;
-        margin-bottom: 1.2rem;
         color: white;
+        margin-bottom: 1.2rem;
       }
-      .social-icons {
-        display: flex;
-        gap: 1.8rem;
-      }
-      .social-icons a:hover {
-        color: #30D5C8;
+      .social-icons a {
+        color: #b2f2ea;
+        margin-right: 1.5rem;
       }
       .footer-bottom {
         text-align: center;
         margin-top: 3rem;
         padding-top: 2rem;
-        border-top: 1px solid rgba(255,255,255,0.15);
+        border-top: 1px solid rgba(255,255,255,0.2);
         opacity: 0.85;
       }
     </style>
