@@ -1,0 +1,163 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
+
+<PageLayout 
+  title="Evästepolitiikka | Matkatoimisto Saimaan Liikenne OY" 
+  description="Evästepolitiikka – Mitä evästeitä käytämme ja miksi">
+  
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Evästepolitiikka</h1>
+      <p class="lead">Matkatoimisto Saimaan Liikenne OY</p>
+    </div>
+  </div>
+
+  <section class="section cookie-section">
+    <div class="container">
+      <div class="cookie-box">
+
+        <p class="last-updated">Viimeksi päivitetty: 29.5.2026</p>
+
+        <h2>Mitä evästeet ovat?</h2>
+        <p>
+          Evästeet ovat pieniä tekstitiedostoja, joita verkkosivusto tallentaa käyttäjän laitteelle. 
+          Ne auttavat meitä parantamaan sivuston toimivuutta, analysoimaan käyttöä ja tarjoamaan parempaa käyttäjäkokemusta.
+        </p>
+
+        <h2>Mitä evästeitä käytämme?</h2>
+
+        <div class="cookie-category">
+          <h3>Toiminnalliset evästeet (välttämättömät)</h3>
+          <p>
+            Näitä evästeitä tarvitaan sivuston perustoimintoihin, kuten navigointiin, lomakkeiden toimivuuteen ja kielivalintojen muistamiseen.
+          </p>
+          <p><strong>Ne eivät voi olla pois päältä.</strong></p>
+        </div>
+
+        <div class="cookie-category">
+          <h3>Analytiikkaevästeet</h3>
+          <p>
+            Käytämme Google Analyticsia ymmärtääksemme, miten kävijät käyttävät sivustoamme. 
+            Tiedot ovat anonyymeja ja auttavat meitä kehittämään sivustoa.
+          </p>
+        </div>
+
+        <div class="cookie-category">
+          <h3>Markkinointi- ja seurantaevästeet</h3>
+          <p>
+            Näitä evästeitä käytetään vain, jos olet antanut suostumuksesi. 
+            Ne auttavat kohdentamaan mainontaa ja mittaamaan kampanjoiden tehokkuutta.
+          </p>
+        </div>
+
+        <h2>Miten voit hallita evästeitä?</h2>
+        <p>
+          Voit hallita ja estää evästeiden käyttöä selaimen asetuksista. 
+          Useimmissa selaimissa voit:
+        </p>
+        <ul>
+          <li>Estää kaikki evästeet</li>
+          <li>Poistaa evästeet manuaalisesti</li>
+          <li>Sallia vain tietyt evästeet</li>
+        </ul>
+        <p>
+          Huomaathan, että evästeiden estäminen voi vaikuttaa sivuston toimivuuteen (esimerkiksi lomakkeen lähettäminen tai kielivalinta).
+        </p>
+
+        <h2>Yhteystiedot evästeisiin liittyen</h2>
+        <p>
+          Jos sinulla on kysyttävää evästeiden käytöstä, voit ottaa yhteyttä:<br>
+          <strong>Sähköposti:</strong> <a href="mailto:info@saimaanliikenne.fi">info@saimaanliikenne.fi</a>
+        </p>
+
+        <div class="consent-notice">
+          <p>
+            Jatkamalla sivuston käyttöä hyväksyt evästeiden käytön tämän evästepolitiikan mukaisesti.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .hero {
+    height: 65vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0,80,90,0.75), rgba(0,50,70,0.85)), 
+                url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .cookie-section {
+    padding: 5rem 0 6rem;
+    background: #f8f9f7;
+  }
+
+  .cookie-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 4rem 3.5rem;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    line-height: 1.75;
+  }
+
+  h2 {
+    color: #006666;
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.9rem;
+  }
+
+  h3 {
+    color: #008080;
+    margin-top: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .cookie-category {
+    margin: 2.5rem 0;
+    padding: 1.5rem;
+    background: #f8f9f7;
+    border-radius: 16px;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .last-updated {
+    text-align: right;
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .consent-notice {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: #e0f7f7;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 768px) {
+    .cookie-box {
+      padding: 2.8rem 1.8rem;
+      margin: 0 1rem;
+    }
+  }
+</style>
