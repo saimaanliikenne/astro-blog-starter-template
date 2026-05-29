@@ -19,14 +19,6 @@ const { currentPage = 'home' } = Astro.props;
       <a href="/contact" class={currentPage === 'contact' ? 'active' : ''}>Contact</a>
     </div>
 
-    <!-- Мобильное меню (гамбургер) -->
-    <button class="mobile-menu-btn" aria-label="Avaa valikko">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-
 <style>
   .main-nav {
     position: sticky;
