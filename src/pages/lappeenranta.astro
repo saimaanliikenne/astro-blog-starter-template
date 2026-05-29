@@ -2,195 +2,219 @@
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<PageLayout title="Lappeenranta – Saimaan kesäkaupunki">
-  <main class="lappeenranta-page">
-    <!-- Hero-секция для атмосферы -->
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <h1>Lappeenranta</h1>
-        <p class="subtitle">– Saimaan rannalla sijaitseva kesäkaupunki</p>
-      </div>
-    </section>
+<PageLayout 
+  title="Lappeenranta | Saimaan Helmi" 
+  description="Lappeenranta – kaunis Saimaan rantakaupunki, linnoitus, kanava ja upeat järvimaisemat">
+  
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Lappeenranta</h1>
+      <p class="lead">Saimaan kaunein rantakaupunki</p>
+      <p class="sublead">Historiallinen linnoitus, upea satama ja unohtumattomat järvimaisemat</p>
+    </div>
+  </div>
 
-    <!-- Основной контент -->
-    <section class="content-section">
-      <div class="container">
-        <p class="intro">
-          Lappeenranta on yksi Kaakkois-Suomen suosituimmista matkailukaupungeista. 
-          Kaupunki tunnetaan kauniista satamastaan, hiekkarannoistaan ja historiallisesta 
-          Lappeenrannan linnoitus-alueesta.
-        </p>
+  <section class="section intro">
+    <div class="container">
+      <h2>Tervetuloa Lappeenrantaan</h2>
+      <p class="description">
+        Lappeenranta on yksi Suomen viehättävimmistä kaupungeista Saimaan rannalla. 
+        Kaupunki yhdistää kauniin luonnon, historiallisen linnoituksen, vilkkaan sataman ja modernin kaupunkielämän. 
+        Se on täydellinen kohde sekä rentoutumiseen että aktiivisempaan lomaan.
+      </p>
+    </div>
+  </section>
 
-        <p>
-          Linnoituksessa voi tutustua museoihin, taidegallerioihin ja perinteisiin kahviloihin. 
-          Kesäisin satama on vilkas matkailukeskus, josta lähtevät risteilyt Saimaalle. 
-          Alueella voi myös vuokrata polkupyöriä tai veneitä ja tutkia järvimaisemia omassa tahdissa.
-        </p>
+  <!-- Nähtävyydet -->
+  <section class="section attractions">
+    <div class="container">
+      <h2 class="section-title">Lappeenrannan helmet</h2>
+      <div class="attractions-grid">
 
-        <!-- Дополнительный блок с выделенными пунктами для красоты -->
-        <div class="highlights">
-          <div class="highlight">
-            <h3>Satama ja risteilyt</h3>
-            <p>Vilkas kesäkeskus, josta lähtevät Saimaan risteilyt ja tunnelmalliset kävelyt.</p>
-          </div>
-          <div class="highlight">
-            <h3>Linnoitusalue</h3>
-            <p>Historiaa, museoita, gallerioita ja tunnelmallisia kahviloita vanhassa ympäristössä.</p>
-          </div>
-          <div class="highlight">
-            <h3>Hiekkarannat ja ulkoilu</h3>
-            <p>Rentoutumista rannalla sekä pyöräilyä ja veneilyä järven maisemissa.</p>
+        <div class="attraction-card">
+          <img src="/images/blog/lappeenranta.jpg" alt="Lappeenrannan satama">
+          <div class="card-content">
+            <h3>Saimaan Satama</h3>
+            <p>Kaupungin sydän ja yksi Suomen kauneimmista satamista. Kesällä täynnä risteilyaluksia, terasseja ja elämää.</p>
           </div>
         </div>
 
-        <!-- Кнопка возврата или CTA -->
-        <div class="back-cta">
-          <a href="/" class="back-button">Takaisin etusivulle</a>
-          <a 
-            href="https://avia.saimaanliikenne.fi" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            class="cta-button"
-          >
-            Etsi lennot Lappeenrantaan ✈️
-          </a>
+        <div class="attraction-card">
+          <img src="https://images.unsplash.com/photo-1580130684518-2f1c3f3b7c4d?auto=format&fit=crop&q=80" alt="Lappeenrannan linnoitus">
+          <div class="card-content">
+            <h3>Linnoitus (Linnoitus)</h3>
+            <p>Historiallinen linnoitusalue vuodelta 1720. Upeat näkymät Saimaalle, museoita ja kesäkahviloita.</p>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <img src="https://images.unsplash.com/photo-1564507592333-cdd0f3d6c4c6?auto=format&fit=crop&q=80" alt="Hiekkalinna">
+          <div class="card-content">
+            <h3>Hiekkalinna</h3>
+            <p>Maailman suurin hiekkalinna, joka rakennetaan joka vuosi uudelleen. Erityisen suosittu lasten keskuudessa.</p>
+          </div>
+        </div>
+
+        <div class="attraction-card">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80" alt="Saimaan kanava">
+          <div class="card-content">
+            <h3>Saimaan kanava</h3>
+            <p>Kaunis kanava, joka yhdistää Saimaan Suomenlahteen. Veneretket ja upeat maisemat kanavan varrella.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lisätietoja -->
+  <section class="section more-info">
+    <div class="container">
+      <h2 class="section-title">Miksi tulla Lappeenrantaan?</h2>
+      <div class="info-grid">
+        <div class="info-item">
+          <h3>🏞️ Luonto ja järvi</h3>
+          <p>Saimaa on Euroopan neljänneksi suurin järvi. Upeat uimarannat, SUP-lautailu ja veneretket.</p>
+        </div>
+        <div class="info-item">
+          <h3>🚤 Risteilyt</h3>
+          <p>Päivä- ja iltaristeilyt Saimaalla – yksi suosituimmista aktiviteeteista.</p>
+        </div>
+        <div class="info-item">
+          <h3>🛍️ Ostokset ja markkinat</h3>
+          <p>Kauppatori, putiikit ja paikalliset herkut (erityisesti vety ja atomi).</p>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Travelpayouts Widget -->
+  <section class="section widget-section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 2.5rem;">Etsi majoitusta ja aktiviteetteja Lappeenrannasta</h2>
+      <div class="tp-widget-wrapper">
+        <script async src="https://tpwgt.com/content?currency=eur&trs=279173&shmarker=498238&show_hotels=true&powered_by=true&locale=fi&searchUrl=search.jetradar.com&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&origin=HEL&promo_id=7879&campaign_id=100" charset="utf-8"></script>
+      </div>
+    </div>
+  </section>
+
 </PageLayout>
 
 <style>
-  .lappeenranta-page {
-    background-color: #f8f9f7;
-  }
-
   .hero {
-    position: relative;
-    height: 50vh;
-    min-height: 400px;
-    background-image: 
-      linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)),
-      url('https://images.unsplash.com/photo-1580130718646-9f694209b207?auto=format&fit=crop&q=85&w=1600');
-    background-size: cover;
-    background-position: center;
+    height: 92vh;
+    min-height: 700px;
+    background: url('/images/blog/lappeenranta.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     color: white;
+    text-align: center;
+    position: relative;
   }
 
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(42, 107, 95, 0.25); /* лёгкий бирюзовый оверлей */
+    background: linear-gradient(to bottom, rgba(0,80,90,0.3), rgba(0,45,70,0.75));
   }
 
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 900px;
-    padding: 0 1.5rem;
+  .hero-content h1 {
+    font-size: clamp(3.6rem, 9vw, 7rem);
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
   }
 
-  .hero h1 {
-    font-size: clamp(3rem, 8vw, 5.5rem);
+  .lead {
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
     margin-bottom: 0.5rem;
-    color: #30D5C8; /* бирюзовый заголовок */
   }
 
-  .subtitle {
-    font-size: clamp(1.4rem, 4vw, 2rem);
-    font-weight: 400;
-    opacity: 0.95;
-  }
-
-  .content-section {
-    padding: 4rem 2rem;
-  }
-
-  .container {
-    max-width: 1000px;
+  .sublead {
+    font-size: 1.35rem;
+    opacity: 0.9;
+    max-width: 700px;
     margin: 0 auto;
   }
 
-  .intro {
-    font-size: 1.35rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-    font-weight: 500;
-    color: #2a6b5f;
+  .section {
+    padding: 5.5rem 0;
   }
 
-  .highlights {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-  }
-
-  .highlight {
-    background: white;
-    padding: 1.8rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
-  }
-
-  .highlight:hover {
-    transform: translateY(-6px);
-  }
-
-  .highlight h3 {
-    color: #30D5C8;
-    margin-bottom: 0.8rem;
-  }
-
-  .back-cta {
+  .section-title {
     text-align: center;
-    margin-top: 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
+    font-size: 2.7rem;
+    margin-bottom: 3.5rem;
+    color: #1a2a2a;
   }
 
-  .back-button,
-  .cta-button {
-    display: inline-block;
-    padding: 0.9rem 2rem;
-    font-size: 1.1rem;
-    font-weight: 600;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .attractions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.2rem;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
 
-  .back-button {
-    background: #e0e0e0;
-    color: #333;
+  .attraction-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
   }
 
-  .back-button:hover {
-    background: #d0d0d0;
+  .attraction-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
   }
 
-  .cta-button {
-    background: #30D5C8;
-    color: white;
-    box-shadow: 0 6px 18px rgba(48, 213, 200, 0.3);
+  .attraction-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
   }
 
-  .cta-button:hover {
-    background: #26b8ac;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(48, 213, 200, 0.4);
+  .card-content {
+    padding: 1.8rem;
+  }
+
+  .card-content h3 {
+    color: #006666;
+    margin-bottom: 0.8rem;
+    font-size: 1.6rem;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .info-item {
+    background: #f8f9f7;
+    padding: 2.2rem;
+    border-radius: 18px;
+  }
+
+  .tp-widget-wrapper {
+    max-width: 780px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.97);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
   }
 
   @media (max-width: 768px) {
-    .content-section { padding: 3rem 1.5rem; }
-    .hero { height: 45vh; min-height: 350px; }
+    .attractions-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
