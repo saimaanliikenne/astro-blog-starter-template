@@ -1,1 +1,158 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+---
 
+<PageLayout 
+  title="Tietosuojaseloste | Matkatoimisto Saimaan Liikenne OY" 
+  description="Tietosuojaseloste – Miten käsittelemme henkilötietojasi">
+  
+  <div class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Tietosuojaseloste</h1>
+      <p class="lead">Matkatoimisto Saimaan Liikenne OY</p>
+    </div>
+  </div>
+
+  <section class="section privacy-section">
+    <div class="container">
+      <div class="privacy-box">
+
+        <p class="last-updated">Viimeksi päivitetty: 29.5.2026</p>
+
+        <h2>1. Rekisterinpitäjä</h2>
+        <p>
+          Matkatoimisto Saimaan Liikenne OY<br>
+          Kauppakatu 40 B 27<br>
+          53100 Lappeenranta<br>
+          Y-tunnus: [Lisää Y-tunnus]
+        </p>
+
+        <h2>2. Yhteydenotto tietosuoja-asioissa</h2>
+        <p>
+          Sähköposti: <a href="mailto:info@saimaanliikenne.fi">info@saimaanliikenne.fi</a><br>
+          Puhelin: +358 50 556 8889
+        </p>
+
+        <h2>3. Keräämämme tiedot</h2>
+        <p>Käsittelemme seuraavia henkilötietoja:</p>
+        <ul>
+          <li>Nimi ja yhteystiedot (sähköposti, puhelin, osoite)</li>
+          <li>Matkan varaustiedot ja maksutiedot</li>
+          <li>Asiakaspalvelun keskustelut</li>
+          <li>Markkinointiluvat ja -kiellot</li>
+          <li>Evästeiden kautta kerätty verkkokäyttäytyminen</li>
+        </ul>
+
+        <h2>4. Mihin käytämme tietojasi</h2>
+        <ul>
+          <li>Matkavarausten käsittelyyn ja toteuttamiseen</li>
+          <li>Asiakaspalveluun ja viestintään</li>
+          <li>Laskutukseen ja maksujen hallintaan</li>
+          <li>Markkinointiin (vain suostumuksella)</li>
+          <li>Palvelun kehittämiseen ja analytiikkaan</li>
+        </ul>
+
+        <h2>5. Tietojen luovuttaminen</h2>
+        <p>
+          Emme myy henkilötietojasi kolmansille osapuolille. Tietoja voidaan luovuttaa luotettaville palveluntarjoajille (esim. maksupalvelut, majoituskumppanit), jotka käsittelevät tietoja vain meidän ohjeistuksemme mukaan.
+        </p>
+
+        <h2>6. Tietojen säilytysaika</h2>
+        <p>
+          Säilytämme tietojasi vain niin kauan kuin on tarpeen tarkoituksen toteuttamiseksi tai lain velvoitteiden täyttämiseksi.
+        </p>
+
+        <h2>7. Oikeutesi</h2>
+        <p>Sinulla on oikeus:</p>
+        <ul>
+          <li>Saada pääsy omiin tietoihisi</li>
+          <li>Pyytää tietojen oikaisua tai poistamista</li>
+          <li>Peruuttaa suostumuksesi markkinointiin</li>
+          <li>Tehdä valitus valvontaviranomaiselle</li>
+        </ul>
+
+        <h2>8. Evästeet</h2>
+        <p>
+          Sivustomme käyttää evästeitä parantamaan käyttökokemusta ja analytiikkaa. Voit hallita evästeasetuksiasi selaimen asetuksista.
+        </p>
+
+        <div class="consent-notice">
+          <p>
+            Käyttämällä sivustoamme hyväksyt tämän tietosuojaselosteen mukaisen henkilötietojesi käsittelyn.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</PageLayout>
+
+<style>
+  .hero {
+    height: 70vh;
+    min-height: 520px;
+    background: linear-gradient(rgba(0,80,90,0.7), rgba(0,50,70,0.85)), 
+                url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80') center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+  }
+
+  .privacy-section {
+    padding: 5rem 0 6rem;
+    background: #f8f9f7;
+  }
+
+  .privacy-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 4rem 3.5rem;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    line-height: 1.75;
+  }
+
+  h2 {
+    color: #006666;
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.85rem;
+  }
+
+  ul {
+    padding-left: 1.5rem;
+    margin: 1.2rem 0;
+  }
+
+  li {
+    margin-bottom: 0.6rem;
+  }
+
+  .last-updated {
+    text-align: right;
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+  }
+
+  .consent-notice {
+    margin-top: 4rem;
+    padding: 2rem;
+    background: #f0f9f9;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 768px) {
+    .privacy-box {
+      padding: 2.8rem 1.8rem;
+      margin: 0 1rem;
+    }
+  }
+</style>
