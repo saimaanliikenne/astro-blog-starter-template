@@ -1,0 +1,138 @@
+---
+const { 
+  showBanner = true 
+} = Astro.props;
+---
+
+<div id="cookie-consent" class="cookie-banner" style={showBanner ? '' : 'display: none;'}>
+  <div class="cookie-content">
+    <div class="cookie-text">
+      <p>
+        Käytämme evästeitä parantaaksemme käyttökokemusta ja analysoidaksemme sivuston liikennettä. 
+        Jatkamalla sivuston käyttöä hyväksyt evästeiden käytön. 
+        <a href="/evastepolitiikka">Lue lisää evästepolitiikastamme</a>.
+      </p>
+    </div>
+    
+    <div class="cookie-buttons">
+      <button id="cookie-settings" class="btn-secondary">
+        Hallitse evästeitä
+      </button>
+      <button id="cookie-accept" class="btn-primary">
+        Hyväksyn evästeet
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const banner = document.getElementById('cookie-consent');
+  const acceptBtn = document.getElementById('cookie-accept');
+  const settingsBtn = document.getElementById('cookie-settings');
+
+  // Проверяем, дал ли пользователь согласие ранее
+  if (localStorage.getItem('cookieConsent') === 'accepted') {
+    banner.style.display = 'none';
+  }
+
+  // Принять все cookies
+  acceptBtn.addEventListener('click', () => {
+    localStorage.setItem('cookieConsent', 'accepted');
+    banner.style.display = 'none';
+    
+    // Здесь можно добавить код для активации аналитики (Google Analytics и т.д.)
+    console.log('✅ Käyttäjä hyväksyi evästeet');
+  });
+
+  // Переход в настройки (можно расширить позже)
+  settingsBtn.addEventListener('click', () => {
+    alert('Evästeasetukset avataan pian... (tulevaisuudessa tähän voi tulla tarkempi hallintapaneeli)');
+    // Можно перенаправить на /evastepolitiikka
+    // window.location.href = '/evastepolitiikka';
+  });
+</script>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 42, 42, 0.97);
+    color: white;
+    z-index: 9999;
+    padding: 1.2rem 1.5rem;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    backdrop-filter: blur(8px);
+  }
+
+  .cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-text {
+    flex: 1;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .cookie-text a {
+    color: #30d5c8;
+    text-decoration: underline;
+  }
+
+  .cookie-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary, .btn-secondary {
+    padding: 0.75rem 1.6rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+  }
+
+  .btn-primary {
+    background: #30d5c8;
+    color: #1a2a2a;
+    border: none;
+  }
+
+  .btn-primary:hover {
+    background: #00b7b7;
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.6);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+  }
+
+  @media (max-width: 768px) {
+    .cookie-content {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.2rem;
+    }
+    
+    .cookie-buttons {
+      justify-content: center;
+    }
+  }
+</style>
