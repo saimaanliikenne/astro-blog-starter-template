@@ -27,12 +27,6 @@ const { currentPage = 'home' } = Astro.props;
     </button>
   </div>
 
-  <!-- Мобильное выпадающее меню -->
-  <div class="mobile-menu">
-    <a href="/" class={currentPage === 'home' ? 'active' : ''}>Etusivu</a>
-  </div>
-</nav>
-
 <style>
   .main-nav {
     position: sticky;
