@@ -1,182 +1,223 @@
 ---
-// src/pages/contact.astro
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<PageLayout title="Contact | Contact">
-  <!-- HERO -->
-  <section class="contact-hero">
-    <div class="overlay"></div>
+<PageLayout 
+  title="Yhteystiedot | Matkatoimisto Saimaan Liikenne OY" 
+  description="Ota yhteyttä – Matkatoimisto Saimaan Liikenne OY">
+  
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Contact Us</h1>
-      
+      <h1>Ota yhteyttä</h1>
+      <p class="lead">Matkatoimisto Saimaan Liikenne OY</p>
+    </div>
+  </div>
+
+  <section class="section contact-section">
+    <div class="container">
+      <div class="contact-box">
+        
+        <h2 class="contact-title">Yhteystiedot</h2>
+
+        <div class="contact-grid">
+          
+          <!-- Адрес -->
+          <div class="contact-item">
+            <div class="icon">📍</div>
+            <div>
+              <h3>Osoite</h3>
+              <p>Kauppakatu 40 B 27<br>
+                 53100 Lappeenranta<br>
+                 Finland</p>
+            </div>
+          </div>
+
+          <!-- Телефон -->
+          <div class="contact-item">
+            <div class="icon">📞</div>
+            <div>
+              <h3>Puhelin</h3>
+              <p><a href="tel:+358505568889">+358 50 556 8889</a></p>
+            </div>
+          </div>
+
+          <!-- Email -->
+          <div class="contact-item">
+            <div class="icon">✉️</div>
+            <div>
+              <h3>Sähköposti</h3>
+              <p><a href="mailto:info@saimaanliikenne.fi">info@saimaanliikenne.fi</a></p>
+            </div>
+          </div>
+
+          <!-- Время работы -->
+          <div class="contact-item">
+            <div class="icon">🕒</div>
+            <div>
+              <h3>Aukioloajat</h3>
+              <p>Ma–Pe: 10:00 – 18:00</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Простая форма обратной связи -->
+        <div class="contact-form">
+          <h3>Lähetä viesti</h3>
+          <form action="#" method="POST">
+            <input type="text" placeholder="Nimi" required>
+            <input type="email" placeholder="Sähköposti" required>
+            <input type="tel" placeholder="Puhelin">
+            <textarea placeholder="Viesti" rows="6" required></textarea>
+            <button type="submit" class="btn-primary">Lähetä viesti</button>
+          </form>
+        </div>
+
+      </div>
     </div>
   </section>
 
-  <!-- CONTACT SECTION -->
-  <section class="contact-section">
-
-    <div class="contact-card">
-      <span><h2>Matkatoimisto Saimaan Liikenne OY</h2></span>
-
-      <div class="contact-item">
-        <span> Address</span>
-        <p>Kauppakatu 40 B 27<br />53100 Lappeenranta<br />Finland</p>
-      </div>
-
-      <div class="contact-item">
-        <span> Phone</span>
-        <p><a href="tel:+358505568889">+358 50 556 8889</a></p>
-      </div>
-
-      <div class="contact-item">
-        <span> Email</span>
-        <p><a href="mailto:info@saimaanliikenne.fi">info@saimaanliikenne.fi</a></p>
-      </div>
-
-      <div class="contact-item">
-        <span> Availability</span>
-        <p>10:00 - 18:00</p>
-      </div>
-
-    </div>
-
-    <!-- MAP -->
-    <div class="map-container">
-      <iframe
-        src="https://www.google.com/maps?q=Kauppakatu+40+Lappeenranta+Finland&output=embed"
-        loading="lazy"
-        allowfullscreen>
-      </iframe>
-    </div>
-
-  </section>
-
-</Layout>
+</PageLayout>
 
 <style>
-
-/* ================= HERO ================= */
-
-.contact-hero {
-  position: relative;
-  height: 55vh;
-  background: url('/images/hero/hero-premium.jpg') center / cover fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-}
-
-.contact-hero .overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom,
-    rgba(0,0,0,0.5),
-    rgba(0,0,0,0.7));
-}
-
-.hero-content {
-  position: relative;
-  text-align: center;
-  z-index: 2;
-}
-
-.hero-content h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
-}
-
-.hero-content p {
-  font-size: 1.2rem;
-  opacity: 0.9;
-}
-
-/* ================= CONTACT SECTION ================= */
-
-.contact-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  padding: 100px 10%;
-  background: #f8fafb;
-}
-
-.contact-card {
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(15px);
-  border-radius: 24px;
-  padding: 50px;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.15);
-}
-
-.contact-card h2 {
-  margin-bottom: 40px;
-  font-size: 2rem;
-}
-
-.contact-item {
-  margin-bottom: 25px;
-}
-
-.contact-item span {
-  display: block;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  color: #d4af37;
-  margin-bottom: 5px;
-}
-
-.contact-item p {
-  font-size: 1.1rem;
-}
-
-.contact-item a {
-  text-decoration: none;
-  color: #0fa3b1;
-  font-weight: 500;
-}
-
-.contact-item a:hover {
-  text-decoration: underline;
-}
-
-/* ================= MAP ================= */
-
-.map-container {
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.2);
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 450px;
-  border: 0;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 900px) {
-
-  .contact-hero {
-    background-attachment: scroll;
+  .hero {
+    height: 75vh;
+    min-height: 580px;
+    background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    position: relative;
   }
 
-  .contact-section {
-    grid-template-columns: 1fr;
-    padding: 60px 20px;
-  }
-
-  .contact-card {
-    padding: 35px;
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,80,90,0.4), rgba(0,50,70,0.75));
   }
 
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: clamp(3.2rem, 8vw, 6rem);
+    font-weight: 800;
   }
-}
 
+  .lead {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    opacity: 0.95;
+  }
+
+  .contact-section {
+    padding: 5rem 0 6rem;
+    background: #f8f9f7;
+  }
+
+  .contact-box {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 4rem 3.5rem;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+  }
+
+  .contact-title {
+    text-align: center;
+    font-size: 2.6rem;
+    margin-bottom: 3rem;
+    color: #1a2a2a;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 4rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1.2rem;
+  }
+
+  .icon {
+    font-size: 2.2rem;
+    flex-shrink: 0;
+  }
+
+  .contact-item h3 {
+    color: #006666;
+    margin-bottom: 0.6rem;
+    font-size: 1.35rem;
+  }
+
+  .contact-item a {
+    color: #00b7b7;
+    text-decoration: none;
+  }
+
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+
+  /* Форма */
+  .contact-form {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid #eee;
+  }
+
+  .contact-form h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #006666;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  input, textarea {
+    padding: 1rem 1.2rem;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    padding: 1.1rem;
+    background: #30d5c8;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+    background: #00b7b7;
+    transform: translateY(-3px);
+  }
+
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .contact-box {
+      padding: 2.8rem 1.8rem;
+      margin: 0 1rem;
+    }
+
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
 </style>
