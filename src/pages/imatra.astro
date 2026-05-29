@@ -1,21 +1,18 @@
 ---
+// src/pages/imatra.astro
 import PageLayout from '../layouts/PageLayout.astro';
 ---
 
-<PageLayout 
-  title="Imatra | Kaunis Etelä-Karjala" 
-  description="Imatra – kuuluisa Imatrankoski, upea luonto ja rentouttava loma">
-  
-  <!-- Hero -->
+<PageLayout title="Imatra | Kaunis Etelä-Karjala">
   <div class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Imatra</h1>
       <p class="lead">Voimakas koski, upea luonto ja rentouttava loma</p>
+      <a href="#attractions" class="cta-button">Lue lisää kohteista ↓</a>
     </div>
   </div>
 
-  <!-- Основной контент -->
   <section class="section content-section">
     <div class="container">
       <div class="article-box">
@@ -61,13 +58,69 @@ import PageLayout from '../layouts/PageLayout.astro';
     </div>
   </section>
 
-</PageLayout>
+  <section id="attractions" class="section attractions">
+    <div class="container">
+      <h2>Suositut nähtävyydet</h2>
+      <div class="cards-grid">
+        
+        <div class="card">
+          <img src="/images/blog/imatrankoski.jpg" alt="Imatrankoski">
+          <div class="card-content">
+            <h3>Imatrankoski</h3>
+            <p>Legendaarinen koski, joka on hurmannut matkailijoita jo yli 200 vuotta. Kesällä koskinäytökset.</p>
+            <a href="#" class="card-link">Lue lisää →</a>
+          </div>
+        </div>
 
+        <div class="card">
+          <img src="/images/blog/imatraspa.jpg" alt="Imatra Spa">
+          <div class="card-content">
+            <h3>Imatran Kylpylä</h3>
+            <p>Moderni kylpylähotelli, jossa rentoutuminen, vesipuisto ja laadukkaat hoidot.</p>
+            <a href="#" class="card-link">Varaa majoitus →</a>
+          </div>
+        </div>
+
+        <div class="card">
+           <img src="/images/blog/kareliannature.jpg" alt="Karelian nature">
+          <div class="card-content">
+            <h3>Karjalan luonto</h3>
+            <p>Kauniit retkeilyreitit, järvet ja metsät ympärillä. Täydellinen luontoharrastajille.</p>
+            <a href="#" class="card-link">Retkeilyreitit →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section gallery">
+    <div class="container">
+      <h2>Visuaalinen matka Imatraan</h2>
+      <div class="gallery-grid">
+        <img src="/images/blog/castle.jpg" alt="Imatrankoski yöllä">
+        <img src="/images/blog/karelia.jpg" alt="Imatra kesällä">
+        <img src="/images/blog/imatrasammer.jpg" alt="Kylpylä">
+        <img src="/images/blog/sky.heic" alt="Imatra kesällä">
+      </div>
+    </div>
+  </section>
+
+  <!-- Travelpayouts widget -->
+  <section class="section widget-section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 2rem;">Etsi majoitusta ja aktiviteetteja Imatralla</h2>
+      <div class="tp-widget-wrapper">
+        <script async src="https://tpwgt.com/content?currency=eur&trs=279173&shmarker=498238&show_hotels=true&powered_by=true&locale=fi&searchUrl=search.jetradar.com&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&origin=HEL&promo_id=7879&campaign_id=100" charset="utf-8"></script>
+      </div>
+    </div>
+  </section>
+</PageLayout>
+ 
 <style>
   .hero {
-    height: 90vh;
+    height: 85vh;
     min-height: 650px;
-    background: url('/images/blog/imatrankoski.jpg') center/cover no-repeat;
+    background: url('/images/blog/imatra.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,10 +132,17 @@ import PageLayout from '../layouts/PageLayout.astro';
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,80,90,0.35), rgba(0,50,70,0.75));
+    background: linear-gradient(to bottom, rgba(0,120,130,0.3), rgba(0,70,90,0.75));
   }
 
-  .content-section {
+  .hero-content h1 {
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+  }
+
+   .content-section {
     padding: 5rem 0 6rem;
     background: #f8f9f7;
   }
@@ -151,7 +211,118 @@ import PageLayout from '../layouts/PageLayout.astro';
     color: #30d5c8;
   }
 
-  /* Адаптивность */
+  .subsection-title {
+    font-size: 1.95rem;
+    margin: 3rem 0 1.4rem;
+    color: #006666;
+  }
+
+  .article-section p {
+    font-size: 1.14rem;
+    line-height: 1.85;
+    margin-bottom: 1.6rem;
+    color: #333;
+  }
+  .cta-button {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background: #00b7b7;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+  }
+
+  .cta-button:hover {
+    background: #009999;
+    transform: translateY(-4px);
+  }
+
+  .about {
+    padding: 5rem 0;
+    background: #f8ffff;
+  }
+
+  .description {
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .attractions, .gallery, .widget-section {
+    padding: 5rem 0;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .card {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-12px);
+  }
+
+  .card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: 1.8rem;
+  }
+
+  .card h3 {
+    color: #006666;
+    margin-bottom: 0.8rem;
+  }
+
+  .card-link {
+    color: #00b7b7;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
+  }
+
+  .gallery-grid img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-grid img:hover {
+    transform: scale(1.05);
+  }
+
+  .tp-widget-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.12);
+  }
+
   @media (max-width: 768px) {
     .article-box {
       padding: 2.8rem 1.8rem;
