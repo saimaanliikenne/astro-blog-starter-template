@@ -22,8 +22,6 @@ import PageLayout from '../layouts/PageLayout.astro';
         <h2 class="contact-title">Yhteystiedot</h2>
 
         <div class="contact-grid">
-          
-          <!-- Адрес -->
           <div class="contact-item">
             <div class="icon">📍</div>
             <div>
@@ -34,7 +32,6 @@ import PageLayout from '../layouts/PageLayout.astro';
             </div>
           </div>
 
-          <!-- Телефон -->
           <div class="contact-item">
             <div class="icon">📞</div>
             <div>
@@ -43,7 +40,6 @@ import PageLayout from '../layouts/PageLayout.astro';
             </div>
           </div>
 
-          <!-- Email -->
           <div class="contact-item">
             <div class="icon">✉️</div>
             <div>
@@ -52,7 +48,6 @@ import PageLayout from '../layouts/PageLayout.astro';
             </div>
           </div>
 
-          <!-- Время работы -->
           <div class="contact-item">
             <div class="icon">🕒</div>
             <div>
@@ -60,10 +55,25 @@ import PageLayout from '../layouts/PageLayout.astro';
               <p>Ma–Pe: 10:00 – 18:00</p>
             </div>
           </div>
-
         </div>
 
-        <!-- Простая форма обратной связи -->
+        <!-- Интерактивная карта -->
+        <div class="map-section">
+          <h3 class="map-title">Löydä meidät kartalta</h3>
+          <div class="map-container">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1981.057678678456!2d28.1885!3d61.0587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4690e4f8f8f8f8f8%3A0xabcdef1234567890!2sKauppakatu%2040%2C%2053100%20Lappeenranta!5e0!3m2!1sfi!2sfi!4v1710000000000" 
+              width="100%" 
+              height="420" 
+              style="border:0; border-radius: 20px;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Форма обратной связи -->
         <div class="contact-form">
           <h3>Lähetä viesti</h3>
           <form action="#" method="POST">
@@ -85,7 +95,7 @@ import PageLayout from '../layouts/PageLayout.astro';
   .hero {
     height: 75vh;
     min-height: 580px;
-    background: url('/images/blog/sky.heic') center/cover no-repeat;
+    background: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,24 +110,13 @@ import PageLayout from '../layouts/PageLayout.astro';
     background: linear-gradient(to bottom, rgba(0,80,90,0.4), rgba(0,50,70,0.75));
   }
 
-  .hero-content h1 {
-    font-size: clamp(3.2rem, 8vw, 6rem);
-    font-weight: 800;
-  }
-
-  .lead {
-    font-size: 1.6rem;
-    margin-top: 1rem;
-    opacity: 0.95;
-  }
-
   .contact-section {
     padding: 5rem 0 6rem;
     background: #f8f9f7;
   }
 
   .contact-box {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
     background: white;
     padding: 4rem 3.5rem;
@@ -145,23 +144,31 @@ import PageLayout from '../layouts/PageLayout.astro';
   }
 
   .icon {
-    font-size: 2.2rem;
+    font-size: 2.3rem;
     flex-shrink: 0;
   }
 
   .contact-item h3 {
     color: #006666;
     margin-bottom: 0.6rem;
-    font-size: 1.35rem;
   }
 
-  .contact-item a {
-    color: #00b7b7;
-    text-decoration: none;
+  /* Карта */
+  .map-section {
+    margin: 3.5rem 0;
   }
 
-  .contact-item a:hover {
-    text-decoration: underline;
+  .map-title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #006666;
+    font-size: 1.8rem;
+  }
+
+  .map-container {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
   }
 
   /* Форма */
@@ -200,7 +207,6 @@ import PageLayout from '../layouts/PageLayout.astro';
     font-weight: 600;
     cursor: pointer;
     margin-top: 1rem;
-    transition: all 0.3s;
   }
 
   .btn-primary:hover {
@@ -214,10 +220,11 @@ import PageLayout from '../layouts/PageLayout.astro';
       padding: 2.8rem 1.8rem;
       margin: 0 1rem;
     }
-
     .contact-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
+    }
+    .map-container iframe {
+      height: 320px;
     }
   }
 </style>
