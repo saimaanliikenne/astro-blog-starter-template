@@ -73,7 +73,7 @@ import PageLayout from '../layouts/PageLayout.astro';
           </div>
         </div>
 
-        <!-- Форма обратной связи -->
+        <!-- Форма с согласием на обработку данных -->
         <div class="contact-form">
           <h3>Lähetä viesti</h3>
           <form action="#" method="POST">
@@ -81,6 +81,15 @@ import PageLayout from '../layouts/PageLayout.astro';
             <input type="email" placeholder="Sähköposti" required>
             <input type="tel" placeholder="Puhelin">
             <textarea placeholder="Viesti" rows="6" required></textarea>
+            
+            <!-- Согласие на обработку данных -->
+            <div class="consent">
+              <label>
+                <input type="checkbox" required>
+                <span>Hyväksyn henkilötietojeni käsittelyn <a href="/tietosuojaseloste" target="_blank">tietosuojaselosteen</a> mukaisesti.</span>
+              </label>
+            </div>
+
             <button type="submit" class="btn-primary">Lähetä viesti</button>
           </form>
         </div>
@@ -214,14 +223,30 @@ import PageLayout from '../layouts/PageLayout.astro';
     transform: translateY(-3px);
   }
 
+  /* Чекбокс согласия */
+  .consent {
+    margin: 1rem 0 1.5rem;
+    font-size: 0.98rem;
+    line-height: 1.6;
+  }
+
+  .consent label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: pointer;
+  }
+
+  .consent a {
+    color: #00b7b7;
+    text-decoration: underline;
+  }
+
   /* Адаптивность */
   @media (max-width: 768px) {
     .contact-box {
       padding: 2.8rem 1.8rem;
       margin: 0 1rem;
-    }
-    .contact-grid {
-      grid-template-columns: 1fr;
     }
     .map-container iframe {
       height: 320px;
