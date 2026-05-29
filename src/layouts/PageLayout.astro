@@ -4,6 +4,7 @@
  */
 import Navigation from '../components/Navigation.astro';
 import { ViewTransitions } from 'astro:transitions';
+import CookieConsent from '../components/CookieConsent.astro';
 
 const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattomat kesälomat Saimaalla' } = Astro.props;
 ---
@@ -127,5 +128,8 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
         opacity: 0.85;
       }
     </style>
+    <!-- Баннер согласия на cookies -->
+    <CookieConsent />
+
   </body>
 </html>
