@@ -353,5 +353,39 @@ import PageLayout from '../layouts/PageLayout.astro';
     .attractions-grid {
       grid-template-columns: 1fr;
     }
+ @media (max-width: 768px) {
+    .article-box {
+      padding: 2.5rem 1.5rem;
+      margin: 0 1rem;
+      border-radius: 18px;
+    }
+
+    .article-title {
+      font-size: 2.25rem;
+    }
+
+    .subsection-title {
+      font-size: 1.65rem;
+    }
+
+    .article-section p,
+    .article-intro {
+      font-size: 1.05rem;
+    }
+
+    .hero {
+      height: 80vh;
+      min-height: 550px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .article-box {
+      padding: 2rem 1.2rem;
+    }
+
+    .article-title {
+      font-size: 2rem;
+    }
   }
 </style>
