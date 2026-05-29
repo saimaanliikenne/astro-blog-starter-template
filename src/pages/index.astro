@@ -4,71 +4,80 @@ import PageLayout from '../layouts/PageLayout.astro';
 
 <PageLayout 
   title="Matkatoimisto Saimaan Liikenne OY" 
-  description="Unohtumattomat lomat Saimaalla – Imatra, Lappeenranta ja Etelä-Karjala">
+  description="Unohtumattomat lomat Saimaalla – Imatra, Lappeenranta ja Etelä-Karjalan luontokohteet">
   
-  <!-- Hero -->
+  <!-- Hero Section -->
   <div class="hero">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Tervetuloa<br>Saimaalle</h1>
       <p class="lead">Ainutlaatuisia elämyksiä, upeaa luontoa ja unohtumattomia lomia Etelä-Karjalassa</p>
       
+      <!-- Travelpayouts Widget -->
       <div class="tp-widget-wrapper">
         <script async src="https://tpwgt.com/content?currency=eur&trs=279173&shmarker=498238&show_hotels=true&powered_by=true&locale=fi&searchUrl=search.jetradar.com&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&origin=HEL&promo_id=7879&campaign_id=100" charset="utf-8"></script>
       </div>
     </div>
   </div>
 
-  <!-- Destinations -->
+  <!-- Destinations Section -->
   <section class="section destinations">
     <div class="container">
-      <h2 class="section-title">Suosituimmat kohteet</h2>
+      <h2 class="section-title">Löydä unelmiesi kohde</h2>
       <div class="destinations-grid">
+
+        <!-- Lappeenranta -->
         <a href="/lappeenranta" class="destination-card">
           <img src="/images/blog/lappeenranta.jpg" alt="Lappeenranta">
-          <div class="overlay"><h3>Lappeenranta</h3></div>
+          <div class="card-overlay">
+            <h3>Lappeenranta</h3>
+            <p>Saimaan helmi, kaunis satama ja vilkas kaupunki</p>
+          </div>
         </a>
+
+        <!-- Imatra -->
         <a href="/imatra" class="destination-card">
           <img src="/images/blog/imatrankoski.jpg" alt="Imatra">
-          <div class="overlay"><h3>Imatra</h3></div>
+          <div class="card-overlay">
+            <h3>Imatra</h3>
+            <p>Voimakas Imatrankoski ja upea luonto</p>
+          </div>
         </a>
-        <a href="/retkeily" class="destination-card">
-          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80" alt="Retkeily">
-          <div class="overlay"><h3>Retkeilyalueet</h3></div>
+
+        <!-- Retkeily -->
+        <a href="/puistot" class="destination-card">
+          <img src="/images/blog/ranta.jpg" alt="Retkeily">
+          <div class="card-overlay">
+            <h3>Kansallispuistot & Retkeily</h3>
+            <p>Petkeljärvi, Ruunaa ja upeat luontoreitit</p>
+          </div>
         </a>
+
       </div>
     </div>
   </section>
 
-  <!-- Фотогалерея -->
-  <section class="section gallery-section">
+  <!-- Why Us Section -->
+  <section class="section why-us">
     <div class="container">
-      <h2 class="section-title">Galleria – Etelä-Karjala kauneimmillaan</h2>
-      <div class="gallery-grid">
-        <img src="/images/hero/finland-hero.jpg" alt="Saimaa kesällä" loading="lazy">
-        <img src="/images/blog/lappeenranta.jpg" alt="Lappeenrannan satama" loading="lazy">
-        <img src="/images/blog/imatrankoski.jpg" alt="Imatrankoski" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80" alt="Saimaan saaret" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80" alt="Metsäpolku" loading="lazy">
-        <img src="https://images.unsplash.com/photo-1564507592333-cdd0f3d6c4c6?auto=format&fit=crop&q=80" alt="Kylpylä" loading="lazy">
+      <h2 class="section-title">Miksi valita meidät?</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🌲</div>
+          <h3>Lähellä luontoa</h3>
+          <p>Autamme sinua löytämään parhaat luontokohteet ja retkeilyreitit.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🏨</div>
+          <h3>Laadukkaat majoitukset</h3>
+          <p>Hotellit, kylpylät ja mökit Saimaan rannalla.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✈️</div>
+          <h3>Helppo matkustaminen</h3>
+          <p>Lentojen, junien ja majoituksen varaaminen samasta paikasta.</p>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Видео -->
-  <section class="section video-section">
-    <div class="container">
-      <h2 class="section-title">Video: Saimaa kutsuu</h2>
-      <div class="video-wrapper">
-        <iframe 
-          src="https://www.youtube.com/embed/dQw4w9wgxcq" 
-          title="Saimaa - Etelä-Karjala" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-      <p class="video-caption">Koe Saimaan kauneus videolta (voit заменить ссылку на своё видео)</p>
     </div>
   </section>
 
@@ -90,139 +99,142 @@ import PageLayout from '../layouts/PageLayout.astro';
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,80,90,0.35), rgba(0,45,70,0.78));
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 80, 90, 0.35) 0%,
+      rgba(0, 50, 70, 0.75) 100%
+    );
   }
 
-  .hero-content h1 {
-    font-size: clamp(3.8rem, 9vw, 7.5rem);
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    padding: 0 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.8rem, 9vw, 7.2rem);
     font-weight: 800;
     line-height: 1.05;
+    margin-bottom: 1.2rem;
     text-shadow: 0 4px 25px rgba(0,0,0,0.6);
   }
 
   .lead {
-    font-size: clamp(1.45rem, 4vw, 2.2rem);
-    margin-top: 1rem;
+    font-size: clamp(1.4rem, 4vw, 2.1rem);
+    margin-bottom: 2.8rem;
     opacity: 0.95;
   }
 
   .tp-widget-wrapper {
     max-width: 720px;
-    margin: 2.5rem auto 0;
+    margin: 0 auto;
     background: rgba(255,255,255,0.96);
     border-radius: 20px;
     padding: 1.8rem;
     box-shadow: 0 15px 45px rgba(0,0,0,0.25);
   }
 
-  .section {
+  /* Destinations */
+  .destinations {
     padding: 6rem 0;
+    background: #f8f9f7;
   }
 
   .section-title {
     text-align: center;
-    font-size: 2.8rem;
+    font-size: 2.6rem;
     margin-bottom: 3.5rem;
     color: #1a2a2a;
   }
 
-  /* Галерея */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.2rem;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .gallery-grid img {
-    width: 100%;
-    height: 320px;
-    object-fit: cover;
-    border-radius: 18px;
-    transition: all 0.4s ease;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  }
-
-  .gallery-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  }
-
-  /* Видео */
-  .video-section {
-    background: #f8f9f7;
-  }
-
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .video-caption {
-    text-align: center;
-    margin-top: 1.5rem;
-    color: #555;
-    font-style: italic;
-  }
-
-  /* Карточки направлений */
   .destinations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
     gap: 2rem;
+    max-width: 1300px;
+    margin: 0 auto;
     padding: 0 1.5rem;
   }
 
   .destination-card {
     position: relative;
-    height: 380px;
-    border-radius: 22px;
+    height: 420px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease;
+    text-decoration: none;
+    color: white;
+  }
+
+  .destination-card:hover {
+    transform: translateY(-15px);
   }
 
   .destination-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
   }
 
   .destination-card:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
   }
 
-  .overlay {
+  .card-overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-    color: white;
-    padding: 2rem 1.8rem 1.8rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.3));
+    padding: 2.5rem 2rem 2rem;
   }
 
-  .overlay h3 {
-    font-size: 1.8rem;
+  .card-overlay h3 {
+    font-size: 1.85rem;
+    margin-bottom: 0.6rem;
+  }
+
+  /* Features */
+  .why-us {
+    padding: 6rem 0;
+  }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .feature {
+    background: white;
+    padding: 2.8rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+
+  .feature-icon {
+    font-size: 3.2rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .feature h3 {
+    font-size: 1.55rem;
+    margin-bottom: 1rem;
+    color: #006666;
   }
 
   @media (max-width: 768px) {
-    .gallery-grid img { height: 240px; }
+    .hero { height: 85vh; }
+    .destinations-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
