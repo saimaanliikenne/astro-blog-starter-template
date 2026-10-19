@@ -44,19 +44,11 @@ import PageLayout from '../layouts/PageLayout.astro';
           Saimaan kauniissa maisemissa.
         </p>
 
-        <div class="article-image">
-          <img src="/images/blog/imatraspa.jpg" alt="Imatrankoski" loading="lazy">
-        </div>
-
         <h3 class="subsection-title">Karjalan luonto ja retkeilyreitit</h3>
         <p>
           Imatran ympäristössä on upeita luontopolkuja, järviä ja metsäalueita. 
           Alue sopii erinomaisesti sekä lyhyille kävelyille että pidemmille retkille.
         </p>
-
-        <div class="article-image">
-          <img src="/images/blog/ranta.jpg" alt="Imatrankoski" loading="lazy">
-        </div>
 
         <h3 class="subsection-title">Vinkkejä vierailuun</h3>
         <ul class="tips-list">
@@ -85,7 +77,7 @@ import PageLayout from '../layouts/PageLayout.astro';
         </div>
 
         <div class="card">
-          <img src="/images/blog/imatraspa.jpg" alt="Imatran Kylpylä" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1564507592333-cdd0f3d6c4c6?auto=format&fit=crop&q=80&w=800" alt="Imatran Kylpylä" loading="lazy">
           <div class="card-content">
             <h3>Imatran Kylpylä</h3>
             <p>Moderni kylpylähotelli, jossa rentoutuminen, vesipuisto ja laadukkaat hoidot.</p>
@@ -93,7 +85,7 @@ import PageLayout from '../layouts/PageLayout.astro';
         </div>
 
         <div class="card">
-          <img src="/images/blog/karelia.jpg" alt="Karjalan luonto" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=800" alt="Karjalan luonto" loading="lazy">
           <div class="card-content">
             <h3>Karjalan luonto</h3>
             <p>Kauniit retkeilyreitit, järvet ja metsät ympärillä. Täydellinen luontoharrastajille.</p>
@@ -103,15 +95,18 @@ import PageLayout from '../layouts/PageLayout.astro';
     </div>
   </section>
 
-  <!-- Travelpayouts Widget -->
+  <!-- Виджет отелей Иматры -->
   <section class="section widget-section">
     <div class="container">
-      <h2 class="section-title">Etsi majoitusta ja aktiviteetteja Imatralla</h2>
+      <h2 class="section-title">Etsi majoitusta Imatralla</h2>
+      <p class="widget-subtitle">Löydä parhaat hotellit, kylpylät ja majoitusvaihtoehdot Imatrasta</p>
+      
       <div class="tp-widget-wrapper">
-       <script async 
-  src="https://tpwgt.com/content?currency=eur&trs=279173&shmarker=498238&show_hotels=true&powered_by=true&locale=fi&destination=Imatra&check_in=2026-06-01&check_out=2026-06-05&adults=2&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&color_focused=%2332a8dd&border_radius=8&promo_id=7879&campaign_id=100" 
-  charset="utf-8">
-</script>
+        <script async 
+          src="https://tpwgt.com/content?currency=eur&trs=279173&shmarker=498238&show_hotels=true&powered_by=true&locale=fi&destination=Imatra&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=12&plain=false&promo_id=7879&campaign_id=100" 
+          charset="utf-8">
+        </script>
+      </div>
     </div>
   </section>
 
@@ -269,13 +264,21 @@ import PageLayout from '../layouts/PageLayout.astro';
     margin-bottom: 0.7rem;
   }
 
+  /* Виджет */
+  .widget-subtitle {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+  }
+
   .tp-widget-wrapper {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     background: white;
     padding: 2rem;
     border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
   }
 
   @media (max-width: 768px) {
@@ -286,6 +289,11 @@ import PageLayout from '../layouts/PageLayout.astro';
     .hero {
       height: 80vh;
       min-height: 550px;
+    }
+
+    .tp-widget-wrapper {
+      padding: 1.2rem;
+      margin: 0 1rem;
     }
   }
 </style>
