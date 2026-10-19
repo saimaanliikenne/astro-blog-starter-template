@@ -93,43 +93,37 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
       .md\:pt-24 { padding-top: 6rem; }
 
       /* Footer */
-      .footer {
-        background: linear-gradient(135deg, #1e3a5f 0%, #2a6b5f 100%);
-        color: #e0f7fa;
-        padding: 4rem 1.5rem 2rem;
-        margin-top: 5rem;
-      }
-      .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 3rem;
-      }
-      .footer-logo {
-        font-size: 2.1rem;
-        color: #30d5c8;
-        margin-bottom: 0.8rem;
-      }
-      .footer-contacts h4,
-      .footer-social h4 {
-        color: white;
-        margin-bottom: 1.2rem;
-      }
-      .social-icons a {
-        color: #b2f2ea;
-        margin-right: 1.5rem;
-      }
-      .footer-bottom {
-        text-align: center;
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255,255,255,0.2);
-        opacity: 0.85;
+.footer {
+  background: linear-gradient(135deg, #1e3a5f 0%, #2a6b5f 100%);
+  color: #E6E6FA; /* основной цвет текста */
+  padding: 4rem 2rem 2rem;
+  margin-top: 4rem;
+}
+
+.footer a {
+  color: #E6E6FA; /* цвет ссылок */
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer a:hover {
+  color: #ffffff; /* при наведении — белый */
+}
+
+.footer-logo {
+  color: #E6E6FA;
+}
+
+.footer-contacts h4,
+.footer-social h4 {
+  color: #E6E6FA;
+}
+
+.footer-bottom {
+  color: #E6E6FA;
+  opacity: 0.9;
       }
     </style>
-    <!-- Баннер согласия на cookies -->
     
-
   </body>
 </html>
