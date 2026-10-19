@@ -1,10 +1,9 @@
 ---
 /**
- * PageLayout.astro — Главный layout с меню
+ * PageLayout.astro — Основной layout
  */
 import Navigation from '../components/Navigation.astro';
 import { ViewTransitions } from 'astro:transitions';
-import CookieConsent from '../components/CookieConsent.astro';
 
 const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattomat kesälomat Saimaalla' } = Astro.props;
 ---
@@ -36,7 +35,7 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
     <Navigation currentPath={Astro.url.pathname} />
 
     <!-- Основной контент -->
-    <main class="pt-20 md:pt-24 pb-16">
+    <main>
       <slot />
     </main>
 
@@ -47,6 +46,7 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
           <h3 class="footer-logo">Matkatoimisto Saimaan Liikenne OY</h3>
           <p>Unohtumattomat hetket Suomen suurimmalla järvellä</p>
         </div>
+
         <div class="footer-contacts">
           <h4>Yhteystiedot</h4>
           <ul>
@@ -55,17 +55,19 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
             <li>📍 Kauppakatu 40 B 27, 53100 Lappeenranta</li>
           </ul>
         </div>
+
         <div class="footer-social">
           <h4>Seuraa meitä</h4>
           <div class="social-icons">
-            <a href="#" target="_blank">Instagram</a>
-            <a href="#" target="_blank">Facebook</a>
-            <a href="#" target="_blank">Pinterest</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Facebook</a>
+            <a href="#" target="_blank" rel="noopener noreferrer">Pinterest</a>
           </div>
         </div>
       </div>
+
       <div class="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Matkatoimisto Saimaan Liikenne OY. Kaikki oikeudet pidätetään.</p>
+        <p>© {new Date().getFullYear()} Matkatoimisto Saimaan Liikenne OY. Kaikki oikeudet pidätetään.</p>
       </div>
     </footer>
 
@@ -73,32 +75,39 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
       :root {
         --primary: #2a6b5f;
         --accent: #30d5c8;
-        --bg: #f8f9f7;
+        --lavender: #E6E6FA;
         --text: #1a2a2a;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       body {
         font-family: 'Inter', system-ui, sans-serif;
-        background: hsl(var(--bg));
-        color: hsl(var(--text));
-        margin: 0;
         line-height: 1.6;
+        color: var(--text);
+        background-color: #E6E6FA;
       }
 
       h1, h2, h3 {
         font-family: 'Playfair Display', serif;
       }
 
-      .pt-20 { padding-top: 5rem; }
-      .md\:pt-24 { padding-top: 6rem; }
+      a {
+        transition: all 0.3s ease;
+      }
 
-      /* Footer */
+      /* ===================== FOOTER ===================== */
       .footer {
         background: linear-gradient(135deg, #1e3a5f 0%, #2a6b5f 100%);
         color: #E6E6FA;
-        padding: 4rem 1.5rem 2rem;
+        padding: 4.5rem 2rem 2.5rem;
         margin-top: 5rem;
       }
+
       .footer-container {
         max-width: 1200px;
         margin: 0 auto;
@@ -106,28 +115,85 @@ const { title = 'Matkatoimisto Saimaan Liikenne OY', description = 'Unohtumattom
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 3rem;
       }
+
       .footer-logo {
         font-size: 2.1rem;
         color: #E6E6FA;
-        margin-bottom: 0.8rem;
+        margin-bottom: 0.9rem;
       }
+
+      .footer-brand p {
+        color: #E6E6FA;
+        opacity: 0.95;
+        font-size: 1.05rem;
+      }
+
       .footer-contacts h4,
       .footer-social h4 {
         color: #E6E6FA;
-        margin-bottom: 1.2rem;
+        font-size: 1.35rem;
+        margin-bottom: 1.3rem;
       }
+
+      .footer-contacts ul {
+        list-style: none;
+      }
+
+      .footer-contacts li {
+        margin-bottom: 0.9rem;
+        color: #E6E6FA;
+        font-size: 1.05rem;
+      }
+
+      .footer a {
+        color: #E6E6FA;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: #ffffff;
+        text-decoration: underline;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 1.6rem;
+        flex-wrap: wrap;
+      }
+
       .social-icons a {
         color: #E6E6FA;
-        margin-right: 1.5rem;
+        font-size: 1.15rem;
       }
+
+      .social-icons a:hover {
+        color: #ffffff;
+      }
+
       .footer-bottom {
         text-align: center;
-        margin-top: 3rem;
+        margin-top: 3.5rem;
         padding-top: 2rem;
+        border-top: 1px solid rgba(230, 230, 250, 0.25);
         color: #E6E6FA;
-        opacity: 0.85;
+        opacity: 0.9;
+        font-size: 0.98rem;
+      }
+
+      /* Адаптивность */
+      @media (max-width: 768px) {
+        .footer {
+          padding: 3.5rem 1.5rem 2rem;
+        }
+
+        .footer-container {
+          gap: 2.5rem;
+        }
+
+        .footer-logo {
+          font-size: 1.85rem;
+        }
       }
     </style>
-  
   </body>
 </html>
