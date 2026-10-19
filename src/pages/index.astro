@@ -20,23 +20,63 @@ import CookieConsent from '../components/CookieConsent.astro';
     </div>
   </div>
 
-  <!-- Destinations -->
+  <!-- Destinations Section -->
   <section class="section destinations">
     <div class="container">
-      <h2 class="section-title">Suosituimmat kohteet</h2>
+      <h2 class="section-title">Löydä unelmiesi kohde</h2>
       <div class="destinations-grid">
+
+        <!-- Lappeenranta -->
         <a href="/lappeenranta" class="destination-card">
           <img src="/images/blog/lappeenranta.jpg" alt="Lappeenranta">
-          <div class="overlay"><h3>Lappeenranta</h3></div>
+          <div class="card-overlay">
+            <h3>Lappeenranta</h3>
+            <p>Saimaan helmi, kaunis satama ja vilkas kaupunki</p>
+          </div>
         </a>
+
+        <!-- Imatra -->
         <a href="/imatra" class="destination-card">
           <img src="/images/blog/imatrankoski.jpg" alt="Imatra">
-          <div class="overlay"><h3>Imatra</h3></div>
+          <div class="card-overlay">
+            <h3>Imatra</h3>
+            <p>Voimakas Imatrankoski ja upea luonto</p>
+          </div>
         </a>
-        <a href="/retkeily" class="destination-card">
-          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80" alt="Retkeily">
-          <div class="overlay"><h3>Retkeilyalueet</h3></div>
+
+        <!-- Retkeily -->
+        <a href="/puistot" class="destination-card">
+          <img src="/images/blog/ranta.jpg" alt="Retkeily">
+          <div class="card-overlay">
+            <h3>Kansallispuistot & Retkeily</h3>
+            <p>Petkeljärvi, Ruunaa ja upeat luontoreitit</p>
+          </div>
         </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Section -->
+  <section class="section why-us">
+    <div class="container">
+      <h2 class="section-title">Miksi valita meidät?</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">🌲</div>
+          <h3>Lähellä luontoa</h3>
+          <p>Autamme sinua löytämään parhaat luontokohteet ja retkeilyreitit.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">🏨</div>
+          <h3>Laadukkaat majoitukset</h3>
+          <p>Hotellit, kylpylät ja mökit Saimaan rannalla.</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">✈️</div>
+          <h3>Helppo matkustaminen</h3>
+          <p>Lentojen, junien ja majoituksen varaaminen samasta paikasta.</p>
+        </div>
       </div>
     </div>
   </section>
