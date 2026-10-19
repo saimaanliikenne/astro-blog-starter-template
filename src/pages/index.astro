@@ -20,23 +20,34 @@ import CookieConsent from '../components/CookieConsent.astro';
     </div>
   </div>
 
-  <!-- Destinations -->
+ <!-- Destinations -->
   <section class="section destinations">
     <div class="container">
       <h2 class="section-title">Suosituimmat kohteet</h2>
+      
       <div class="destinations-grid">
+        <!-- Lappeenranta -->
         <a href="/lappeenranta" class="destination-card">
-          <img src="/images/blog/lappeenranta.jpg" alt="Lappeenranta">
-          <div class="overlay"><h3>Lappeenranta</h3></div>
+          <img src="/images/blog/lappeenranta.jpg" alt="Lappeenranta" loading="lazy">
+          <div class="overlay">
+            <h3>Lappeenranta</h3>
+          </div>
         </a>
+
+        <!-- Imatra -->
         <a href="/imatra" class="destination-card">
-          <img src="/images/blog/imatrankoski.jpg" alt="Imatra">
-          <div class="overlay"><h3>Imatra</h3></div>
+          <img src="/images/blog/imatrankoski.jpg" alt="Imatra" loading="lazy">
+          <div class="overlay">
+            <h3>Imatra</h3>
+          </div>
         </a>
+
         <!-- Retkeily -->
-        <a href="/puistot" class="destination-card">
-          <img src="/images/routes/seasons.jpg" alt="Retkeily">
-          <div class="card-overlay"><h3>Kansallispuistot & Retkeily</h3>
+        <a href="/retkeily" class="destination-card">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=800" alt="Kansallispuistot & Retkeily" loading="lazy">
+          <div class="overlay">
+            <h3>Kansallispuistot & Retkeily</h3>
+          </div>
         </a>
       </div>
     </div>
