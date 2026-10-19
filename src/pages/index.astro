@@ -20,39 +20,23 @@ import CookieConsent from '../components/CookieConsent.astro';
     </div>
   </div>
 
-  <!-- Destinations Section -->
+  <!-- Destinations -->
   <section class="section destinations">
     <div class="container">
-      <h2 class="section-title">Löydä unelmiesi kohde</h2>
+      <h2 class="section-title">Suosituimmat kohteet</h2>
       <div class="destinations-grid">
-
-        <!-- Lappeenranta -->
         <a href="/lappeenranta" class="destination-card">
           <img src="/images/blog/lappeenranta.jpg" alt="Lappeenranta">
-          <div class="card-overlay">
-            <h3>Lappeenranta</h3>
-            <p>Saimaan helmi, kaunis satama ja vilkas kaupunki</p>
-          </div>
+          <div class="overlay"><h3>Lappeenranta</h3></div>
         </a>
-
-        <!-- Imatra -->
         <a href="/imatra" class="destination-card">
           <img src="/images/blog/imatrankoski.jpg" alt="Imatra">
-          <div class="card-overlay">
-            <h3>Imatra</h3>
-            <p>Voimakas Imatrankoski ja upea luonto</p>
-          </div>
+          <div class="overlay"><h3>Imatra</h3></div>
         </a>
-
-        <!-- Retkeily -->
-        <a href="/puistot" class="destination-card">
-          <img src="/images/blog/ranta.jpg" alt="Retkeily">
-          <div class="card-overlay">
-            <h3>Kansallispuistot & Retkeily</h3>
-            <p>Petkeljärvi, Ruunaa ja upeat luontoreitit</p>
-          </div>
+        <a href="/retkeily" class="destination-card">
+          <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80" alt="Retkeily">
+          <div class="overlay"><h3>Retkeilyalueet</h3></div>
         </a>
-
       </div>
     </div>
   </section>
@@ -65,7 +49,9 @@ import CookieConsent from '../components/CookieConsent.astro';
         <img src="/images/hero/finland-hero.jpg" alt="Saimaa" loading="lazy">
         <img src="/images/blog/lappeenranta.jpg" alt="Lappeenranta" loading="lazy">
         <img src="/images/blog/imatrankoski.jpg" alt="Imatrankoski" loading="lazy">
-        
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80" alt="Saimaa" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80" alt="Metsä" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1564507592333-cdd0f3d6c4c6?auto=format&fit=crop&q=80" alt="Kylpylä" loading="lazy">
       </div>
     </div>
   </section>
@@ -76,7 +62,7 @@ import CookieConsent from '../components/CookieConsent.astro';
       <h2 class="section-title">Video: Saimaa kutsuu</h2>
       <div class="video-wrapper">
         <iframe 
-          src="https://www.youtube.com/embed/fqvvbWV4KPA"
+          src="https://www.youtube.com/embed/dQw4w9wgxcq" 
           title="Saimaa - Etelä-Karjala" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -92,6 +78,11 @@ import CookieConsent from '../components/CookieConsent.astro';
 </PageLayout>
 
 <style>
+  /* Основной лавандовый фон всей страницы */
+  :global(body) {
+    background-color: #E6E6FA !important;
+  }
+
   .hero {
     height: 100vh;
     min-height: 680px;
@@ -141,6 +132,7 @@ import CookieConsent from '../components/CookieConsent.astro';
 
   .section {
     padding: 5.5rem 0;
+    background-color: #E6E6FA;
   }
 
   .section-title {
