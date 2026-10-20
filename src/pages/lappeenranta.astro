@@ -260,72 +260,114 @@ import PageLayout from '../layouts/PageLayout.astro';
     color: #444;
   }
 
-  /* Tabs */
-  .tabs-box {
-    max-width: 860px;
-    margin: 0 auto;
-    background: white;
-    border-radius: 24px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    overflow: hidden;
+ /* Tabs */
+.tabs-box {
+  max-width: 860px;
+  margin: 0 auto;
+  background: #f7f5fc; /* мягкий лавандовый фон */
+  border-radius: 24px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border: 1px solid rgba(230, 230, 250, 0.8);
+}
+
+.tabs-nav {
+  display: flex;
+  background: #ebe8f8;
+  border-bottom: 1px solid #ddd8f0;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 1.1rem 1rem;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+  background: #f7f5fc;
+  color: #006666;
+  border-bottom: 3px solid #00b7b7;
+}
+
+.tab-btn:hover {
+  color: #006666;
+}
+
+.tab-content {
+  display: none;
+  padding: 2.6rem 2.8rem 3rem;
+  background: #f7f5fc;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content h2 {
+  font-size: 1.75rem;        /* было ~2rem */
+  color: #1a2a2a;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+.tab-content h3 {
+  font-size: 1.3rem;         /* чуть меньше */
+  color: #006666;
+  margin: 1.9rem 0 0.85rem;
+}
+
+.tab-content p {
+  font-size: 0.98rem;        /* чуть меньше */
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 0.9rem;
+}
+
+.winter-tip {
+  background: #eef6f6;
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  margin: 2rem 0 1.3rem;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.closing {
+  text-align: center;
+  font-style: italic;
+  color: #555;
+  margin-top: 1.6rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .tab-content {
+    padding: 2rem 1.5rem;
   }
 
   .tabs-nav {
-    display: flex;
-    background: #f0f9f9;
-    border-bottom: 1px solid #e0eeee;
+    flex-direction: column;
   }
 
   .tab-btn {
-    flex: 1;
-    padding: 1.2rem 1rem;
-    border: none;
-    background: transparent;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #666;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    border-bottom: 1px solid #ddd8f0;
+    font-size: 0.95rem;
   }
 
   .tab-btn.active {
-    background: white;
-    color: #006666;
     border-bottom: 3px solid #00b7b7;
   }
 
-  .tab-btn:hover {
-    color: #006666;
-  }
-
-  .tab-content {
-    display: none;
-    padding: 3rem 3rem 3.5rem;
-  }
-
-  .tab-content.active {
-    display: block;
-  }
-
   .tab-content h2 {
-    font-size: 2rem;
-    color: #1a2a2a;
-    margin-bottom: 1.4rem;
-    text-align: center;
+    font-size: 1.55rem;
   }
-
-  .tab-content h3 {
-    font-size: 1.45rem;
-    color: #006666;
-    margin: 2.2rem 0 1rem;
-  }
-
-  .tab-content p {
-    font-size: 1.08rem;
-    line-height: 1.75;
-    color: #333;
-    margin-bottom: 1rem;
-  }
+}
 
   .winter-tip {
     background: #f0f9f9;
