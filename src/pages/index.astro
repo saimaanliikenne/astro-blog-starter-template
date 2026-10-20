@@ -14,48 +14,78 @@ import CookieConsent from '../components/CookieConsent.astro';
       <h1>Tervetuloa<br>Saimaalle</h1>
       <p class="lead">Ainutlaatuisia elämyksiä, upeaa luontoa ja unohtumattomia lomia Etelä-Karjalassa</p>
       
+      <div class="tp-widget-wrapper">
+        <script async src="https://tpwgt.com/content?currency=eur&trs=279173&shmarker=498238&show_hotels=true&powered_by=true&locale=fi&searchUrl=search.jetradar.com&primary_override=%2332a8dd&color_button=%2332a8dd&color_icons=%2332a8dd&dark=%23262626&light=%23FFFFFF&secondary=%23FFFFFF&special=%23C4C4C4&color_focused=%2332a8dd&border_radius=0&plain=false&origin=HEL&promo_id=7879&campaign_id=100" charset="utf-8"></script>
+      </div>
     </div>
   </div>
 
- <!-- Destinations -->
+  <!-- Destinations -->
   <section class="section destinations">
     <div class="container">
       <h2 class="section-title">Suosituimmat kohteet</h2>
       
       <div class="destinations-grid">
-        <!-- Lappeenranta -->
         <a href="/lappeenranta" class="destination-card">
           <img src="/images/blog/lappeenranta.jpg" alt="Lappeenranta" loading="lazy">
           <div class="overlay">
             <h3>Lappeenranta</h3>
+            <p>Saimaan helmi, kaunis satama ja historiallinen linnoitus</p>
           </div>
         </a>
 
-        <!-- Imatra -->
         <a href="/imatra" class="destination-card">
           <img src="/images/blog/imatrankoski.jpg" alt="Imatra" loading="lazy">
           <div class="overlay">
             <h3>Imatra</h3>
+            <p>Voimakas Imatrankoski ja upea Karjalan luonto</p>
           </div>
         </a>
 
-        <!-- Puistot -->
         <a href="/puistot" class="destination-card">
           <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80&w=800" alt="Kansallispuistot & Retkeily" loading="lazy">
           <div class="overlay">
             <h3>Kansallispuistot & Retkeily</h3>
+            <p>Petkeljärvi, Ruunaa, Linnansaari ja upeat luontoreitit</p>
           </div>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section class="section gallery-section">
+  <!-- Рекомендация: Järvisydän -->
+  <section class="section jarvisydan-section">
     <div class="container">
-      <h2 class="section-title">Galleria – Etelä-Karjala kauneimmillaan</h2>
-      <div class="gallery-grid">
-        <img src="/images/blog/church.jpg" alt="Saimaa" loading="lazy">
+      <div class="jarvisydan-card">
+        <div class="jarvisydan-image">
+          <img 
+            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&q=80&w=900" 
+            alt="Nature Hotel & Spa Resort Järvisydän" 
+            loading="lazy"
+          >
+        </div>
+        
+        <div class="jarvisydan-content">
+          <span class="label">Suosittelemme</span>
+          <h2>Nature Hotel & Spa Resort Järvisydän</h2>
+          <p>
+            Saimaan rannalla, Linnansaaren kansallispuiston kupeessa sijaitseva Järvisydän tarjoaa 
+            majoitusta, herkullista ruokaa, ohjelmapalveluita sekä uniikin Järvikylpylän ja savolaisen 
+            saunamaailman. Kaikki palvelut toimivat normaalisti – myös ryhmille.
+          </p>
+          <p class="extra">
+            Naapurissa kannattaa poiketa myös <a href="https://www.metsakahvila.fi/" target="_blank" rel="noopener">Alpakka-kahvilassa</a>.
+          </p>
+          <a href="https://www.jarvisydan.com/" target="_blank" rel="noopener" class="btn-outline">
+            Tutustu Järvisydämeen →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <secti<img src="/images/blog/church.jpg" alt="Saimaa" loading="lazy">
         <img src="/images/blog/ranta.jpg" alt="Lappeenranta" loading="lazy">
         <img src="/images/blog/hk_linna.jpg" alt="Imatrankoski" loading="lazy">
         <img src="/images/blog/imatrasammer.jpg" alt="Imatrankoski" loading="lazy">
@@ -73,7 +103,7 @@ import CookieConsent from '../components/CookieConsent.astro';
       <h2 class="section-title">Video: Saimaa kutsuu</h2>
       <div class="video-wrapper">
         <iframe 
-          src="https://www.youtube.com/embed/fqvvbWV4KPA" 
+          src="https://www.youtube.com/embed/dQw4w9wgxcq" 
           title="Saimaa - Etelä-Karjala" 
           frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -89,7 +119,6 @@ import CookieConsent from '../components/CookieConsent.astro';
 </PageLayout>
 
 <style>
-  /* Основной лавандовый фон всей страницы */
   :global(body) {
     background-color: #E6E6FA !important;
   }
@@ -101,7 +130,7 @@ import CookieConsent from '../components/CookieConsent.astro';
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #E6E6FA;
+    color: white;
     text-align: center;
     position: relative;
   }
@@ -109,7 +138,7 @@ import CookieConsent from '../components/CookieConsent.astro';
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(0,80,90,0.35), rgba(0,45,70,0.78));
+    background: linear-gradient(to bottom, rgba(0, 80, 90, 0.35), rgba(0, 45, 70, 0.78));
   }
 
   .hero-content {
@@ -153,19 +182,31 @@ import CookieConsent from '../components/CookieConsent.astro';
     color: #1a2a2a;
   }
 
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Destinations */
   .destinations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.8rem;
-    padding: 0 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 
   .destination-card {
     position: relative;
-    height: 340px;
+    height: 400px;
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  .destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.18);
   }
 
   .destination-card img {
@@ -184,16 +225,115 @@ import CookieConsent from '../components/CookieConsent.astro';
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-    color: #E6E6FA;
-    padding: 1.8rem 1.5rem 1.5rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.88), transparent);
+    color: white;
+    padding: 2rem 1.6rem 1.8rem;
   }
 
+  .overlay h3 {
+    font-size: 1.65rem;
+    margin: 0 0 0.6rem 0;
+  }
+
+  .overlay p {
+    font-size: 1.05rem;
+    margin: 0;
+    opacity: 0.95;
+    line-height: 1.45;
+  }
+
+  /* Järvisydän блок */
+  .jarvisydan-section {
+    padding: 4.5rem 0;
+  }
+
+  .jarvisydan-card {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 0;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .jarvisydan-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 340px;
+  }
+
+  .jarvisydan-content {
+    padding: 3rem 2.8rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .jarvisydan-content .label {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #00b7b7;
+    margin-bottom: 0.8rem;
+  }
+
+  .jarvisydan-content h2 {
+    font-size: 1.9rem;
+    color: #1a2a2a;
+    margin-bottom: 1.2rem;
+    line-height: 1.25;
+  }
+
+  .jarvisydan-content p {
+    font-size: 1.08rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 1rem;
+  }
+
+  .jarvisydan-content .extra {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.8rem;
+  }
+
+  .jarvisydan-content a {
+    color: #00b7b7;
+    text-decoration: none;
+  }
+
+  .jarvisydan-content a:hover {
+    text-decoration: underline;
+  }
+
+  .btn-outline {
+    display: inline-block;
+    padding: 0.85rem 1.8rem;
+    border: 2px solid #00b7b7;
+    border-radius: 50px;
+    color: #00b7b7 !important;
+    font-weight: 600;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+    width: fit-content;
+  }
+
+  .btn-outline:hover {
+    background: #00b7b7;
+    color: white !important;
+  }
+
+  /* Gallery */
   .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1rem;
-    padding: 0 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.2rem;
   }
 
   .gallery-grid img {
@@ -202,8 +342,14 @@ import CookieConsent from '../components/CookieConsent.astro';
     object-fit: cover;
     border-radius: 16px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: transform 0.4s ease;
   }
 
+  .gallery-grid img:hover {
+    transform: scale(1.04);
+  }
+
+  /* Video */
   .video-wrapper {
     position: relative;
     padding-bottom: 42%;
@@ -211,7 +357,7 @@ import CookieConsent from '../components/CookieConsent.astro';
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    max-width: 1000px;
+    max-width: 780px;
     margin: 0 auto;
   }
 
@@ -221,6 +367,31 @@ import CookieConsent from '../components/CookieConsent.astro';
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  /* Адаптивность */
+  @media (max-width: 900px) {
+    .destinations-grid {
+      grid-template-columns: 1fr;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .destination-card {
+      height: 340px;
+    }
+
+    .jarvisydan-card {
+      grid-template-columns: 1fr;
+    }
+
+    .jarvisydan-image img {
+      min-height: 260px;
+    }
+
+    .jarvisydan-content {
+      padding: 2.2rem 1.8rem;
+    }
   }
 
   @media (max-width: 768px) {
@@ -237,21 +408,18 @@ import CookieConsent from '../components/CookieConsent.astro';
       font-size: 2.2rem;
     }
 
-    .destinations-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .destination-card {
-      height: 280px;
+    .tp-widget-wrapper {
+      margin: 1.5rem 1rem;
+      padding: 1.2rem;
     }
 
     .gallery-grid img {
       height: 220px;
     }
 
-    .tp-widget-wrapper {
-      margin: 1.5rem 1rem;
-      padding: 1.2rem;
+    .video-wrapper {
+      max-width: 100%;
+      padding-bottom: 56.25%;
     }
   }
 </style>
