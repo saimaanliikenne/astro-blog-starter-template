@@ -26,107 +26,111 @@ import PageLayout from '../layouts/PageLayout.astro';
           Kaupunki yhdistää kauniin luonnon, historiallisen linnoituksen, vilkkaan sataman 
           ja modernin kaupunkielämän. Se on täydellinen kohde sekä rentoutumiseen että aktiivisempaan lomaan.
         </p>
-
-        <h3 class="subsection-title">Linnoitus ja vanha kaupunki</h3>
-        <p>
-          Lappeenrannan linnoitus on kaupungin sydän. Kävele vanhoilla kujilla, tutustu 
-          museoihin ja ihaile näkymiä Saimaalle. Alueella on myös kauniita kahviloita ja ravintoloita.
-        </p>
-
-        <div class="article-image">
-          <img src="/images/blog/lappeenranta.jpg" alt="Lappeenrannan linnoitus" loading="lazy">
-        </div>
-
-        <h3 class="subsection-title">Satama ja Saimaa</h3>
-        <p>
-          Satama on Lappeenrannan elävä keskus. Kesällä täällä on torielämää, risteilyjä 
-          ja tunnelmaa auringonlaskun aikaan. Talvella satama muuttuu hiljaiseksi ja lumiseksi – 
-          mutta yhtä kauniiksi.
-        </p>
       </div>
     </div>
   </section>
 
-  <!-- Talvi Lappeenrannassa -->
-  <section class="section winter-section">
+  <!-- Два текста во вкладках -->
+  <section class="section tabs-section">
     <div class="container">
-      <div class="article-box winter-box">
+      <div class="tabs-box">
 
-        <h2 class="section-title">Lappeenranta talvella</h2>
-        <p class="intro-text">
-          Kun lumi peittää Etelä-Karjalan ja Saimaa jäätyy, Lappeenranta muuttuu. 
-          Kesän vilkas satama rauhoittuu, linnoituksen kivimuurit peittyvät valkoiseen peittoon 
-          ja kaupunki saa aivan uuden, lähes unenomaisen tunnelman.
-        </p>
-
-        <div class="article-image">
-          <img 
-            src="https://images.unsplash.com/photo-1483664852095-d6cc68707029?auto=format&fit=crop&q=80&w=1000" 
-            alt="Talvinen Saimaa Lappeenrannassa" 
-            loading="lazy"
-          >
+        <div class="tabs-nav">
+          <button class="tab-btn active" data-tab="weekend">Viikonloppu Lappeenrannassa</button>
+          <button class="tab-btn" data-tab="winter">Lappeenranta talvella</button>
         </div>
 
-        <h3 class="subsection-title">Kävele jäällä – Saimaan monikäyttöreitti</h3>
-        <p>
-          Jään kantaessa satamasta avataan reitti, jota pitkin voi kävellä, juosta tai pyöräillä. 
-          Kymmenen kilometrin mittainen reitti vie avaraan maisemaan, jossa horisontti katoaa 
-          lumen ja taivaan rajaan. Aamu- tai iltahämärässä kokemus on erityisen vaikuttava.
-        </p>
+        <!-- Вкладка 1: Выходные -->
+        <div class="tab-content active" id="weekend">
+          <h2>Vietä unohtumaton viikonloppu Lappeenrannassa</h2>
+          <p>
+            Lappeenranta, Saimaan kaunein rantakaupunki, on täydellinen kohde rentouttavalle 
+            ja monipuoliselle viikonlopulle. Olitpa sitten aktiivinen liikkuja tai rentoutumisen 
+            etsijä, täältä löytyy juuri sinulle sopivaa ohjelmaa.
+          </p>
 
-        <h3 class="subsection-title">Hiihtäen järvelle tai metsiin</h3>
-        <p>
-          Lappeenrannassa riittää latuja: Pappilanniemi, Lauritsala, Huhtiniemi ja lentokentän 
-          ympäristö tarjoavat sekä helppoja että pidempiä reittejä. Jään salliessa voi hiihtää 
-          myös suoraan satamasta Karhusaareen tai Mikonsaareen. Hiljaisuus, suksen suhina ja 
-          talvinen Saimaa – siinä on jotain hyvin suomalaista.
-        </p>
+          <h3>Aamupäivä: Liikettä ja historian havinaa</h3>
+          <p>
+            Aloita päivä aktiivisesti. Kävele tai pyöräile Saimaan rannoilla, hengitä raikasta 
+            ilmaa ja anna maiseman herättää aistit. Tämän jälkeen suuntaa kohti linnoitusta – 
+            paikkaa, jossa aika tuntuu pysähtyvän.
+          </p>
+          <p>
+            Linnoituksen kivimuurit, vanhat rakennukset ja kapeat kujat kertovat vuosisatojen 
+            tarinaa. Täällä voit aistia historian läheisyyden: sotilaiden askeleet, kauppiaiden 
+            äänet ja elämän, joka on jatkunut täällä sukupolvesta toiseen. Kävele hitaasti, 
+            pysähdy katsomaan näkymiä Saimaalle ja anna menneisyyden koskettaa nykyhetkeä.
+          </p>
 
-        <div class="article-image">
-          <img 
-            src="https://images.unsplash.com/photo-1551524559-8af4e6624178?auto=format&fit=crop&q=80&w=1000" 
-            alt="Hiihtäjä talvisessa metsässä" 
-            loading="lazy"
-          >
+          <h3>Iltapäivä: Sataman rauha ja auringonlasku</h3>
+          <p>
+            Kun päivä kääntyy iltaan, on aika hidastaa. Suuntaa satamaan. Istu terassille 
+            tai kahvilaan, tilaa kuppi tuoretta, aromikasta kahvia ja anna itsellesi lupa vain olla.
+          </p>
+          <p>
+            Satamassa kuuluu usein elävää musiikkia, naurua ja hiljaista keskustelua. 
+            Kun aurinko alkaa laskea Saimaan taakse, valo pehmenee ja maisema muuttuu kultaiseksi. 
+            Tämä hetki – kahvi, musiikki ja auringonlasku – on monelle viikonlopun kaunein osa.
+          </p>
+          <p class="closing">
+            Lappeenranta ei vaadi kiirettä. Se kutsuu kokemaan, aistimaan ja muistamaan.
+          </p>
         </div>
 
-        <h3 class="subsection-title">Avantouinti ja sauna</h3>
-        <p>
-          Jos etsit aitoa talvielämystä, kokeile avantouintia Myllysaaressa. Lämmitä itsesi saunassa, 
-          astu kylmään veteen ja palaa takaisin lämpöön. Tunne on monille pysäyttävä – ja lopulta palkitseva.
-        </p>
+        <!-- Вкладка 2: Зима -->
+        <div class="tab-content" id="winter">
+          <h2>Lappeenranta talvella</h2>
+          <p>
+            Kun lumi peittää Etelä-Karjalan ja Saimaa jäätyy, Lappeenranta muuttuu. 
+            Kesän vilkas satama rauhoittuu, linnoituksen kivimuurit peittyvät valkoiseen peittoon 
+            ja kaupunki saa aivan uuden, lähes unenomaisen tunnelman.
+          </p>
 
-        <h3 class="subsection-title">Linnoitus lumessa</h3>
-        <p>
-          Linnoituksen alue on talvella erityisen kaunis. Kävele vanhan kaupungin kujilla, 
-          ihaile ortodoksista kirkkoa ja Etelä-Karjalan museota. Lumisilla rinteillä näkyy usein 
-          perheitä pulkkamäessä. Jouluisin alueella on myös tunnelmalliset markkinat.
-        </p>
+          <h3>Kävele jäällä – Saimaan monikäyttöreitti</h3>
+          <p>
+            Jään kantaessa satamasta avataan reitti, jota pitkin voi kävellä, juosta tai pyöräillä. 
+            Kymmenen kilometrin mittainen reitti vie avaraan maisemaan, jossa horisontti katoaa 
+            lumen ja taivaan rajaan. Aamu- tai iltahämärässä kokemus on erityisen vaikuttava.
+          </p>
 
-        <div class="article-image">
-          <img 
-            src="/images/blog/lappeenranta.jpg" 
-            alt="Lappeenrannan linnoitus talvella" 
-            loading="lazy"
-          >
+          <h3>Hiihtäen järvelle tai metsiin</h3>
+          <p>
+            Lappeenrannassa riittää latuja: Pappilanniemi, Lauritsala, Huhtiniemi ja lentokentän 
+            ympäristö tarjoavat sekä helppoja että pidempiä reittejä. Jään salliessa voi hiihtää 
+            myös suoraan satamasta Karhusaareen tai Mikonsaareen. Hiljaisuus, suksen suhina ja 
+            talvinen Saimaa – siinä on jotain hyvin suomalaista.
+          </p>
+
+          <h3>Avantouinti ja sauna</h3>
+          <p>
+            Jos etsit aitoa talvielämystä, kokeile avantouintia Myllysaaressa. Lämmitä itsesi saunassa, 
+            astu kylmään veteen ja palaa takaisin lämpöön. Tunne on monille pysäyttävä – ja lopulta palkitseva.
+          </p>
+
+          <h3>Linnoitus lumessa</h3>
+          <p>
+            Linnoituksen alue on talvella erityisen kaunis. Kävele vanhan kaupungin kujilla, 
+            ihaile ortodoksista kirkkoa ja Etelä-Karjalan museota. Lumisilla rinteillä näkyy usein 
+            perheitä pulkkamäessä. Jouluisin alueella on myös tunnelmalliset markkinat.
+          </p>
+
+          <h3>Talvisatama – tekemistä koko perheelle</h3>
+          <p>
+            Tammikuun lopusta maaliskuuhun satamassa toimii Talvisatama. Siellä on lumiliukumäki, 
+            napakelkkaa, teemapäiviä ja iltatulia. Paikka sopii erinomaisesti sekä lapsiperheille 
+            että niille, jotka haluavat vain istahtaa lämpimän juoman ääreen.
+          </p>
+
+          <div class="winter-tip">
+            <strong>Vinkki viikonlopuksi:</strong> 
+            Aloita aamu hiihtolenkillä tai kävelyllä jäällä, vietä iltapäivä linnoituksessa 
+            ja päätä päivä saunaan ja hyvään ruokaan. Näin Lappeenranta näyttää talvisen parhaimman puolensa.
+          </div>
+
+          <p class="closing">
+            Lappeenranta talvella ei huuda – se kutsuu hiljaa. Ja juuri siksi se jää mieleen.
+          </p>
         </div>
-
-        <h3 class="subsection-title">Talvisatama – tekemistä koko perheelle</h3>
-        <p>
-          Tammikuun lopusta maaliskuuhun satamassa toimii Talvisatama. Siellä on lumiliukumäki, 
-          napakelkkaa, teemapäiviä ja iltatulia. Paikka sopii erinomaisesti sekä lapsiperheille 
-          että niille, jotka haluavat vain istahtaa lämpimän juoman ääreen.
-        </p>
-
-        <div class="winter-tip">
-          <strong>Vinkki viikonlopuksi:</strong> 
-          Aloita aamu hiihtolenkillä tai kävelyllä jäällä, vietä iltapäivä linnoituksessa 
-          ja päätä päivä saunaan ja hyvään ruokaan. Näin Lappeenranta näyttää talvisen parhaimman puolensa.
-        </div>
-
-        <p class="closing">
-          Lappeenranta talvella ei huuda – se kutsuu hiljaa. Ja juuri siksi se jää mieleen.
-        </p>
 
       </div>
     </div>
@@ -166,6 +170,23 @@ import PageLayout from '../layouts/PageLayout.astro';
   </section>
 
 </PageLayout>
+
+<script>
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabContents = document.querySelectorAll('.tab-content');
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.dataset.tab;
+
+      tabButtons.forEach(b => b.classList.remove('active'));
+      tabContents.forEach(c => c.classList.remove('active'));
+
+      btn.classList.add('active');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+</script>
 
 <style>
   .hero {
@@ -232,58 +253,94 @@ import PageLayout from '../layouts/PageLayout.astro';
     color: #1a2a2a;
   }
 
-  .subsection-title {
-    font-size: 1.55rem;
-    margin: 2.4rem 0 1rem;
-    color: #006666;
-  }
-
   .intro-text {
     text-align: center;
     font-size: 1.15rem;
     line-height: 1.75;
-    margin-bottom: 2rem;
     color: #444;
   }
 
-  .article-box p {
+  /* Tabs */
+  .tabs-box {
+    max-width: 860px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    overflow: hidden;
+  }
+
+  .tabs-nav {
+    display: flex;
+    background: #f0f9f9;
+    border-bottom: 1px solid #e0eeee;
+  }
+
+  .tab-btn {
+    flex: 1;
+    padding: 1.2rem 1rem;
+    border: none;
+    background: transparent;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tab-btn.active {
+    background: white;
+    color: #006666;
+    border-bottom: 3px solid #00b7b7;
+  }
+
+  .tab-btn:hover {
+    color: #006666;
+  }
+
+  .tab-content {
+    display: none;
+    padding: 3rem 3rem 3.5rem;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  .tab-content h2 {
+    font-size: 2rem;
+    color: #1a2a2a;
+    margin-bottom: 1.4rem;
+    text-align: center;
+  }
+
+  .tab-content h3 {
+    font-size: 1.45rem;
+    color: #006666;
+    margin: 2.2rem 0 1rem;
+  }
+
+  .tab-content p {
     font-size: 1.08rem;
     line-height: 1.75;
     color: #333;
     margin-bottom: 1rem;
   }
 
-  .article-image {
-    margin: 2.2rem 0;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  }
-
-  .article-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    max-height: 420px;
-    object-fit: cover;
-  }
-
   .winter-tip {
     background: #f0f9f9;
-    padding: 1.5rem 1.8rem;
-    border-radius: 16px;
-    margin: 2.5rem 0 1.5rem;
+    padding: 1.4rem 1.6rem;
+    border-radius: 14px;
+    margin: 2.2rem 0 1.4rem;
     font-size: 1.05rem;
     line-height: 1.65;
-    color: #333;
   }
 
   .closing {
     text-align: center;
     font-style: italic;
-    font-size: 1.15rem;
     color: #555;
-    margin-top: 2rem;
+    margin-top: 1.8rem;
   }
 
   .cards-grid {
@@ -320,21 +377,25 @@ import PageLayout from '../layouts/PageLayout.astro';
   }
 
   @media (max-width: 768px) {
-    .article-box {
-      padding: 2.5rem 1.6rem;
-    }
-
     .hero {
       height: 80vh;
       min-height: 550px;
     }
 
-    .section-title {
-      font-size: 2.1rem;
+    .tab-content {
+      padding: 2.2rem 1.6rem;
     }
 
-    .article-image img {
-      max-height: 280px;
+    .tabs-nav {
+      flex-direction: column;
+    }
+
+    .tab-btn {
+      border-bottom: 1px solid #e0eeee;
+    }
+
+    .tab-btn.active {
+      border-bottom: 3px solid #00b7b7;
     }
   }
 </style>
